@@ -1,17 +1,11 @@
 'use client'
 
-import { useGlobalContext } from "@/context/GlobalContext"
-
-
-
-
-
-
+import { useGlobalContext } from '@/context/GlobalContext'
 
 const Teste = () => {
-    const {setIsLightTheme} = useGlobalContext()
+  const { setIsLightTheme } = useGlobalContext()
   return (
-    <button className="z-10" onClick={() => setIsLightTheme(prev => !prev)}>
+    <button className="z-10" onClick={() => setIsLightTheme((prev) => !prev)}>
       teste
     </button>
   )
