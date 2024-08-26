@@ -1,3 +1,4 @@
+import { Header } from '@/components/Header'
 import NavBar from '@/components/NavBar'
 import RainCanvas from '@/components/RainCanvas'
 import Teste from '@/components/teste'
@@ -8,9 +9,7 @@ const Page = () => {
       {/* <Clouds/> */}
       <Teste />
       <RainCanvas />
-      <NavBar />
-      <h1>teste</h1>
-      <h2>teste</h2>
+      <Header />
     </>
   )
 }

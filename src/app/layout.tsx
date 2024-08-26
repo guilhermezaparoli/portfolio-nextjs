@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="pt-BR">
       <GlobalProvider>
         <body className={inter.className}>
-          <div className="min-h-screen">
+          <div className="flex min-h-screen justify-center">
             <main>{children}</main>
           </div>
         </body>

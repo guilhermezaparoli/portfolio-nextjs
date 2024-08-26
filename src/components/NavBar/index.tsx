@@ -1,11 +1,30 @@
 import React from 'react'
+import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa'
 
 const NavBar = () => {
   return (
-    <div className="border-b border-blue-500 bg-blue-950 p-10">
-      <h1>teste</h1>
-      <h2>teste</h2>
-      <p>teste</p>
+    <div className="flex items-center gap-16">
+      <button className="text-center text-xl font-medium text-white">
+        Início
+      </button>
+      <button className="text-center text-xl font-medium text-white">
+        Sobre
+      </button>
+      <button className="text-center text-xl font-medium text-white">
+        Habilidades
+      </button>
+      <button className="text-center text-xl font-medium text-white">
+        Projetos
+      </button>
+      <button className="text-center text-xl font-medium text-white">
+        Contato
+      </button>
+
+      <div className="flex items-center gap-5">
+        <FaGithub className="cursor-pointer text-white" fontSize={30} />
+        <FaInstagram className="cursor-pointer text-white" fontSize={30} />
+        <FaLinkedin className="cursor-pointer text-white" fontSize={30} />
+      </div>
     </div>
   )
 }

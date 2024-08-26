@@ -94,9 +94,8 @@ const RainCanvas = () => {
         weather(lightningTimer)
       }
 
-      if (transitionProgress > 0) {
-        drawSun(transitionProgress)
-      }
+      // Draw the sun during the day and the moon at night
+      drawSunAndMoon(transitionProgress)
 
       animationFrameId = requestAnimationFrame(mainLoop)
     }
@@ -189,62 +188,106 @@ const RainCanvas = () => {
       }
     }
 
-    const drawSun = (progress: number) => {
+    const drawSunAndMoon = (progress: number) => {
       const sunX = w - 150
       const sunY = 150
       const sunRadius = 60 + 40 * progress
 
-      // Outer glow
-      const outerGlow = ctx.createRadialGradient(
-        sunX,
-        sunY,
-        0,
-        sunX,
-        sunY,
-        sunRadius + 60,
-      )
-      outerGlow.addColorStop(0, 'rgba(255, 255, 0, 0.6)')
-      outerGlow.addColorStop(1, 'rgba(255, 255, 0, 0)')
+      const moonX = w - 150
+      const moonY = 150
+      const moonRadius = 60 - 40 * progress
 
-      ctx.fillStyle = outerGlow
-      ctx.beginPath()
-      ctx.arc(sunX, sunY, sunRadius + 60, 0, Math.PI * 2)
-      ctx.fill()
+      // Draw the moon when transitionProgress < 1 (night)
+      if (progress < 1) {
+        // Moon outer glow
+        const outerGlow = ctx.createRadialGradient(
+          moonX,
+          moonY,
+          0,
+          moonX,
+          moonY,
+          moonRadius + 30,
+        )
+        outerGlow.addColorStop(0, 'rgba(255, 255, 255, 0.6)')
+        outerGlow.addColorStop(1, 'rgba(255, 255, 255, 0)')
 
-      // Main Sun Body
-      const sunGradient = ctx.createRadialGradient(
-        sunX,
-        sunY,
-        0,
-        sunX,
-        sunY,
-        sunRadius,
-      )
-      sunGradient.addColorStop(0, 'rgba(255, 255, 255, 1)')
-      sunGradient.addColorStop(0.5, 'rgba(255, 255, 0, 1)')
-      sunGradient.addColorStop(1, 'rgba(255, 204, 0, 1)')
+        ctx.fillStyle = outerGlow
+        ctx.beginPath()
+        ctx.arc(moonX, moonY, moonRadius + 30, 0, Math.PI * 2)
+        ctx.fill()
 
-      ctx.fillStyle = sunGradient
-      ctx.beginPath()
-      ctx.arc(sunX, sunY, sunRadius, 0, Math.PI * 2)
-      ctx.fill()
+        // Moon main body
+        const moonGradient = ctx.createRadialGradient(
+          moonX,
+          moonY,
+          0,
+          moonX,
+          moonY,
+          moonRadius,
+        )
+        moonGradient.addColorStop(0, 'rgba(255, 255, 255, 1)')
+        moonGradient.addColorStop(1, 'rgba(180, 180, 180, 1)')
 
-      // Inner Glow
-      const innerGlow = ctx.createRadialGradient(
-        sunX,
-        sunY,
-        0,
-        sunX,
-        sunY,
-        sunRadius * 0.5,
-      )
-      innerGlow.addColorStop(0, 'rgba(255, 255, 255, 1)')
-      innerGlow.addColorStop(1, 'rgba(255, 255, 0, 0)')
+        ctx.fillStyle = moonGradient
+        ctx.beginPath()
+        ctx.arc(moonX, moonY, moonRadius, 0, Math.PI * 2)
+        ctx.fill()
+      }
 
-      ctx.fillStyle = innerGlow
-      ctx.beginPath()
-      ctx.arc(sunX, sunY, sunRadius * 0.5, 0, Math.PI * 2)
-      ctx.fill()
+      // Draw the sun when transitionProgress > 0 (day)
+      if (progress > 0) {
+        // Sun outer glow
+        const outerGlow = ctx.createRadialGradient(
+          sunX,
+          sunY,
+          0,
+          sunX,
+          sunY,
+          sunRadius + 60,
+        )
+        outerGlow.addColorStop(0, 'rgba(255, 255, 0, 0.6)')
+        outerGlow.addColorStop(1, 'rgba(255, 255, 0, 0)')
+
+        ctx.fillStyle = outerGlow
+        ctx.beginPath()
+        ctx.arc(sunX, sunY, sunRadius + 60, 0, Math.PI * 2)
+        ctx.fill()
+
+        // Main Sun Body
+        const sunGradient = ctx.createRadialGradient(
+          sunX,
+          sunY,
+          0,
+          sunX,
+          sunY,
+          sunRadius,
+        )
+        sunGradient.addColorStop(0, 'rgba(255, 255, 255, 1)')
+        sunGradient.addColorStop(0.5, 'rgba(255, 255, 0, 1)')
+        sunGradient.addColorStop(1, 'rgba(255, 204, 0, 1)')
+
+        ctx.fillStyle = sunGradient
+        ctx.beginPath()
+        ctx.arc(sunX, sunY, sunRadius, 0, Math.PI * 2)
+        ctx.fill()
+
+        // Inner Glow
+        const innerGlow = ctx.createRadialGradient(
+          sunX,
+          sunY,
+          0,
+          sunX,
+          sunY,
+          sunRadius * 0.5,
+        )
+        innerGlow.addColorStop(0, 'rgba(255, 255, 255, 1)')
+        innerGlow.addColorStop(1, 'rgba(255, 255, 0, 0)')
+
+        ctx.fillStyle = innerGlow
+        ctx.beginPath()
+        ctx.arc(sunX, sunY, sunRadius * 0.5, 0, Math.PI * 2)
+        ctx.fill()
+      }
     }
 
     const blendColors = (
