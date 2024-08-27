@@ -189,11 +189,11 @@ const RainCanvas = () => {
     }
 
     const drawSunAndMoon = (progress: number) => {
-      const sunX = w - 150
+      const sunX = w - 100
       const sunY = 150
-      const sunRadius = 60 + 40 * progress
+      const sunRadius = 50 + 30 * progress
 
-      const moonX = w - 150
+      const moonX = w - 100
       const moonY = 150
       const moonRadius = 60 - 40 * progress
 
