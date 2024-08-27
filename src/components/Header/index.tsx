@@ -7,7 +7,7 @@ export function Header() {
         {/* <p>Logo</p> */}
         <NavBar />
       </div>
-      <div className="mt-8">
+      <div className="z-2 relative mt-24">
         <h1 className="font-poppins text-title text-xl font-bold">Olá,</h1>
         <h1 className="font-poppins text-title text-xl font-bold">
           Meu nome é{' '}
