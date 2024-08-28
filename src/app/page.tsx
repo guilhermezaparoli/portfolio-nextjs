@@ -1,7 +1,9 @@
 // import Clouds from '@/components/Clouds'
+import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
+import { Projects } from '@/components/Projects'
 import RainCanvas from '@/components/RainCanvas'
-import Skills from '@/components/skills'
+import Skills from '@/components/Skills'
 import Teste from '@/components/teste'
 
 const Page = () => {
@@ -12,6 +14,8 @@ const Page = () => {
       <RainCanvas />
       <Header />
       <Skills />
+      <Projects />
+      <Footer />
     </>
   )
 }

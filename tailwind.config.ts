@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         title: '#003d6a',
+        descriptionProject: '#666',
       },
       fontFamily: {
         DM_Sans: ['DM Sans', 'sans-serif'],
