@@ -8,14 +8,14 @@ export function Header() {
         <NavBar />
       </div>
       <div className="z-2 relative mt-24">
-        <h1 className="font-poppins text-title text-xl font-bold">Olá,</h1>
-        <h1 className="font-poppins text-title text-xl font-bold">
+        <h1 className="font-poppins text-xl font-bold text-title">Olá,</h1>
+        <h1 className="font-poppins text-xl font-bold text-title">
           Meu nome é{' '}
         </h1>
-        <h1 className="font-poppins text-title text-xl font-bold">
+        <h1 className="font-poppins text-xl font-bold text-title">
           Guilherme Zaparoli
         </h1>
-        <h1 className="font-poppins text-title text-xl font-bold">
+        <h1 className="font-poppins text-xl font-bold text-title">
           Eu construo coisas para web
         </h1>
       </div>

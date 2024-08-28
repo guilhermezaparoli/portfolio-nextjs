@@ -4,19 +4,19 @@ import React from 'react'
 const NavBar = () => {
   return (
     <div className="flex items-center gap-4">
-      <button className="font-DM_Sans text-center text-base font-medium text-white">
+      <button className="text-center font-DM_Sans text-base font-medium text-white">
         Início
       </button>
-      <button className="font-DM_Sans text-center text-base font-medium text-white">
+      <button className="text-center font-DM_Sans text-base font-medium text-white">
         Sobre
       </button>
-      <button className="font-DM_Sans text-center text-base font-medium text-white">
+      <button className="text-center font-DM_Sans text-base font-medium text-white">
         Habilidades
       </button>
-      <button className="font-DM_Sans text-center text-base font-medium text-white">
+      <button className="text-center font-DM_Sans text-base font-medium text-white">
         Projetos
       </button>
-      <button className="font-DM_Sans text-center text-base font-medium text-white">
+      <button className="text-center font-DM_Sans text-base font-medium text-white">
         Contato
       </button>
 

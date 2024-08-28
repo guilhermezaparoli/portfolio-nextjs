@@ -12,7 +12,7 @@ export function ProjectCard() {
 
       <div className="p-7 text-center font-medium text-black">
         <h1 className="font-poppins text-xl">Project title goes here</h1>
-        <p className="text-descriptionProject mt-4 font-poppins text-sm font-light">
+        <p className="mt-4 font-poppins text-sm font-light text-descriptionProject">
           This is sample project description random things are here in
           description This is sample project lorem ipsum generator for dummy
           content
