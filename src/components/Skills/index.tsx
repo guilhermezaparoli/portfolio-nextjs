@@ -12,8 +12,10 @@ import Image from 'next/image'
 const Skills = () => {
   return (
     <div className="mt-20 flex flex-col items-center justify-center text-center">
-      <h1 className="font-poppins text-xl">Minhas habilidades</h1>
-      <p className="whitespace-nowrap font-poppins text-sm">
+      <h1 className="font-poppins text-xl font-bold text-white">
+        Minhas habilidades
+      </h1>
+      <p className="whitespace-nowrap font-poppins text-sm text-white">
         Tecnologias que estive trabalhando recentemente:
       </p>
 

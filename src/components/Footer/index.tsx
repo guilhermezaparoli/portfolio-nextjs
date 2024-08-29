@@ -16,7 +16,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="m-10 h-[2px] w-full bg-black stroke-none"></div>
+      <div className="m-10 h-[2px] w-full bg-white stroke-none"></div>
 
       <div className="font-poppins text-xs">
         <p>Desenvolvido e construído por Guilherme Zaparoli Gomes</p>

@@ -11,10 +11,15 @@ const config: Config = {
       colors: {
         title: '#003d6a',
         descriptionProject: '#666',
+        dark: '#141414',
       },
       fontFamily: {
         DM_Sans: ['DM Sans', 'sans-serif'],
         poppins: ['Poppins'],
+      },
+      backgroundImage: {
+        switchDay: 'linear-gradient(90deg, #fea431, #ffff00)',
+        nightDay: 'linear-gradient(90deg, #141414, #9ca3b0)',
       },
     },
   },
