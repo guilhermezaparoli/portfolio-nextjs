@@ -12,6 +12,7 @@ const config: Config = {
         title: '#003d6a',
         descriptionProject: '#666',
         dark: '#141414',
+        overlay: 'rgba(0,0,0,.8)',
       },
       fontFamily: {
         DM_Sans: ['DM Sans', 'sans-serif'],
