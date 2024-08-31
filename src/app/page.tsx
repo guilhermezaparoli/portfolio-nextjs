@@ -1,4 +1,5 @@
-import Clouds from '@/components/Clouds'
+// import Clouds from '@/components/Clouds'
+// import Clouds from '@/components/Clouds'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { Projects } from '@/components/Projects'
@@ -9,7 +10,7 @@ import SwitchTheme from '@/components/SwitchTheme'
 const Page = () => {
   return (
     <>
-      <Clouds />
+      {/* <Clouds /> */}
       <SwitchTheme />
       <RainCanvas />
       <Header />
