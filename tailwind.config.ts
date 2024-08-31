@@ -16,11 +16,29 @@ const config: Config = {
       },
       fontFamily: {
         DM_Sans: ['DM Sans', 'sans-serif'],
-        poppins: ['Poppins'],
+        poppins: ['Poppins', 'sans-serif'],
+        itensMenu: ['JetBrains Mono', 'sans-serif'],
       },
       backgroundImage: {
         switchDay: 'linear-gradient(90deg, #fea431, #ffff00)',
         nightDay: 'linear-gradient(90deg, #141414, #9ca3b0)',
+      },
+      keyframes: {
+        expand: {
+          '0%': {
+            transform: 'scale(0)',
+            borderRadius: '50%',
+            opacity: '0.8',
+          },
+          '100%': {
+            transform: 'scale(100)',
+            borderRadius: '0',
+            opacity: '1',
+          },
+        },
+      },
+      animation: {
+        'animate-expand': 'expand 0.7s ease-in-out forwards',
       },
     },
   },

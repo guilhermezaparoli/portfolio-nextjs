@@ -26,48 +26,89 @@ export function HamburgerMenu() {
         />
       </label>
 
-      {statusHamburgerMenu && (
-        <>
-          <div
-            className="fixed inset-0 bg-black opacity-50"
-            onClick={() => setStatusHamburgerMenu(false)}
-          ></div>
-          <div
-            className="fixed inset-0 flex items-center justify-center"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="bg-overlay relative z-10 flex h-screen w-full items-center justify-center p-6 shadow-lg">
-              <ul>
-                <li className="mb-2">
-                  <a href="#" className="text-blue-500 hover:underline">
-                    Início
-                  </a>
-                </li>
-                <li className="mb-2">
-                  <a href="#" className="text-blue-500 hover:underline">
-                    Sobre
-                  </a>
-                </li>
-                <li className="mb-2">
-                  <a href="#" className="text-blue-500 hover:underline">
-                    Option 3
-                  </a>
-                </li>
-              </ul>
+      <div
+        className={`fixed inset-0 z-10 flex items-center justify-center transition-opacity duration-500 ${
+          statusHamburgerMenu ? 'opacity-100' : 'opacity-0'
+        }`}
+        style={{ pointerEvents: statusHamburgerMenu ? 'auto' : 'none' }}
+      >
+        <div
+          className={`fixed inset-0 bg-overlay transition-all duration-700 ease-in-out ${
+            statusHamburgerMenu
+              ? 'scale-150 rounded-none'
+              : 'scale-0 rounded-full'
+          }`}
+          style={{
+            transformOrigin: 'center',
+          }}
+        ></div>
 
-              <IoMdClose
-                onClick={onToggle}
-                fontSize={24}
-                className={`absolute left-0 right-0 transform text-white transition-transform duration-300 ease-in-out ${
-                  statusHamburgerMenu
-                    ? 'rotate-0 scale-100 opacity-100'
-                    : 'rotate-180 scale-0 opacity-0'
-                }`}
-              />
-            </div>
-          </div>
-        </>
-      )}
+        <div
+          className={`relative flex h-screen w-full flex-1 items-center justify-center p-6 text-center shadow-lg transition-opacity delay-100 duration-500 ${
+            statusHamburgerMenu
+              ? 'translate-y-0 scale-100 opacity-100'
+              : 'translate-y-20 scale-0 opacity-0'
+          }`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <ul
+            className={`flex flex-col gap-5 transition-opacity delay-500 duration-300 ${
+              statusHamburgerMenu ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <li className="mb-2">
+              <a
+                href="#"
+                className="font-itensMenu text-5xl font-bold text-white hover:no-underline"
+              >
+                Início
+              </a>
+            </li>
+            <li className="mb-2">
+              <a
+                href="#"
+                className="font-itensMenu text-5xl font-bold text-white hover:no-underline"
+              >
+                Sobre
+              </a>
+            </li>
+            <li className="mb-2">
+              <a
+                href="#"
+                className="font-itensMenu text-5xl font-bold text-white hover:no-underline"
+              >
+                Habilidades
+              </a>
+            </li>
+            <li className="mb-2">
+              <a
+                href="#"
+                className="font-itensMenu text-5xl font-bold text-white hover:no-underline"
+              >
+                Projetos
+              </a>
+            </li>
+            <li className="mb-2">
+              <a
+                href="#"
+                className="font-itensMenu text-5xl font-bold text-white hover:no-underline"
+              >
+                Contato
+              </a>
+            </li>
+          </ul>
+
+          <IoMdClose
+            onClick={onToggle}
+            fontSize={24}
+            className={`absolute right-2 top-7 transform text-white transition-transform delay-100 duration-300 ease-in-out ${
+              statusHamburgerMenu
+                ? 'rotate-180 scale-100 opacity-100'
+                : 'rotate-0 scale-0 opacity-0'
+            }`}
+          />
+        </div>
+      </div>
     </div>
   )
 }
