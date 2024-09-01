@@ -1,6 +1,7 @@
 import { HiOutlineMail } from 'react-icons/hi'
 import NavBar from './NavBar'
 import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
+import Link from 'next/link'
 
 export function Header() {
   return (
@@ -25,15 +26,40 @@ export function Header() {
       <div className="mt-20 flex flex-col gap-5">
         <div className="flex w-full items-center justify-start">
           <div className="flex items-center gap-5">
-            <HiOutlineMail
-              className="cursor-pointer text-white"
-              fontSize={25}
-            />
-            <FaWhatsapp className="cursor-pointer text-white" fontSize={25} />
-            <FaInstagram className="cursor-pointer text-white" fontSize={25} />
-            <FaLinkedin className="cursor-pointer text-white" fontSize={25} />
-            <FaGithub className="cursor-pointer text-white" fontSize={25} />
-            {/* <FaWhatsapp className="cursor-pointer text-white" fontSize={25} /> */}
+            <Link
+              target="_blank"
+              type="email"
+              href={'mailto:guilhermezapas@gmail.com'}
+            >
+              <HiOutlineMail
+                className="cursor-pointer text-white"
+                fontSize={25}
+              />
+            </Link>
+            <Link
+              target="_blank"
+              href="https://api.whatsapp.com/send?phone=5517996299200"
+            >
+              <FaWhatsapp className="cursor-pointer text-white" fontSize={25} />
+            </Link>
+            <Link
+              target="_blank"
+              href="https://www.instagram.com/guilherme.zaparoli/"
+            >
+              <FaInstagram
+                className="cursor-pointer text-white"
+                fontSize={25}
+              />
+            </Link>
+            <Link
+              target="_blank"
+              href="https://www.linkedin.com/in/guilherme-zaparoli-gomes-b979b5179/"
+            >
+              <FaLinkedin className="cursor-pointer text-white" fontSize={25} />
+            </Link>
+            <Link target="_blank" href="https://github.com/guilhermezaparoli">
+              <FaGithub className="cursor-pointer text-white" fontSize={25} />
+            </Link>
           </div>
         </div>
         <button className="px- w-36 rounded-lg border-2 border-white p-3 text-center font-itensMenu text-xs font-bold text-white">
