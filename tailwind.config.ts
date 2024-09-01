@@ -25,22 +25,8 @@ const config: Config = {
         nightDayMenu:
           'linear-gradient(180deg, rgba(0,180,255,1) 0%, rgba(0,212,255,0) 100%);',
       },
-      keyframes: {
-        expand: {
-          '0%': {
-            transform: 'scale(0)',
-            borderRadius: '50%',
-            opacity: '0.8',
-          },
-          '100%': {
-            transform: 'scale(100)',
-            borderRadius: '0',
-            opacity: '1',
-          },
-        },
-      },
-      animation: {
-        'animate-expand': 'expand 0.7s ease-in-out forwards',
+      gridTemplateColumns: {
+        icons: 'repeat(auto-fit, 50px)',
       },
     },
   },

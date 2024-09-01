@@ -14,7 +14,7 @@ export function Footer() {
           <FaGithub className="cursor-pointer text-white" fontSize={25} />
         </div>
       </div>
-      <button className="font-itensMenu px- rounded-lg border-2 border-white p-3 text-center text-xs font-bold text-white">
+      <button className="px- rounded-lg border-2 border-white p-3 text-center font-itensMenu text-xs font-bold text-white">
         Vamos conversar
       </button>
 

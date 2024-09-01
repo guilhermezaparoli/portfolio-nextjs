@@ -1,5 +1,5 @@
 import { HiOutlineMail } from 'react-icons/hi'
-import NavBar from '../NavBar'
+import NavBar from './NavBar'
 import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
 
 export function Header() {
@@ -36,7 +36,7 @@ export function Header() {
             {/* <FaWhatsapp className="cursor-pointer text-white" fontSize={25} /> */}
           </div>
         </div>
-        <button className="font-itensMenu px- w-36 rounded-lg border-2 border-white p-3 text-center text-xs font-bold text-white">
+        <button className="px- w-36 rounded-lg border-2 border-white p-3 text-center font-itensMenu text-xs font-bold text-white">
           Vamos conversar
         </button>
       </div>

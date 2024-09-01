@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import imagem from '../../../public/assets/images/image-teste.svg'
+import imagem from '../../../../public/assets/images/image-teste.svg'
 import Link from 'next/link'
 import { FaGithub, FaLink } from 'react-icons/fa'
 
