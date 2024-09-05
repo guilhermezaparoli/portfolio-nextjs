@@ -1,4 +1,4 @@
-/* clouds.css */
+/* Keyframe for animating clouds */
 @keyframes animateCloud {
   0% {
     margin-left: -1000px;
@@ -8,23 +8,26 @@
   }
 }
 
+/* Cloud container stays fixed on the screen */
 .cloud-container {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   top: 0;
   padding-top: 50px;
-  /* z-index: 1; */
+  z-index: -1; /* Clouds behind content */
   overflow: hidden;
+  pointer-events: none; /* To prevent interaction with the clouds */
 }
 
+/* Cloud styling */
 .cloud {
   background: linear-gradient(to bottom, #fff 5%, #f1f1f1 100%);
   border-radius: 50px;
   box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
-  height: 60px; /* Reduced height */
-  width: 175px; /* Reduced width */
+  height: 60px;
+  width: 175px;
   position: relative;
 }
 
@@ -37,20 +40,21 @@
 
 .cloud::after {
   border-radius: 50px;
-  height: 50px; /* Reduced height */
-  width: 50px;  /* Reduced width */
-  left: 25px;   /* Adjusted position */
-  top: -25px;   /* Adjusted position */
+  height: 50px;
+  width: 50px;
+  left: 25px;
+  top: -25px;
 }
 
 .cloud::before {
   border-radius: 100px;
-  width: 90px;  /* Reduced width */
-  height: 90px; /* Reduced height */
-  right: 25px;  /* Adjusted position */
-  top: -45px;   /* Adjusted position */
+  width: 90px;
+  height: 90px;
+  right: 25px;
+  top: -45px;
 }
 
+/* Different cloud speeds */
 .x1 {
   animation: animateCloud 35s linear infinite;
 }

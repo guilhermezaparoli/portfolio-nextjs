@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR" className="antialiased">
+    <html lang="pt-BR" className="scroll-smooth antialiased">
       <GlobalProvider>
         <body className={inter.className}>
           <div className="min-h-screen px-4 py-5">

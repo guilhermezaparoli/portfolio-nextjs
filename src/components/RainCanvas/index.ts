@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 
 const RainCanvas = () => {
   const { isLightTheme } = useGlobalContext()
-  const [transitionProgress, setTransitionProgress] = useState(0)
+  const [transitionProgress, setTransitionProgress] = useState(1)
 
   useEffect(() => {
     const div = document.createElement('div')
@@ -28,7 +28,7 @@ const RainCanvas = () => {
     const init = () => {
       document.body.appendChild(div)
       div.style.position = 'fixed'
-      div.style.zIndex = '-1'
+      div.style.zIndex = '-2'
       div.style.pointerEvents = 'none'
       div.style.width = '100vw'
       div.style.height = '100vh'
@@ -265,6 +265,7 @@ const RainCanvas = () => {
         sunGradient.addColorStop(0, 'rgba(255, 255, 255, 1)')
         sunGradient.addColorStop(0.5, 'rgba(255, 255, 0, 1)')
         sunGradient.addColorStop(1, 'rgba(255, 204, 0, 1)')
+        // sunGradient.addColorStop(1, 'rgba(255, 150, 0, 1)')
 
         ctx.fillStyle = sunGradient
         ctx.beginPath()
