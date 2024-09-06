@@ -1,7 +1,7 @@
 /* Keyframe for animating clouds */
 @keyframes animateCloud {
   0% {
-    margin-left: -1000px;
+    margin-left: -300px;
   }
   100% {
     margin-left: 100%;
@@ -31,6 +31,8 @@
   position: relative;
 }
 
+
+
 .cloud::after,
 .cloud::before {
   content: '';
@@ -47,6 +49,40 @@
 }
 
 .cloud::before {
+  border-radius: 100px;
+  width: 90px;
+  height: 90px;
+  right: 25px;
+  top: -45px;
+}
+
+.cloud-dark {
+  background: linear-gradient(to bottom, #000 5%, #000 100%);
+  border-radius: 50px;
+  box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
+  height: 60px;
+  width: 175px;
+  position: relative;
+}
+
+
+
+.cloud-dark::after,
+.cloud-dark::before {
+  content: '';
+  position: absolute;
+  background: #000;
+}
+
+.cloud-dark::after {
+  border-radius: 50px;
+  height: 50px;
+  width: 50px;
+  left: 25px;
+  top: -25px;
+}
+
+.cloud-dark::before {
   border-radius: 100px;
   width: 90px;
   height: 90px;
@@ -72,5 +108,5 @@
 }
 
 .x5 {
-  animation: animateCloud 23s linear infinite;
+  animation: animateCloud 30s linear infinite;
 }

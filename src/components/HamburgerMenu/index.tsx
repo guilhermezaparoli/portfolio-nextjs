@@ -18,7 +18,7 @@ export function HamburgerMenu() {
 
         <RxHamburgerMenu
           fontSize={24}
-          className={`text-simple absolute bottom-0 left-0 right-0 top-0 transform transition-transform duration-300 ease-in-out dark:text-white ${
+          className={`text-simple absolute bottom-0 left-0 right-0 top-0 transform transition-transform duration-300 ease-in-out dark:text-simpleDark ${
             !statusHamburgerMenu
               ? 'rotate-0 scale-100 opacity-100'
               : 'rotate-180 scale-0 opacity-0'

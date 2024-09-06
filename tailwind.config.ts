@@ -12,11 +12,18 @@ const config: Config = {
       colors: {
         title: 'rgb(28 77 93)',
         simple: '#25667b',
+        darkTitle: '#2222',
+        simpleDark: "rgb(249 249 251)",
         descriptionProject: '#666',
         dark: '#141414',
         overlay: 'rgba(0,0,0,.8)',
-        bg: '#3FC5F0',
+        
       },
+      backgroundColor: {
+        sunnyDay: '#3FC5F0',
+        nightDay: '#000000',
+      },
+
       fontFamily: {
         DM_Sans: ['DM Sans', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
@@ -24,7 +31,8 @@ const config: Config = {
       },
       backgroundImage: {
         switchDay: 'linear-gradient(90deg, #fea431, #ffff00)',
-        nightDay: 'linear-gradient(90deg, #141414, #9ca3b0)',
+        switchNight: 'linear-gradient(90deg, #141414, #9ca3b0)',
+
         sunnyDayMenu:
           'linear-gradient(180deg, rgba(63, 197, 240, 1) 0%, rgba(0,212,255,0) 100%);',
         nightDayMenu:
