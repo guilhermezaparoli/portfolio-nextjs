@@ -10,7 +10,6 @@ import SwitchTheme from '@/components/SwitchTheme'
 const Page = () => {
   return (
     <>
-      <SwitchTheme />
       <Clouds />
       <RainCanvas />
 

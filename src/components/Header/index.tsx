@@ -1,14 +1,17 @@
 import { HiOutlineMail } from 'react-icons/hi'
-import NavBar from './NavBar'
+
 import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
+
+const NavBarDynamic = dynamic(() => import('./NavBar'))
 
 export function Header() {
   return (
     <div className="min-h-screen">
       <div className="flex items-center gap-3">
         {/* <p>Logo</p> */}
-        <NavBar />
+        <NavBarDynamic />
       </div>
       <div className="z-2 relative mt-40">
         <h1 className="font-poppins text-sm font-bold text-title">
