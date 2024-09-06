@@ -25,8 +25,10 @@ const config: Config = {
       backgroundImage: {
         switchDay: 'linear-gradient(90deg, #fea431, #ffff00)',
         nightDay: 'linear-gradient(90deg, #141414, #9ca3b0)',
+        sunnyDayMenu:
+          'linear-gradient(180deg, rgba(63, 197, 240, 1) 0%, rgba(0,212,255,0) 100%);',
         nightDayMenu:
-          'linear-gradient(180deg, rgba(0,180,255,1) 0%, rgba(0,212,255,0) 100%);',
+          'linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0,212,255,0) 100%);',
       },
       gridTemplateColumns: {
         icons: 'repeat(auto-fit, 50px)',

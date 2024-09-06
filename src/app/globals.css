@@ -5,4 +5,12 @@
 @tailwind components;
 @tailwind utilities;
 
+ body * {
+ @apply transition-colors duration-500;
 
+}
+
+svg {
+ @apply transition-colors duration-[0];
+
+}

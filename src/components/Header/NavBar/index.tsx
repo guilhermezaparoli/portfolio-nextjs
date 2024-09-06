@@ -46,7 +46,7 @@ const NavBar = () => {
   }, [scrollProgress])
 
   return (
-    <div className="fixed left-0 top-0 z-20 w-full bg-nightDayMenu px-4 py-5">
+    <div className="bg-sunnyDayMenu fixed left-0 top-0 z-20 w-full px-4 py-5 dark:bg-nightDayMenu">
       {isMounted && (
         <div
           style={{

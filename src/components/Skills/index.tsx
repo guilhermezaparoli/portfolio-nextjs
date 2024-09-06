@@ -21,16 +21,18 @@ import Image from 'next/image'
 const Skills = () => {
   return (
     <div className="mt-20">
-      <p className="text-simple text-start font-mono">Habilidades</p>
-      <h1 className="text-simple font-poppins text-3xl font-bold">
+      <p className="text-simple text-start font-mono dark:text-white">
+        Habilidades
+      </p>
+      <h1 className="text-simple font-poppins text-3xl font-bold dark:text-white">
         Minhas habilidades
       </h1>
-      <p className="text-simple whitespace-nowrap font-poppins text-sm">
+      <p className="text-simple whitespace-nowrap font-poppins text-sm dark:text-white">
         Tecnologias que estive trabalhando recentemente:
       </p>
 
       <div className="mt-10">
-        <p className="text-simple">Linguagens e Ferramentas</p>
+        <p className="text-simple dark:text-white">Linguagens e Ferramentas</p>
         <div className="mt-4 grid w-full grid-cols-icons justify-center gap-8">
           <Image title="HTML5" src={html5} alt="HTML5" />
           <Image title="CSS3" src={css3} alt="CSS3" />
@@ -43,7 +45,7 @@ const Skills = () => {
         </div>
       </div>
       <div className="mt-10">
-        <p className="text-simple">Bibliotecas e Frameworks</p>
+        <p className="text-simple dark:text-white">Bibliotecas e Frameworks</p>
         <div className="mt-4 grid w-full grid-cols-icons justify-center gap-8">
           <Image title="React.js" src={react} alt="React.js" />
           <Image title="Next.js" src={nextjs} alt="Next.js" />
@@ -58,7 +60,7 @@ const Skills = () => {
       </div>
 
       <div className="mt-10">
-        <p className="text-simple">Banco de dados</p>
+        <p className="text-simple dark:text-white">Banco de dados</p>
         <div className="mt-4 grid w-full grid-cols-icons justify-center gap-8">
           <Image title="PostgreSQL" src={postgreSQL} alt="PostgreSQL" />
           <Image title="MongoDB" src={mongoDB} alt="MongoDB" />
@@ -68,10 +70,15 @@ const Skills = () => {
       </div>
 
       <div className="mt-10 flex-1">
-        <p className="text-simple">Outros</p>
+        <p className="text-simple dark:text-white">Outros</p>
         <div className="mt-4 grid w-full grid-cols-icons justify-center gap-6">
           <Image title="Git" src={git} alt="Git" />
-          <Image title="GitHub" src={gitHub} alt="GitHub" />
+          <Image
+            title="GitHub"
+            src={gitHub}
+            alt="GitHub"
+            className="text-white"
+          />
           <div></div>
           <div></div>
         </div>
