@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
+  darkMode: 'class',
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -9,10 +10,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        title: '#003d6a',
+        title: 'rgb(28 77 93)',
+        simple: '#25667b',
         descriptionProject: '#666',
         dark: '#141414',
         overlay: 'rgba(0,0,0,.8)',
+        bg: '#3FC5F0',
       },
       fontFamily: {
         DM_Sans: ['DM Sans', 'sans-serif'],

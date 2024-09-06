@@ -18,7 +18,7 @@ export function HamburgerMenu() {
 
         <RxHamburgerMenu
           fontSize={24}
-          className={`absolute bottom-0 left-0 right-0 top-0 transform text-white transition-transform duration-300 ease-in-out ${
+          className={`text-simple absolute bottom-0 left-0 right-0 top-0 transform transition-transform duration-300 ease-in-out ${
             !statusHamburgerMenu
               ? 'rotate-0 scale-100 opacity-100'
               : 'rotate-180 scale-0 opacity-0'
@@ -59,7 +59,7 @@ export function HamburgerMenu() {
             <li className="mb-2">
               <a
                 href="#"
-                className="font-itensMenu text-5xl font-bold text-white hover:no-underline"
+                className="font-poppins text-5xl font-bold text-white hover:no-underline"
               >
                 Início
               </a>
@@ -67,7 +67,7 @@ export function HamburgerMenu() {
             <li className="mb-2">
               <a
                 href="#"
-                className="font-itensMenu text-5xl font-bold text-white hover:no-underline"
+                className="font-poppins text-5xl font-bold text-white hover:no-underline"
               >
                 Sobre
               </a>
@@ -75,7 +75,7 @@ export function HamburgerMenu() {
             <li className="mb-2">
               <a
                 href="#"
-                className="font-itensMenu text-5xl font-bold text-white hover:no-underline"
+                className="font-poppins text-5xl font-bold text-white hover:no-underline"
               >
                 Habilidades
               </a>
@@ -83,7 +83,7 @@ export function HamburgerMenu() {
             <li className="mb-2">
               <a
                 href="#"
-                className="font-itensMenu text-5xl font-bold text-white hover:no-underline"
+                className="font-poppins text-5xl font-bold text-white hover:no-underline"
               >
                 Projetos
               </a>
@@ -91,7 +91,7 @@ export function HamburgerMenu() {
             <li className="mb-2">
               <a
                 href="#"
-                className="font-itensMenu text-5xl font-bold text-white hover:no-underline"
+                className="font-poppins text-5xl font-bold text-white hover:no-underline"
               >
                 Contato
               </a>

@@ -13,15 +13,15 @@ export function Header() {
         {/* <p>Logo</p> */}
         <NavBarDynamic />
       </div>
-      <div className="z-2 relative mt-40">
-        <h1 className="font-poppins text-sm font-bold text-title">
+      <div className="z-2 relative mt-44">
+        <h1 className="text-simple font-poppins text-sm font-bold">
           Olá, meu nome é
         </h1>
 
-        <h1 className="mt-2 font-poppins text-3xl font-bold text-title">
+        <h1 className="mt-2 font-poppins text-3xl font-bold text-title dark:text-white">
           Guilherme Zaparoli
         </h1>
-        <h1 className="mt-4 font-poppins text-xl font-bold text-slate-800">
+        <h1 className="text-simple mt-4 font-poppins text-xl font-bold">
           Eu construo coisas para web
         </h1>
       </div>
@@ -35,7 +35,7 @@ export function Header() {
               href={'mailto:guilhermezapas@gmail.com'}
             >
               <HiOutlineMail
-                className="cursor-pointer text-white"
+                className="text-simple cursor-pointer"
                 fontSize={25}
               />
             </Link>
@@ -43,14 +43,17 @@ export function Header() {
               target="_blank"
               href="https://api.whatsapp.com/send?phone=5517996299200"
             >
-              <FaWhatsapp className="cursor-pointer text-white" fontSize={25} />
+              <FaWhatsapp
+                className="text-simple cursor-pointer"
+                fontSize={25}
+              />
             </Link>
             <Link
               target="_blank"
               href="https://www.instagram.com/guilherme.zaparoli/"
             >
               <FaInstagram
-                className="cursor-pointer text-white"
+                className="text-simple cursor-pointer"
                 fontSize={25}
               />
             </Link>
@@ -58,14 +61,17 @@ export function Header() {
               target="_blank"
               href="https://www.linkedin.com/in/guilherme-zaparoli-gomes-b979b5179/"
             >
-              <FaLinkedin className="cursor-pointer text-white" fontSize={25} />
+              <FaLinkedin
+                className="text-simple cursor-pointer"
+                fontSize={25}
+              />
             </Link>
             <Link target="_blank" href="https://github.com/guilhermezaparoli">
-              <FaGithub className="cursor-pointer text-white" fontSize={25} />
+              <FaGithub className="text-simple cursor-pointer" fontSize={25} />
             </Link>
           </div>
         </div>
-        <button className="px- w-36 rounded-lg border-2 border-white p-3 text-center font-itensMenu text-xs font-bold text-white">
+        <button className="px- border-simple text-simple w-36 rounded-lg border-2 p-3 text-center font-itensMenu text-xs font-bold">
           Vamos conversar
         </button>
       </div>

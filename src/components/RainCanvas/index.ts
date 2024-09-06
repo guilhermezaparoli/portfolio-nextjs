@@ -75,7 +75,7 @@ const RainCanvas = () => {
 
       // Night to day transition colors
       const nightColor = '#000000'
-      const dayColor = '#00b4ff'
+      const dayColor = '#3FC5F0'
       const currentBackgroundColor = blendColors(
         nightColor,
         dayColor,
@@ -262,9 +262,9 @@ const RainCanvas = () => {
           sunY,
           sunRadius,
         )
-        sunGradient.addColorStop(0, 'rgba(255, 255, 255, 1)')
-        sunGradient.addColorStop(0.5, 'rgba(255, 255, 0, 1)')
-        sunGradient.addColorStop(1, 'rgba(255, 204, 0, 1)')
+        sunGradient.addColorStop(0, 'rgba(255, 215, 0, 1)')
+        sunGradient.addColorStop(0.5, 'rgba(255, 215, 0, 1)')
+        sunGradient.addColorStop(1, 'rgba(255, 215, 0, 1)')
         // sunGradient.addColorStop(1, 'rgba(255, 150, 0, 1)')
 
         ctx.fillStyle = sunGradient

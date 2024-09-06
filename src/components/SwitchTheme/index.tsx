@@ -9,6 +9,9 @@ const SwitchTheme = () => {
 
   const onToggle = () => {
     setIsLightTheme(!isLightTheme)
+
+    localStorage.theme = isLightTheme ? 'dark' : 'light' // Save preference
+    document.documentElement.classList.toggle('dark', isLightTheme)
   }
 
   return (

@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="scroll-smooth antialiased">
       <GlobalProvider>
-        <body className={inter.className}>
+        <body className={`${inter.className} bg-bg`}>
           <div className="min-h-screen px-4 py-5">
             <main>{children}</main>
           </div>
