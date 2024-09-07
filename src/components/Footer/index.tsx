@@ -4,7 +4,7 @@ import { HiOutlineMail } from 'react-icons/hi'
 
 export function Footer() {
   return (
-    <div className="flex flex-col items-center justify-center gap-8 font-DM_Sans text-sm">
+    <div id="contato" className="flex flex-col items-center justify-center gap-8 font-DM_Sans text-sm">
       <h1 className="text-simple text-3xl font-bold dark:text-simpleDark">
         Conecte-se comigo
       </h1>

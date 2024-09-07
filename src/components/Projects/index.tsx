@@ -2,14 +2,14 @@ import { ProjectCard } from './ProjectCard'
 
 export function Projects() {
   return (
-    <div className="mt-20 flex flex-col justify-center">
-      <p className="text-simple text-start font-mono dark:text-simpleDark">
+    <div id="projetos" className="flex flex-col justify-center pt-20">
+      <p className="text-start font-mono text-simple dark:text-simpleDark">
         Projetos
       </p>
-      <h1 className="text-simple font-poppins text-3xl font-bold dark:text-simpleDark">
+      <h1 className="font-poppins text-3xl font-bold text-simple dark:text-simpleDark">
         Meus Projetos
       </h1>
-      <p className="text-simple whitespace-nowrap font-poppins text-sm dark:text-simpleDark">
+      <p className="whitespace-nowrap font-poppins text-sm text-simple dark:text-simpleDark">
         Coisas que contruí até agora:
       </p>
 

@@ -265,7 +265,7 @@ const RainCanvas = () => {
         sunGradient.addColorStop(0, 'rgba(255, 215, 0, 1)')
         sunGradient.addColorStop(0.5, 'rgba(255, 215, 0, 1)')
         sunGradient.addColorStop(1, 'rgba(255, 215, 0, 1)')
-        // sunGradient.addColorStop(1, 'rgba(255, 150, 0, 1)')
+        sunGradient.addColorStop(1, 'rgba(255, 150, 0, 1)')
 
         ctx.fillStyle = sunGradient
         ctx.beginPath()

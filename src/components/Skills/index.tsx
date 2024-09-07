@@ -20,19 +20,21 @@ import Image from 'next/image'
 
 const Skills = () => {
   return (
-    <div className="mt-20">
-      <p className="text-simple text-start font-mono dark:text-simpleDark">
+    <div id="habilidades" className="pt-20">
+      <p className="text-start font-mono text-simple dark:text-simpleDark">
         Habilidades
       </p>
-      <h1 className="text-simple font-poppins text-3xl font-bold dark:text-simpleDark">
+      <h1 className="font-poppins text-3xl font-bold text-simple dark:text-simpleDark">
         Minhas habilidades
       </h1>
-      <p className="text-simple whitespace-nowrap font-poppins text-sm dark:text-simpleDark">
+      <p className="whitespace-nowrap font-poppins text-sm text-simple dark:text-simpleDark">
         Tecnologias que estive trabalhando recentemente:
       </p>
 
       <div className="mt-10">
-        <p className="text-simple dark:text-simpleDark">Linguagens e Ferramentas</p>
+        <p className="text-simple dark:text-simpleDark">
+          Linguagens e Ferramentas
+        </p>
         <div className="mt-4 grid w-full grid-cols-icons justify-center gap-8">
           <Image title="HTML5" src={html5} alt="HTML5" />
           <Image title="CSS3" src={css3} alt="CSS3" />
@@ -45,7 +47,9 @@ const Skills = () => {
         </div>
       </div>
       <div className="mt-10">
-        <p className="text-simple dark:text-simpleDark">Bibliotecas e Frameworks</p>
+        <p className="text-simple dark:text-simpleDark">
+          Bibliotecas e Frameworks
+        </p>
         <div className="mt-4 grid w-full grid-cols-icons justify-center gap-8">
           <Image title="React.js" src={react} alt="React.js" />
           <Image title="Next.js" src={nextjs} alt="Next.js" />

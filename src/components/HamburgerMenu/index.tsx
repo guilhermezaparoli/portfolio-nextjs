@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { IoMdClose } from 'react-icons/io'
 import { RxHamburgerMenu } from 'react-icons/rx'
+import SwitchTheme from '../SwitchTheme'
 
 export function HamburgerMenu() {
   const [statusHamburgerMenu, setStatusHamburgerMenu] = useState(false)
@@ -12,13 +13,15 @@ export function HamburgerMenu() {
   }
 
   return (
-    <div>
+    <div className="flex items-center gap-4">
+      <SwitchTheme />
+
       <label className="relative">
         <input type="checkbox" className="invisible w-5" onClick={onToggle} />
 
         <RxHamburgerMenu
           fontSize={24}
-          className={`text-simple absolute bottom-0 left-0 right-0 top-0 transform transition-transform duration-300 ease-in-out dark:text-simpleDark ${
+          className={`absolute bottom-0 left-0 right-0 top-0 transform text-simple transition-transform duration-300 ease-in-out dark:text-simpleDark ${
             !statusHamburgerMenu
               ? 'rotate-0 scale-100 opacity-100'
               : 'rotate-180 scale-0 opacity-0'
@@ -58,40 +61,45 @@ export function HamburgerMenu() {
           >
             <li className="mb-2">
               <a
-                href="#"
+                href="#inicio"
                 className="font-poppins text-5xl font-bold text-white hover:no-underline"
+                onClick={onToggle}
               >
                 Início
               </a>
             </li>
             <li className="mb-2">
               <a
-                href="#"
+                href="#sobre"
                 className="font-poppins text-5xl font-bold text-white hover:no-underline"
+                onClick={onToggle}
               >
                 Sobre
               </a>
             </li>
             <li className="mb-2">
               <a
-                href="#"
+                href="#habilidades"
                 className="font-poppins text-5xl font-bold text-white hover:no-underline"
+                onClick={onToggle}
               >
                 Habilidades
               </a>
             </li>
             <li className="mb-2">
               <a
-                href="#"
+                href="#projetos"
                 className="font-poppins text-5xl font-bold text-white hover:no-underline"
+                onClick={onToggle}
               >
                 Projetos
               </a>
             </li>
             <li className="mb-2">
               <a
-                href="#"
+                href="#contato"
                 className="font-poppins text-5xl font-bold text-white hover:no-underline"
+                onClick={onToggle}
               >
                 Contato
               </a>
@@ -101,7 +109,7 @@ export function HamburgerMenu() {
           <IoMdClose
             onClick={onToggle}
             fontSize={24}
-            className={`absolute right-2 top-7 transform text-white transition-transform delay-100 duration-300 ease-in-out ${
+            className={`flex transform self-baseline text-white transition-transform delay-100 duration-300 ease-in-out ${
               statusHamburgerMenu
                 ? 'rotate-180 scale-100 opacity-100'
                 : 'rotate-0 scale-0 opacity-0'

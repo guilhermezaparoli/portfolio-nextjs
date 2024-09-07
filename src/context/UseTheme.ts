@@ -2,18 +2,20 @@
 import { useEffect, useState } from 'react'
 
 export function UseTheme() {
-  const [isLightTheme, setIsLightTheme] = useState<boolean | undefined >(() => {
-    if(typeof localStorage !== "undefined"){
-        const storedTheme = localStorage
-        ? localStorage.getItem('theme')
-        : null
-      if (storedTheme) {
-        return storedTheme === 'light'
-      }
-      return !window.matchMedia('(prefers-color-scheme: light)').matches
-    }
-//   return true
-  })
+  const [isLightTheme, setIsLightTheme] = useState<boolean | undefined>(false)
+
+  // () => {
+  //   if(typeof localStorage !== "undefined"){
+  //       const storedTheme = localStorage
+  //       ? localStorage.getItem('theme')
+  //       : null
+  //     if (storedTheme) {
+  //       return storedTheme === 'light'
+  //     }
+  //     return !window.matchMedia('(prefers-color-scheme: light)').matches
+  //   }
+  // return
+  // }
 
   useEffect(() => {
     if (isLightTheme) {

@@ -14,7 +14,7 @@ const Page = () => {
 
       <Header />
       <Skills />
-      <Projects />
+      <Projects  />
       <Footer />
     </>
   )

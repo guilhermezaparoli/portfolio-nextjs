@@ -46,8 +46,8 @@ const NavBar = () => {
   }, [scrollProgress])
 
   return (
-    <div className="bg-sunnyDayMenu fixed left-0 top-0 z-20 w-full px-4 py-5 dark:bg-nightDayMenu">
-      {isMounted && (
+    <div className="fixed left-0 top-0 z-20 w-full bg-sunnyDayMenu px-6 py-5 dark:bg-nightDayMenu">
+      {/* {isMounted && (
         <div
           style={{
             opacity: isFadingOut ? 0 : 1,
@@ -56,7 +56,7 @@ const NavBar = () => {
         >
           <SwitchTheme />
         </div>
-      )}
+      )} */}
       <div className="min-w-screen flex justify-between">
         <ScrollProgressBar />
         <h1>GZ</h1>
