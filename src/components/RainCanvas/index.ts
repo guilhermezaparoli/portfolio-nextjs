@@ -44,7 +44,7 @@ const RainCanvas = () => {
     }
 
     const createRain = () => {
-      const length = 500
+      const length = 2000
       rainArr = []
       for (let i = length - 1; i >= 0; i--) {
         rainArr.push({

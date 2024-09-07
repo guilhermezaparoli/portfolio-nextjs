@@ -24,67 +24,71 @@ const Skills = () => {
       <p className="text-start font-mono text-simple dark:text-simpleDark">
         Habilidades
       </p>
-      <h1 className="font-poppins text-3xl font-bold text-simple dark:text-simpleDark">
+      <h1 className="font-poppins text-3xl font-bold text-simple dark:text-simpleDark md:text-4xl">
         Minhas habilidades
       </h1>
-      <p className="whitespace-nowrap font-poppins text-sm text-simple dark:text-simpleDark">
+      <p className="whitespace-nowrap font-poppins text-sm text-simple dark:text-simpleDark md:text-lg">
         Tecnologias que estive trabalhando recentemente:
       </p>
 
-      <div className="mt-10">
-        <p className="text-simple dark:text-simpleDark">
-          Linguagens e Ferramentas
-        </p>
-        <div className="mt-4 grid w-full grid-cols-icons justify-center gap-8">
-          <Image title="HTML5" src={html5} alt="HTML5" />
-          <Image title="CSS3" src={css3} alt="CSS3" />
-          <Image title="JavaScript" src={js} alt="JavaScript" />
-          <Image title="TypeScript" src={typescript} alt="TypeScript" />
-          <Image title="Node.js" src={nodejs} alt="Node.js" />
-          <Image title="Vite" src={vite} alt="Vite" />
-          <Image title="Figma" src={figma} alt="Figma" />
-          <Image title="Jira" src={jira} alt="Jira" />
+      <div className="md:grid-cols-skills md:grid md:gap-36">
+        <div className="mt-10">
+          <p className="text-simple dark:text-simpleDark md:text-lg">
+            Linguagens e Ferramentas
+          </p>
+          <div className="mt-4 grid w-full grid-cols-icons justify-center gap-8 md:justify-start">
+            <Image title="HTML5" src={html5} alt="HTML5" />
+            <Image title="CSS3" src={css3} alt="CSS3" />
+            <Image title="JavaScript" src={js} alt="JavaScript" />
+            <Image title="TypeScript" src={typescript} alt="TypeScript" />
+            <Image title="Node.js" src={nodejs} alt="Node.js" />
+            <Image title="Vite" src={vite} alt="Vite" />
+            <Image title="Figma" src={figma} alt="Figma" />
+            <Image title="Jira" src={jira} alt="Jira" />
+          </div>
         </div>
-      </div>
-      <div className="mt-10">
-        <p className="text-simple dark:text-simpleDark">
-          Bibliotecas e Frameworks
-        </p>
-        <div className="mt-4 grid w-full grid-cols-icons justify-center gap-8">
-          <Image title="React.js" src={react} alt="React.js" />
-          <Image title="Next.js" src={nextjs} alt="Next.js" />
-          <Image title="Tailwind" src={tailwind} alt="Tailwind" />
-          <Image
-            title="Styled-components"
-            src={styledComponents}
-            alt="Styled-components"
-          />
-          <Image title="Material UI" src={materialUI} alt="Material UI" />
+        <div className="mt-10">
+          <p className="text-simple dark:text-simpleDark md:text-lg">
+            Bibliotecas e Frameworks
+          </p>
+          <div className="mt-4 grid w-full grid-cols-icons justify-center gap-8 md:justify-start">
+            <Image title="React.js" src={react} alt="React.js" />
+            <Image title="Next.js" src={nextjs} alt="Next.js" />
+            <Image title="Tailwind" src={tailwind} alt="Tailwind" />
+            <Image
+              title="Styled-components"
+              src={styledComponents}
+              alt="Styled-components"
+            />
+            <Image title="Material UI" src={materialUI} alt="Material UI" />
+          </div>
         </div>
-      </div>
 
-      <div className="mt-10">
-        <p className="text-simple dark:text-simpleDark">Banco de dados</p>
-        <div className="mt-4 grid w-full grid-cols-icons justify-center gap-8">
-          <Image title="PostgreSQL" src={postgreSQL} alt="PostgreSQL" />
-          <Image title="MongoDB" src={mongoDB} alt="MongoDB" />
-          <div></div>
-          <div></div>
+        <div className="mt-10">
+          <p className="text-simple dark:text-simpleDark md:text-lg">
+            Banco de dados
+          </p>
+          <div className="mt-4 grid w-full grid-cols-icons justify-center gap-8 md:justify-start">
+            <Image title="PostgreSQL" src={postgreSQL} alt="PostgreSQL" />
+            <Image title="MongoDB" src={mongoDB} alt="MongoDB" />
+            <div></div>
+            <div></div>
+          </div>
         </div>
-      </div>
 
-      <div className="mt-10 flex-1">
-        <p className="text-simple dark:text-simpleDark">Outros</p>
-        <div className="mt-4 grid w-full grid-cols-icons justify-center gap-6">
-          <Image title="Git" src={git} alt="Git" />
-          <Image
-            title="GitHub"
-            src={gitHub}
-            alt="GitHub"
-            className="text-white"
-          />
-          <div></div>
-          <div></div>
+        <div className="mt-10 flex-1">
+          <p className="text-simple dark:text-simpleDark md:text-lg">Outros</p>
+          <div className="mt-4 grid w-full grid-cols-icons justify-center gap-6 md:justify-start">
+            <Image title="Git" src={git} alt="Git" />
+            <Image
+              title="GitHub"
+              src={gitHub}
+              alt="GitHub"
+              className="text-white"
+            />
+            <div></div>
+            <div></div>
+          </div>
         </div>
       </div>
     </div>

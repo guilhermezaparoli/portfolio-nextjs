@@ -10,18 +10,17 @@ export function Header() {
   return (
     <div id="inicio" className="min-h-screen">
       <div className="flex items-center gap-3">
-        {/* <p>Logo</p> */}
         <NavBarDynamic />
       </div>
       <div className="z-2 relative pt-44">
-        <h1 className="font-poppins text-sm font-bold text-simple dark:text-simpleDark">
+        <h1 className="font-poppins text-sm font-bold text-simple dark:text-simpleDark md:text-lg">
           Olá, meu nome é
         </h1>
 
-        <h1 className="mt-2 font-poppins text-3xl font-bold text-title dark:text-simpleDark">
+        <h1 className="mt-2 font-poppins text-3xl font-bold text-title dark:text-simpleDark md:text-5xl">
           Guilherme Zaparoli
         </h1>
-        <h1 className="mt-4 font-poppins text-xl font-bold text-simple dark:text-simpleDark">
+        <h1 className="mt-4 font-poppins text-xl font-bold text-simple dark:text-simpleDark md:text-2xl">
           Eu construo coisas para web
         </h1>
       </div>

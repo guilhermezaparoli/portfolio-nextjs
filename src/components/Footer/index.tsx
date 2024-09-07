@@ -4,8 +4,11 @@ import { HiOutlineMail } from 'react-icons/hi'
 
 export function Footer() {
   return (
-    <div id="contato" className="flex flex-col items-center justify-center gap-8 font-DM_Sans text-sm">
-      <h1 className="text-simple text-3xl font-bold dark:text-simpleDark">
+    <div
+      id="contato"
+      className="flex flex-col items-center justify-center gap-8 font-DM_Sans text-sm"
+    >
+      <h1 className="text-3xl font-bold text-simple dark:text-simpleDark md:text-4xl">
         Conecte-se comigo
       </h1>
       <div className="flex w-full items-center justify-center">
@@ -16,7 +19,7 @@ export function Footer() {
             href={'mailto:guilhermezapas@gmail.com'}
           >
             <HiOutlineMail
-              className="text-simple cursor-pointer dark:text-simpleDark"
+              className="cursor-pointer text-simple dark:text-simpleDark"
               fontSize={25}
             />
           </Link>
@@ -25,7 +28,7 @@ export function Footer() {
             href="https://api.whatsapp.com/send?phone=5517996299200"
           >
             <FaWhatsapp
-              className="text-simple cursor-pointer dark:text-simpleDark"
+              className="cursor-pointer text-simple dark:text-simpleDark"
               fontSize={25}
             />
           </Link>
@@ -34,7 +37,7 @@ export function Footer() {
             href="https://www.instagram.com/guilherme.zaparoli/"
           >
             <FaInstagram
-              className="text-simple cursor-pointer dark:text-simpleDark"
+              className="cursor-pointer text-simple dark:text-simpleDark"
               fontSize={25}
             />
           </Link>
@@ -43,23 +46,23 @@ export function Footer() {
             href="https://www.linkedin.com/in/guilherme-zaparoli-gomes-b979b5179/"
           >
             <FaLinkedin
-              className="text-simple cursor-pointer dark:text-simpleDark"
+              className="cursor-pointer text-simple dark:text-simpleDark"
               fontSize={25}
             />
           </Link>
           <Link target="_blank" href="https://github.com/guilhermezaparoli">
             <FaGithub
-              className="text-simple cursor-pointer dark:text-simpleDark"
+              className="cursor-pointer text-simple dark:text-simpleDark"
               fontSize={25}
             />
           </Link>
         </div>
       </div>
-      <button className="px- border-simple text-simple rounded-lg border-2 p-3 text-center font-itensMenu text-xs font-bold dark:border-white dark:text-simpleDark">
+      <button className="px- rounded-lg border-2 border-simple p-3 text-center font-itensMenu text-xs font-bold text-simple dark:border-white dark:text-simpleDark">
         Vamos conversar
       </button>
 
-      <div className="text-simple font-poppins text-xs dark:text-simpleDark">
+      <div className="font-poppins text-xs text-simple dark:text-simpleDark">
         <p>Desenvolvido e construído por Guilherme Zaparoli Gomes</p>
       </div>
     </div>

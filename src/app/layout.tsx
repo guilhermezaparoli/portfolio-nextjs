@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="pt-BR" className="scroll-smooth antialiased">
       <GlobalProvider>
         <body className={`${inter.className} bg-sunnyDay dark:bg-nightDay`}>
-          <div className="min-h-screen px-4 py-5">
+          <div className="min-h-screen px-4 py-5 md:px-36 md:py-8">
             <main>{children}</main>
           </div>
         </body>

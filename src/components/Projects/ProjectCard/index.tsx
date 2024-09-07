@@ -1,25 +1,33 @@
-import Image from 'next/image'
-import imagem from '../../../../public/assets/images/image-teste.svg'
+import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import { FaGithub, FaLink } from 'react-icons/fa'
 
-export function ProjectCard() {
+interface ProjectCardProps {
+  title: string
+  description: string
+  tecnologies: string
+  image: StaticImageData
+}
+export function ProjectCard({
+  image,
+  title,
+  description,
+  tecnologies,
+}: ProjectCardProps) {
   return (
-    <div className="borde max-w-80 rounded-2xl bg-white shadow-2xl">
-      <div className="max-h-64">
-        <Image src={imagem} alt="teste" />
+    <div className="max-w-80 rounded-2xl bg-white shadow-2xl">
+      <div className="max-h-64 overflow-hidden rounded-t-2xl">
+        <Image src={image} alt="teste" />
       </div>
 
       <div className="p-7 text-center font-medium text-black">
-        <h1 className="font-poppins text-xl">Project title goes here</h1>
+        <h1 className="font-poppins text-xl">{title}</h1>
         <p className="mt-4 font-poppins text-sm font-light text-descriptionProject">
-          This is sample project description random things are here in
-          description This is sample project lorem ipsum generator for dummy
-          content
+          {description}
         </p>
         <p className="mt-3 font-poppins text-xs font-light">
-          <span className="font-poppins text-sm font-normal">Tech stack:</span>{' '}
-          HTML, JavaScript, SASS, React HTML, JavaScript, SASS, React
+          <span className="font-poppins text-sm font-normal">Tecnologias:</span>{' '}
+          {tecnologies}
         </p>
 
         <div className="mt-4 flex items-center justify-between">
@@ -29,7 +37,7 @@ export function ProjectCard() {
               className="font-poppins text-sm text-black underline"
               href={'/'}
             >
-              Ver site
+              Visitar site
             </Link>
           </div>
           <div className="flex items-center gap-2">
@@ -38,7 +46,7 @@ export function ProjectCard() {
               className="font-poppins text-sm text-black underline"
               href={'/'}
             >
-              Ver código
+              Repositório
             </Link>
           </div>
         </div>

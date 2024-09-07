@@ -13,11 +13,10 @@ const config: Config = {
         title: 'rgb(28 77 93)',
         simple: '#25667b',
         darkTitle: '#2222',
-        simpleDark: "rgb(249 249 251)",
+        simpleDark: 'rgb(249 249 251)',
         descriptionProject: '#666',
         dark: '#141414',
         overlay: 'rgba(0,0,0,.8)',
-        
       },
       backgroundColor: {
         sunnyDay: '#3FC5F0',
@@ -40,6 +39,7 @@ const config: Config = {
       },
       gridTemplateColumns: {
         icons: 'repeat(auto-fit, 50px)',
+        skills: 'repeat(auto-fit, minmax(250px, 1fr))',
       },
     },
   },
