@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import React, { useRef } from 'react'
 import css3 from '../../../public/assets/images/css3.svg'
 import git from '../../../public/assets/images/git.svg'
 import gitHub from '../../../public/assets/images/github.svg'
@@ -17,21 +18,40 @@ import materialUI from '../../../public/assets/images/material-ui.svg'
 import postgreSQL from '../../../public/assets/images/postgresql.svg'
 import jira from '../../../public/assets/images/jira.svg'
 import Image from 'next/image'
+import { useInView, motion } from 'framer-motion'
 
 const Skills = () => {
-  return (
-    <div id="habilidades" className="pt-20">
-      <p className="text-start font-mono text-simple dark:text-simpleDark">
-        Habilidades
-      </p>
-      <h1 className="font-poppins text-3xl font-bold text-simple dark:text-simpleDark md:text-4xl">
-        Minhas habilidades
-      </h1>
-      <p className="whitespace-nowrap font-poppins text-sm text-simple dark:text-simpleDark md:text-lg">
-        Tecnologias que estive trabalhando recentemente:
-      </p>
+  const skillRref = useRef()
 
-      <div className="md:grid-cols-skills md:grid md:gap-36">
+  const isSkillRefInView = useInView(skillRref, { once: false })
+  return (
+    <div id="habilidades" className="" ref={skillRref}>
+      <motion.p
+        initial={{ x: '-600px' }}
+        animate={isSkillRefInView ? { x: 0 } : {}}
+        transition={{ delay: 0.5 }}
+        className="text-start font-mono text-simple dark:text-simpleDark"
+      >
+        Habilidades
+      </motion.p>
+      <motion.h1
+        initial={{ x: '-600px' }}
+        animate={isSkillRefInView ? { x: 0 } : {}}
+        transition={{ delay: 0.6 }}
+        className="font-poppins text-3xl font-bold text-simple dark:text-simpleDark md:text-4xl"
+      >
+        Minhas habilidades
+      </motion.h1>
+      <motion.p
+        initial={{ x: '-600px' }}
+        animate={isSkillRefInView ? { x: 0 } : {}}
+        transition={{ delay: 0.7 }}
+        className="whitespace-nowrap font-poppins text-sm text-simple dark:text-simpleDark md:text-lg"
+      >
+        Tecnologias que estive trabalhando recentemente:
+      </motion.p>
+
+      <div className="md:grid md:grid-cols-skills md:gap-36">
         <div className="mt-10">
           <p className="text-simple dark:text-simpleDark md:text-lg">
             Linguagens e Ferramentas

@@ -17,6 +17,8 @@ const config: Config = {
         descriptionProject: '#666',
         dark: '#141414',
         overlay: 'rgba(0,0,0,.8)',
+        hoverIconsLight: 'rgb(21, 75, 94)',
+        hoverIconsDark: 'rgb(21, 75, 94)',
       },
       backgroundColor: {
         sunnyDay: '#3FC5F0',

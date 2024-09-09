@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 
 export function UseTheme() {
-  const [isLightTheme, setIsLightTheme] = useState<boolean | undefined>(false)
+  const [isLightTheme, setIsLightTheme] = useState<boolean | undefined>(true)
 
   // () => {
   //   if(typeof localStorage !== "undefined"){
