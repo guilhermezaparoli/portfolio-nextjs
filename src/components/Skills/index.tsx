@@ -1,33 +1,33 @@
 'use client'
 import React, { useRef } from 'react'
-import css3 from '../../../public/assets/images/css3.svg'
-import git from '../../../public/assets/images/git.svg'
-import gitHub from '../../../public/assets/images/github.svg'
-import html5 from '../../../public/assets/images/hml5.svg'
-import js from '../../../public/assets/images/js.svg'
-import react from '../../../public/assets/images/react.svg'
-import tailwind from '../../../public/assets/images/tailwind.svg'
-import mongoDB from '../../../public/assets/images/mongo-db.svg'
-import nodejs from '../../../public/assets/images/nodejs.svg'
-import vite from '../../../public/assets/images/vite.svg'
-import figma from '../../../public/assets/images/figma.svg'
-import nextjs from '../../../public/assets/images/nextjs.svg'
-import styledComponents from '../../../public/assets/images/styled-components.svg'
-import typescript from '../../../public/assets/images/typescript.svg'
-import materialUI from '../../../public/assets/images/material-ui.svg'
-import postgreSQL from '../../../public/assets/images/postgresql.svg'
-import jira from '../../../public/assets/images/jira.svg'
+import css3 from '../../../public/assets/svg/css3.svg'
+import git from '../../../public/assets/svg/git.svg'
+import gitHub from '../../../public/assets/svg/github.svg'
+import html5 from '../../../public/assets/svg/hml5.svg'
+import js from '../../../public/assets/svg/js.svg'
+import react from '../../../public/assets/svg/react.svg'
+import tailwind from '../../../public/assets/svg/tailwind.svg'
+import mongoDB from '../../../public/assets/svg/mongo-db.svg'
+import nodejs from '../../../public/assets/svg/nodejs.svg'
+import vite from '../../../public/assets/svg/vite.svg'
+import figma from '../../../public/assets/svg/figma.svg'
+import nextjs from '../../../public/assets/svg/nextjs.svg'
+import styledComponents from '../../../public/assets/svg/styled-components.svg'
+import typescript from '../../../public/assets/svg/typescript.svg'
+import materialUI from '../../../public/assets/svg/material-ui.svg'
+import postgreSQL from '../../../public/assets/svg/postgresql.svg'
+import jira from '../../../public/assets/svg/jira.svg'
 import Image from 'next/image'
 import { useInView, motion } from 'framer-motion'
 
 const Skills = () => {
-  const skillRref = useRef()
-  const IconsRef = useRef()
+  const skillRref = useRef<HTMLDivElement>(null)
+  const IconsRef = useRef<HTMLDivElement>(null)
 
   const isSkillRefInView = useInView(skillRref, { once: true })
   const isIconsRefInView = useInView(IconsRef, { once: true })
   return (
-    <div id="habilidades" className="" ref={skillRref}>
+    <div id="habilidades" className="mb-40" ref={skillRref}>
       <motion.p
         initial={{ x: '-1000px' }}
         animate={isSkillRefInView ? { x: 0 } : {}}

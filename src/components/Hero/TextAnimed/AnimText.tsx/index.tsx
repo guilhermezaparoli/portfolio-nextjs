@@ -49,7 +49,7 @@ export default function AnimText({ delay }: IRedoAnimTextProps) {
   }, [])
 
   return (
-    <motion.span className="mt-4 font-poppins text-xl font-bold text-simple dark:text-simpleDark md:text-2xl">
+    <motion.span className="mt-6 font-poppins text-xl font-bold text-simple dark:text-simpleDark md:text-2xl">
       {displayText}
     </motion.span>
   )

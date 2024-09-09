@@ -23,12 +23,16 @@ interface ProjectCardProps {
   description: string
   technologies: string
   image: StaticImageData
+  url: string,
+  repo: string
 }
 export function ProjectCard({
   image,
   title,
   description,
   technologies,
+  url,
+  repo
 }: ProjectCardProps) {
   return (
     <motion.div variants={cardVariants} initial="offscreen" whileInView="onscreen"  className="max-w-80 rounded-2xl bg-white shadow-2xl md:max-w-[475px] md:h-[530px]"  viewport={{ once: true, amount: 0.8 }}>
@@ -38,7 +42,7 @@ export function ProjectCard({
 
       <div className="p-7 text-center font-medium text-black">
         <h1 className="font-poppins text-xl">{title}</h1>
-        <p className="mt-4 font-poppins text-sm font-light text-descriptionProject">
+        <p className="mt-4 font-poppins text-sm font-light text-descriptionProject text-start">
           {description}
         </p>
         <p className="mt-3 font-poppins text-xs font-light">
@@ -51,7 +55,7 @@ export function ProjectCard({
             <FaLink />
             <Link
               className="font-poppins text-sm text-black underline"
-              href={'/'}
+              href={url}
             >
               Visitar site
             </Link>
@@ -60,7 +64,7 @@ export function ProjectCard({
             <FaGithub />
             <Link
               className="font-poppins text-sm text-black underline"
-              href={'/'}
+              href={repo}
             >
               Repositório
             </Link>
