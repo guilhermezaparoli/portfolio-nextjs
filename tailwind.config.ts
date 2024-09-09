@@ -19,6 +19,7 @@ const config: Config = {
         overlay: 'rgba(0,0,0,.8)',
         hoverIconsLight: 'rgb(21, 75, 94)',
         hoverIconsDark: 'rgb(21, 75, 94)',
+        sunnyDay: '#3FC5F0',
       },
       backgroundColor: {
         sunnyDay: '#3FC5F0',
@@ -42,6 +43,7 @@ const config: Config = {
       gridTemplateColumns: {
         icons: 'repeat(auto-fit, 50px)',
         skills: 'repeat(auto-fit, minmax(250px, 1fr))',
+        projects: 'repeat(auto-fit, minmax(400px, 1fr))'
       },
     },
   },

@@ -1,21 +1,37 @@
+'use client'
+import { Variants } from "framer-motion";
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import { FaGithub, FaLink } from 'react-icons/fa'
+import {motion} from "framer-motion"
+const cardVariants: Variants = {
+  offscreen: {
+    y: 200
+  },
+  onscreen: {
+    y: 50,
 
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.8
+    }
+  }
+};
 interface ProjectCardProps {
   title: string
   description: string
-  tecnologies: string
+  technologies: string
   image: StaticImageData
 }
 export function ProjectCard({
   image,
   title,
   description,
-  tecnologies,
+  technologies,
 }: ProjectCardProps) {
   return (
-    <div className="max-w-80 rounded-2xl bg-white shadow-2xl">
+    <motion.div variants={cardVariants} initial="offscreen" whileInView="onscreen"  className="max-w-80 rounded-2xl bg-white shadow-2xl md:max-w-[475px] md:h-[530px]"  viewport={{ once: true, amount: 0.8 }}>
       <div className="max-h-64 overflow-hidden rounded-t-2xl">
         <Image src={image} alt="teste" />
       </div>
@@ -27,7 +43,7 @@ export function ProjectCard({
         </p>
         <p className="mt-3 font-poppins text-xs font-light">
           <span className="font-poppins text-sm font-normal">Tecnologias:</span>{' '}
-          {tecnologies}
+          {technologies}
         </p>
 
         <div className="mt-4 flex items-center justify-between">
@@ -51,6 +67,6 @@ export function ProjectCard({
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

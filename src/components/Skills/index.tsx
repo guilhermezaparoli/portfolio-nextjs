@@ -22,36 +22,38 @@ import { useInView, motion } from 'framer-motion'
 
 const Skills = () => {
   const skillRref = useRef()
+  const IconsRef = useRef()
 
-  const isSkillRefInView = useInView(skillRref, { once: false })
+  const isSkillRefInView = useInView(skillRref, { once: true })
+  const isIconsRefInView = useInView(IconsRef, { once: true })
   return (
     <div id="habilidades" className="" ref={skillRref}>
       <motion.p
-        initial={{ x: '-600px' }}
+        initial={{ x: '-1000px' }}
         animate={isSkillRefInView ? { x: 0 } : {}}
-        transition={{ delay: 0.5 }}
+        transition={{  duration: 0.5 }}
         className="text-start font-mono text-simple dark:text-simpleDark"
       >
         Habilidades
       </motion.p>
       <motion.h1
-        initial={{ x: '-600px' }}
+        initial={{ x: '-1000px' }}
         animate={isSkillRefInView ? { x: 0 } : {}}
-        transition={{ delay: 0.6 }}
+        transition={{delay: 0.5, duration: 0.6 }}
         className="font-poppins text-3xl font-bold text-simple dark:text-simpleDark md:text-4xl"
       >
         Minhas habilidades
       </motion.h1>
       <motion.p
-        initial={{ x: '-600px' }}
+        initial={{ x: '-1000px' }}
         animate={isSkillRefInView ? { x: 0 } : {}}
-        transition={{ delay: 0.7 }}
+        transition={{delay: 1, duration: 0.6 }}
         className="whitespace-nowrap font-poppins text-sm text-simple dark:text-simpleDark md:text-lg"
       >
         Tecnologias que estive trabalhando recentemente:
       </motion.p>
 
-      <div className="md:grid md:grid-cols-skills md:gap-36">
+      <motion.div ref={IconsRef} initial={{opacity: 0}} animate={isIconsRefInView ? {opacity: 1}: {}} transition={{delay: 1.7,duration: 1}} className="md:grid md:grid-cols-skills md:gap-36">
         <div className="mt-10">
           <p className="text-simple dark:text-simpleDark md:text-lg">
             Linguagens e Ferramentas
@@ -110,7 +112,7 @@ const Skills = () => {
             <div></div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   )
 }

@@ -30,7 +30,6 @@ export default function TextAnimed({ delay }: IAnimTextProps) {
     secondPart.slice(0, latest),
   )
 
-  // Anima a primeira parte do texto
   useEffect(() => {
     const controlsFirst = animate(countFirst, firstPart.length, {
       type: 'tween',
@@ -45,12 +44,11 @@ export default function TextAnimed({ delay }: IAnimTextProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // Anima a segunda parte do texto (depois que a primeira parte termina)
   useEffect(() => {
     if (doneFirstPart) {
       const controlsSecond = animate(countSecond, secondPart.length, {
         type: 'tween',
-        delay: 1, // Pequeno atraso antes de animar a segunda parte
+        delay: 0,
         duration: 2,
         ease: 'easeInOut',
         onComplete: () => {
