@@ -31,15 +31,15 @@ const NavBar = () => {
   ]
 
   return (
-    <motion.div  initial={{ x: '-1100px' }}
-    animate={{ x: 0 }}
-    transition={{ duration: 0.3 }} className="fixed left-0 top-0 z-20 w-full bg-sunnyDayMenu px-6 py-5 dark:bg-nightDayMenu md:px-36 md:py-8">
+    <motion.div
+      initial={{ x: '-1100px' }}
+      animate={{ x: 0 }}
+      transition={{ duration: 0.3 }}
+      className="fixed left-0 top-0 z-20 w-full bg-sunnyDayMenu px-6 py-5 dark:bg-nightDayMenu md:px-36 md:py-8"
+    >
       <div className="min-w-screen flex justify-between">
         <ScrollProgressBar />
-        <div
-         
-          className="hidden gap-4 md:flex"
-        >
+        <div className="hidden gap-4 md:flex">
           {links.map((link) => (
             <Link
               className="font-poppins text-xl font-bold text-title transition-colors delay-75 hover:brightness-50 dark:text-simpleDark dark:hover:brightness-[0.85]"

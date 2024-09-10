@@ -40,6 +40,8 @@ export default function TextAnimed({ delay }: IAnimTextProps) {
         setDoneFirstPart(true)
       },
     })
+    window.scrollTo(0, 0)
+    document.body.style.overflow = 'hidden'
     return controlsFirst.stop
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -68,7 +70,7 @@ export default function TextAnimed({ delay }: IAnimTextProps) {
         {!doneFirstPart && <CursorBlinker />}
       </div>
       {doneFirstPart && (
-        <div className="flex">
+        <div className="flex min-h-7">
           <motion.div className="mt-2 font-poppins text-3xl font-bold text-title dark:text-simpleDark md:text-5xl">
             {displaySecondPart}
           </motion.div>
@@ -81,7 +83,7 @@ export default function TextAnimed({ delay }: IAnimTextProps) {
         </>
       )}
       {doneSecondPart && (
-        <div>
+        <div className="min-h-16">
           <AnimText delay={delay} />
           <CursorBlinker />
         </div>

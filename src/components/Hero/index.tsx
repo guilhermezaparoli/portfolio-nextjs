@@ -21,8 +21,11 @@ export function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
+        onAnimationComplete={() => {
+          document.body.style.overflow = 'auto'
+        }}
         transition={{ delay: 5.5, duration: 1, ease: 'easeInOut' }}
-        className="mt-20 flex flex-col gap-5"
+        className="mt-14 flex flex-col gap-5"
       >
         <div className="flex w-full items-center justify-start">
           <div className="flex items-center gap-5">
@@ -79,9 +82,11 @@ export function Hero() {
             </Link>
           </div>
         </div>
-        <button className="px- hover:text-sunnyDay w-36 rounded-lg border-2 border-simple p-3 text-center font-itensMenu text-xs font-bold text-simple transition-colors delay-0 hover:bg-simple dark:border-white dark:text-simpleDark dark:hover:bg-white dark:hover:text-black">
-          Vamos conversar
-        </button>
+        <Link href="#contato">
+          <button className="w-36 rounded-lg border-2 border-simple p-3 text-center font-itensMenu text-xs font-bold text-simple transition-colors delay-0 hover:bg-simple hover:text-sunnyDay dark:border-white dark:text-simpleDark dark:hover:bg-white dark:hover:text-black">
+            Vamos conversar
+          </button>
+        </Link>
       </motion.div>
     </div>
   )
