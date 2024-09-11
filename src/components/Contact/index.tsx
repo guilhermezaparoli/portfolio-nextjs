@@ -17,7 +17,8 @@ export function Contact() {
             <input
               title="Nome"
               type="text"
-              className="h-12 rounded-md border border-title bg-transparent px-3 outline-none focus:border-slate-950"
+              className="h-12 rounded-md border border-title bg-transparent px-3 font-poppins text-lg outline-none focus:border-2 focus:border-simple"
+              required
             />
           </label>
           <label className="flex flex-col text-title">
@@ -25,14 +26,16 @@ export function Contact() {
             <input
               title="Nome"
               type="mail"
-              className="h-12 rounded-md border border-title bg-transparent"
+              className="h-12 rounded-md border border-title bg-transparent px-3 font-poppins text-lg outline-none focus:border-2 focus:border-simple"
+              required
             />
           </label>
           <label className="flex flex-col text-title">
             Mensagem
             <textarea
               title="Nome"
-              className="h-48 rounded-md border border-title bg-transparent p-3"
+              className="h-48 rounded-md border border-title bg-transparent p-3 font-poppins text-lg outline-none focus:border-2 focus:border-simple"
+              required
             />
           </label>
 

@@ -43,7 +43,7 @@ const config: Config = {
       gridTemplateColumns: {
         icons: 'repeat(auto-fit, 50px)',
         skills: 'repeat(auto-fit, minmax(250px, 1fr))',
-        projects: 'repeat(auto-fit, minmax(400px, 1fr))'
+        projects: 'repeat(auto-fit, minmax(400px, 1fr))',
       },
     },
   },

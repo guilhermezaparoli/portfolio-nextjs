@@ -34,7 +34,7 @@ export function HamburgerMenu() {
     },
     opened: {
       rotate: 45,
-      backgroundColor: 'rgb(255,255,255)',
+      // backgroundColor: 'rgb(255,255,255)',
     },
   }
   const centerVariants = {
@@ -52,7 +52,7 @@ export function HamburgerMenu() {
     },
     opened: {
       rotate: -45,
-      backgroundColor: 'rgb(255,255,255)',
+      // backgroundColor: 'rgb(255,255,255)',
     },
   }
 
@@ -89,7 +89,7 @@ export function HamburgerMenu() {
         <motion.div
           animate={open ? 'opened' : 'closed'}
           variants={topVariants}
-          className="h-1 w-10 origin-left rounded bg-title transition-colors duration-0 dark:bg-simpleDark"
+          className={`h-1 w-10 origin-left rounded bg-title transition-colors duration-0 dark:bg-simpleDark ${open && 'bg-white'}`}
         ></motion.div>
         <motion.div
           animate={open ? 'opened' : 'closed'}
@@ -99,7 +99,7 @@ export function HamburgerMenu() {
         <motion.div
           animate={open ? 'opened' : 'closed'}
           variants={bottomVariants}
-          className="h-1 w-10 origin-left rounded bg-title transition-colors duration-0 dark:bg-simpleDark"
+          className={`h-1 w-10 origin-left rounded bg-title transition-colors duration-0 dark:bg-simpleDark ${open && 'bg-white'}`}
         ></motion.div>
       </button>
 
