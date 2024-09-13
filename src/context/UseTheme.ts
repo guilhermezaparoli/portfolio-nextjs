@@ -1,8 +1,8 @@
-"use client";
-import { useEffect, useState } from "react";
+'use client'
+import { useEffect, useState } from 'react'
 
 export function UseTheme() {
-  const [isLightTheme, setIsLightTheme] = useState<boolean | undefined>(true);
+  const [isLightTheme, setIsLightTheme] = useState<boolean | undefined>(true)
 
   // () => {
   //   if(typeof localStorage !== "undefined"){
@@ -19,19 +19,19 @@ export function UseTheme() {
 
   useEffect(() => {
     if (isLightTheme) {
-      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.remove('dark')
     } else {
-      document.documentElement.classList.add("dark");
+      document.documentElement.classList.add('dark')
     }
-  }, [isLightTheme]);
+  }, [isLightTheme])
 
   // Update localStorage when the theme changes
   useEffect(() => {
-    localStorage.setItem("theme", isLightTheme ? "light" : "dark");
-  }, [isLightTheme]);
+    localStorage.setItem('theme', isLightTheme ? 'light' : 'dark')
+  }, [isLightTheme])
 
   return {
     isLightTheme,
     setIsLightTheme,
-  };
+  }
 }

@@ -1,15 +1,15 @@
-"use client";
-import Link from "next/link";
-import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
-import { HiOutlineMail } from "react-icons/hi";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { useTranslations } from "next-intl";
+'use client'
+import Link from 'next/link'
+import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
+import { HiOutlineMail } from 'react-icons/hi'
+import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react'
+import { useTranslations } from 'next-intl'
 
 export function Footer() {
-  const t = useTranslations("Footer");
-  const refFooter = useRef<HTMLDivElement>(null);
-  const isFooterInView = useInView(refFooter, { once: true });
+  const t = useTranslations('Footer')
+  const refFooter = useRef<HTMLDivElement>(null)
+  const isFooterInView = useInView(refFooter, { once: true })
   return (
     <motion.div
       ref={refFooter}
@@ -20,14 +20,14 @@ export function Footer() {
       className="relative flex flex-col items-center justify-center gap-8 font-poppins text-sm"
     >
       <h1 className="text-center text-3xl font-bold text-simple dark:text-simpleDark md:text-4xl">
-        {t("connect")}
+        {t('connect')}
       </h1>
       <div className="flex w-full items-center justify-center">
         <div className="flex items-center gap-5">
           <Link
             target="_blank"
             type="email"
-            href={"mailto:guilhermezapas@gmail.com"}
+            href={'mailto:guilhermezapas@gmail.com'}
             title="E-mail"
           >
             <HiOutlineMail
@@ -79,13 +79,13 @@ export function Footer() {
       </div>
       <Link href="#contato">
         <button className="px- w-36 rounded-lg border-2 border-simple p-3 text-center font-itensMenu text-xs font-bold text-simple transition-colors delay-0 hover:bg-simple hover:text-sunnyDay dark:border-white dark:text-simpleDark dark:hover:bg-white dark:hover:text-black">
-          {t("letsTalk")}
+          {t('letsTalk')}
         </button>
       </Link>
 
       <div className="font-poppins text-xs text-simple dark:text-simpleDark">
-        <p>{t("description")}</p>
+        <p>{t('description')}</p>
       </div>
     </motion.div>
-  );
+  )
 }

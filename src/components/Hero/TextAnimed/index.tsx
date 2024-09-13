@@ -1,67 +1,67 @@
-"use client";
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { useEffect, useState } from "react";
+'use client'
+import { motion, useMotionValue, useTransform, animate } from 'framer-motion'
+import { useEffect, useState } from 'react'
 
-import CursorBlinker from "./CursorBlinker";
-import AnimText from "./AnimText.tsx";
-import { useTranslations } from "next-intl";
+import CursorBlinker from './CursorBlinker'
+import AnimText from './AnimText.tsx'
+import { useTranslations } from 'next-intl'
 
 export interface IAnimTextProps {
-  delay: number;
+  delay: number
 }
 
 export default function TextAnimed({ delay }: IAnimTextProps) {
-  const t = useTranslations("Hero");
-  const [doneFirstPart, setDoneFirstPart] = useState(false);
-  const [doneSecondPart, setDoneSecondPart] = useState(false);
-  const firstPart = t("nameMessage");
-  const secondPart = "Guilherme Zaparoli";
+  const t = useTranslations('Hero')
+  const [doneFirstPart, setDoneFirstPart] = useState(false)
+  const [doneSecondPart, setDoneSecondPart] = useState(false)
+  const firstPart = t('nameMessage')
+  const secondPart = 'Guilherme Zaparoli'
 
-  const countFirst = useMotionValue(0);
-  const countSecond = useMotionValue(0);
+  const countFirst = useMotionValue(0)
+  const countSecond = useMotionValue(0)
 
-  const roundedFirst = useTransform(countFirst, (latest) => Math.round(latest));
+  const roundedFirst = useTransform(countFirst, (latest) => Math.round(latest))
   const roundedSecond = useTransform(countSecond, (latest) =>
-    Math.round(latest),
-  );
+    Math.round(latest)
+  )
 
   const displayFirstPart = useTransform(roundedFirst, (latest) =>
-    firstPart.slice(0, latest),
-  );
+    firstPart.slice(0, latest)
+  )
   const displaySecondPart = useTransform(roundedSecond, (latest) =>
-    secondPart.slice(0, latest),
-  );
+    secondPart.slice(0, latest)
+  )
 
   useEffect(() => {
     const controlsFirst = animate(countFirst, firstPart.length, {
-      type: "tween",
+      type: 'tween',
       delay,
       duration: 1,
-      ease: "easeInOut",
+      ease: 'easeInOut',
       onComplete: () => {
-        setDoneFirstPart(true);
+        setDoneFirstPart(true)
       },
-    });
+    })
     // window.scrollTo(0, 0)
     // document.body.style.overflow = 'hidden'
-    return controlsFirst.stop;
+    return controlsFirst.stop
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [])
 
   useEffect(() => {
     if (doneFirstPart) {
       const controlsSecond = animate(countSecond, secondPart.length, {
-        type: "tween",
+        type: 'tween',
         delay: 0,
         duration: 1,
-        ease: "easeInOut",
+        ease: 'easeInOut',
         onComplete: () => {
-          setDoneSecondPart(true);
+          setDoneSecondPart(true)
         },
-      });
-      return controlsSecond.stop;
+      })
+      return controlsSecond.stop
     }
-  }, [doneFirstPart]);
+  }, [doneFirstPart])
 
   return (
     <div>
@@ -91,5 +91,5 @@ export default function TextAnimed({ delay }: IAnimTextProps) {
         </div>
       )}
     </div>
-  );
+  )
 }

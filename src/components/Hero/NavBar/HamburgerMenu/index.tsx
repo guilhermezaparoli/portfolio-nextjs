@@ -1,37 +1,37 @@
-"use client";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { useState } from "react";
-import SwitchTheme from "../../../SwitchTheme";
-import { useTranslations } from "next-intl";
-import { LocalSwitcher } from "../LocalSwitcher";
+'use client'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { useState } from 'react'
+import SwitchTheme from '../../../SwitchTheme'
+import { useTranslations } from 'next-intl'
+import { LocalSwitcher } from '../LocalSwitcher'
 
 export function HamburgerMenu() {
-  const t = useTranslations("Header");
+  const t = useTranslations('Header')
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
   const links = [
     {
-      url: "#inicio",
-      title: t("Menu.home"),
+      url: '#inicio',
+      title: t('Menu.home'),
     },
     {
-      url: "#sobre",
-      title: t("Menu.about"),
+      url: '#sobre',
+      title: t('Menu.about'),
     },
     {
-      url: "#habilidades",
-      title: t("Menu.skills"),
+      url: '#habilidades',
+      title: t('Menu.skills'),
     },
     {
-      url: "#projetos",
-      title: t("Menu.projects"),
+      url: '#projetos',
+      title: t('Menu.projects'),
     },
     {
-      url: "#contato",
-      title: t("Menu.contact"),
+      url: '#contato',
+      title: t('Menu.contact'),
     },
-  ];
+  ]
   const topVariants = {
     closed: {
       rotate: 0,
@@ -40,7 +40,7 @@ export function HamburgerMenu() {
       rotate: 45,
       // backgroundColor: 'rgb(255,255,255)',
     },
-  };
+  }
   const centerVariants = {
     closed: {
       opacity: 1,
@@ -48,7 +48,7 @@ export function HamburgerMenu() {
     opened: {
       opacity: 0,
     },
-  };
+  }
 
   const bottomVariants = {
     closed: {
@@ -58,20 +58,20 @@ export function HamburgerMenu() {
       rotate: -45,
       // backgroundColor: 'rgb(255,255,255)',
     },
-  };
+  }
 
   const listVariants = {
     closed: {
-      x: "100vw",
+      x: '100vw',
     },
     opened: {
       x: 0,
       transition: {
-        when: "beforeChildren",
+        when: 'beforeChildren',
         staggerChildren: 0.2,
       },
     },
-  };
+  }
 
   const listItemVarients = {
     closed: {
@@ -82,7 +82,7 @@ export function HamburgerMenu() {
       x: 0,
       opacity: 1,
     },
-  };
+  }
   return (
     <div className="flex gap-5">
       <SwitchTheme />
@@ -94,19 +94,19 @@ export function HamburgerMenu() {
         className="relative z-50 flex h-8 w-10 flex-col justify-between md:hidden"
       >
         <motion.div
-          animate={open ? "opened" : "closed"}
+          animate={open ? 'opened' : 'closed'}
           variants={topVariants}
-          className={`h-1 w-10 origin-left rounded bg-title transition-colors duration-0 dark:bg-simpleDark ${open && "bg-white"}`}
+          className={`h-1 w-10 origin-left rounded bg-title transition-colors duration-0 dark:bg-simpleDark ${open && 'bg-white'}`}
         ></motion.div>
         <motion.div
-          animate={open ? "opened" : "closed"}
+          animate={open ? 'opened' : 'closed'}
           variants={centerVariants}
           className="h-1 w-10 rounded bg-title transition-colors duration-0 dark:bg-simpleDark"
         ></motion.div>
         <motion.div
-          animate={open ? "opened" : "closed"}
+          animate={open ? 'opened' : 'closed'}
           variants={bottomVariants}
-          className={`h-1 w-10 origin-left rounded bg-title transition-colors duration-0 dark:bg-simpleDark ${open && "bg-white"}`}
+          className={`h-1 w-10 origin-left rounded bg-title transition-colors duration-0 dark:bg-simpleDark ${open && 'bg-white'}`}
         ></motion.div>
       </button>
 
@@ -135,5 +135,5 @@ export function HamburgerMenu() {
         </motion.div>
       )}
     </div>
-  );
+  )
 }

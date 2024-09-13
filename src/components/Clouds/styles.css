@@ -33,7 +33,7 @@
 
 .cloud::after,
 .cloud::before {
-  content: "";
+  content: '';
   position: absolute;
   background: #fff;
 }
@@ -65,7 +65,7 @@
 
 .cloud-dark::after,
 .cloud-dark::before {
-  content: "";
+  content: '';
   position: absolute;
   background: #000;
 }

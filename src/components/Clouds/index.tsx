@@ -1,9 +1,9 @@
-"use client";
-import { useGlobalContext } from "@/context/GlobalContext";
-import "./styles.css";
+'use client'
+import { useGlobalContext } from '@/context/GlobalContext'
+import './styles.css'
 
 const Clouds = () => {
-  const { isLightTheme } = useGlobalContext();
+  const { isLightTheme } = useGlobalContext()
   return (
     <>
       {isLightTheme && (
@@ -28,7 +28,7 @@ const Clouds = () => {
         </div>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Clouds;
+export default Clouds

@@ -1,15 +1,15 @@
-"use client";
-import { HiOutlineMail } from "react-icons/hi";
-import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
-import Link from "next/link";
-import dynamic from "next/dynamic";
-import TextAnimed from "./TextAnimed";
-import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+'use client'
+import { HiOutlineMail } from 'react-icons/hi'
+import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
+import Link from 'next/link'
+import dynamic from 'next/dynamic'
+import TextAnimed from './TextAnimed'
+import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 
-const NavBarDynamic = dynamic(() => import("./NavBar"));
+const NavBarDynamic = dynamic(() => import('./NavBar'))
 export function Hero() {
-  const t = useTranslations("Hero");
+  const t = useTranslations('Hero')
   return (
     <div id="inicio" className="min-h-screen">
       <div className="flex items-center gap-3">
@@ -23,9 +23,9 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         onAnimationComplete={() => {
-          document.body.style.overflow = "auto";
+          document.body.style.overflow = 'auto'
         }}
-        transition={{ delay: 3.5, duration: 1, ease: "easeInOut" }}
+        transition={{ delay: 3.5, duration: 1, ease: 'easeInOut' }}
         className="mt-14 flex flex-col gap-5"
       >
         <div className="flex w-full items-center justify-start">
@@ -33,7 +33,7 @@ export function Hero() {
             <Link
               target="_blank"
               type="email"
-              href={"mailto:guilhermezapas@gmail.com"}
+              href={'mailto:guilhermezapas@gmail.com'}
               title="E-mail"
             >
               <HiOutlineMail
@@ -85,10 +85,10 @@ export function Hero() {
         </div>
         <Link href="#contato">
           <button className="w-36 rounded-lg border-2 border-simple p-3 text-center font-itensMenu text-xs font-bold text-simple transition-colors delay-0 hover:bg-simple hover:text-sunnyDay dark:border-white dark:text-simpleDark dark:hover:bg-white dark:hover:text-black">
-            {t("letsTalk")}
+            {t('letsTalk')}
           </button>
         </Link>
       </motion.div>
     </div>
-  );
+  )
 }
