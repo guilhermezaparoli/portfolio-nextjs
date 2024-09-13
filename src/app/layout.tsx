@@ -3,7 +3,8 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { GlobalProvider } from '@/context/GlobalContext'
 import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+import ToastProvider from '@/context/ToastProvider'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -21,13 +22,9 @@ export default function RootLayout({
       <GlobalProvider>
         <body className={`${inter.className} bg-sunnyDay dark:bg-nightDay`}>
           <div className="min-h-screen px-4 py-5 md:px-36 md:py-8">
-            <main>{children}</main>
-            <ToastContainer
-              position="top-center"
-              theme="dark"
-              autoClose={2000}
-              closeOnClick
-            />
+            <ToastProvider>
+              <main>{children}</main>
+            </ToastProvider>
           </div>
         </body>
       </GlobalProvider>

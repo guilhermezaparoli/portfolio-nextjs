@@ -23,7 +23,7 @@ export function Projects() {
         <motion.h1
           initial={{ x: '-1000px' }}
           animate={isProjectContainerInView ? { x: 0 } : {}}
-          transition={{ delay: 0.5, duration: 0.6 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
           className="font-poppins text-3xl font-bold text-simple dark:text-simpleDark md:text-4xl"
         >
           Meus Projetos
@@ -31,7 +31,7 @@ export function Projects() {
         <motion.p
           initial={{ x: '-1000px' }}
           animate={isProjectContainerInView ? { x: 0 } : {}}
-          transition={{ delay: 1, duration: 0.6 }}
+          transition={{ delay: 1, duration: 0.5 }}
           className="whitespace-nowrap font-poppins text-sm text-simple dark:text-simpleDark md:text-lg"
         >
           Coisas que contruí até agora:

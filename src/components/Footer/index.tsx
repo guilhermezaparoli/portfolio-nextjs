@@ -1,12 +1,21 @@
+'use client'
 import Link from 'next/link'
 import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
 import { HiOutlineMail } from 'react-icons/hi'
+import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react'
 
 export function Footer() {
+  const refFooter = useRef<HTMLDivElement>(null)
+  const isFooterInView = useInView(refFooter, { once: true })
   return (
-    <div
+    <motion.div
+      ref={refFooter}
+      initial={{ opacity: 0 }}
+      animate={isFooterInView ? { opacity: 1 } : {}}
+      transition={{ duration: 1.3 }}
       id="contato"
-      className="flex flex-col items-center justify-center gap-8 font-DM_Sans text-sm"
+      className="relative flex flex-col items-center justify-center gap-8 font-poppins text-sm"
     >
       <h1 className="text-3xl font-bold text-simple dark:text-simpleDark md:text-4xl">
         Conecte-se comigo
@@ -75,6 +84,6 @@ export function Footer() {
       <div className="font-poppins text-xs text-simple dark:text-simpleDark">
         <p>Desenvolvido e construído por Guilherme Zaparoli Gomes</p>
       </div>
-    </div>
+    </motion.div>
   )
 }

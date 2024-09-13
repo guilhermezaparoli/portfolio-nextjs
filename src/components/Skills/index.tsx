@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import css3 from '../../../public/assets/svg/css3.svg'
 import git from '../../../public/assets/svg/git.svg'
 import gitHub from '../../../public/assets/svg/github.svg'
@@ -23,9 +23,9 @@ import { useInView, motion } from 'framer-motion'
 const Skills = () => {
   const skillRref = useRef<HTMLDivElement>(null)
   const IconsRef = useRef<HTMLDivElement>(null)
+  const [firstAnimationFinished, setFirstAnimationFinished] = useState(false)
 
   const isSkillRefInView = useInView(skillRref, { once: true })
-  const isIconsRefInView = useInView(IconsRef, { once: true })
   return (
     <div id="habilidades" className="pt-20">
       <div className="mb-40" ref={skillRref}>
@@ -40,7 +40,7 @@ const Skills = () => {
         <motion.h1
           initial={{ x: '-1000px' }}
           animate={isSkillRefInView ? { x: 0 } : {}}
-          transition={{ delay: 0.5, duration: 0.6 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
           className="font-poppins text-3xl font-bold text-simple dark:text-simpleDark md:text-4xl"
         >
           Minhas habilidades
@@ -48,7 +48,8 @@ const Skills = () => {
         <motion.p
           initial={{ x: '-1000px' }}
           animate={isSkillRefInView ? { x: 0 } : {}}
-          transition={{ delay: 1, duration: 0.6 }}
+          transition={{ delay: 1, duration: 0.5 }}
+          onAnimationComplete={() => setFirstAnimationFinished(true)}
           className="whitespace-nowrap font-poppins text-sm text-simple dark:text-simpleDark md:text-lg"
         >
           Tecnologias que estive trabalhando recentemente:
@@ -57,8 +58,8 @@ const Skills = () => {
         <motion.div
           ref={IconsRef}
           initial={{ opacity: 0 }}
-          animate={isIconsRefInView ? { opacity: 1 } : {}}
-          transition={{ delay: 1.7, duration: 1 }}
+          animate={firstAnimationFinished ? { opacity: 1 } : {}}
+          transition={{ duration: 1 }}
           className="md:grid md:grid-cols-skills md:gap-36"
         >
           <div className="mt-10">

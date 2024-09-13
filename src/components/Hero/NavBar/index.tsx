@@ -52,7 +52,15 @@ const NavBar = () => {
         </div>
         <div className="md:hidden">
           <Link href="#inicio">
-            <h1>GZ</h1>
+            <div className="flex">
+              <h1 className="-translate-y-1 font-poppins
+               text-2xl text-title dark:text-simpleDark">
+                G
+              </h1>
+              <h1 className="translate-y-1 font-poppins text-2xl text-title dark:text-simpleDark">
+                Z
+              </h1>
+            </div>
           </Link>
         </div>
         <HamburgerMenu />

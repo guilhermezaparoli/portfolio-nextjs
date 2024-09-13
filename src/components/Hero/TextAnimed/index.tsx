@@ -34,13 +34,13 @@ export default function TextAnimed({ delay }: IAnimTextProps) {
     const controlsFirst = animate(countFirst, firstPart.length, {
       type: 'tween',
       delay,
-      duration: 2,
+      duration: 1,
       ease: 'easeInOut',
       onComplete: () => {
         setDoneFirstPart(true)
       },
     })
-    window.scrollTo(0, 0)
+    // window.scrollTo(0, 0)
     // document.body.style.overflow = 'hidden'
     return controlsFirst.stop
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -51,7 +51,7 @@ export default function TextAnimed({ delay }: IAnimTextProps) {
       const controlsSecond = animate(countSecond, secondPart.length, {
         type: 'tween',
         delay: 0,
-        duration: 2,
+        duration: 1,
         ease: 'easeInOut',
         onComplete: () => {
           setDoneSecondPart(true)

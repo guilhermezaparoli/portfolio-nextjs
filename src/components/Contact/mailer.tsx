@@ -1,6 +1,6 @@
 import emailjs from '@emailjs/browser'
 import { toast } from 'react-toastify'
-
+import { FaCheckCircle } from 'react-icons/fa'
 interface mailerProps {
   name: string
   email: string
@@ -29,8 +29,23 @@ export async function mailer({ name, email, message }: mailerProps) {
   )
 
   if (status === 200) {
-    toast.success('E-mail enviado com sucesso!')
+    toast.success('E-mail enviado com sucesso!', {
+      className: 'font-poppins',
+      position: 'top-center',
+      autoClose: 2000, // Ensure progress bar is visible
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      icon: <FaCheckCircle className="text-xl text-dark" />,
+    })
   } else {
-    toast.error('Houve um erro ao enviar!')
+    toast.error('Houve um erro ao enviar o e-mail', {
+      className: 'font-poppins',
+      position: 'top-center',
+      autoClose: 2000, // Ensure progress bar is visible
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    })
   }
 }

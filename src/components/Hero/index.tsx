@@ -24,7 +24,7 @@ export function Hero() {
         onAnimationComplete={() => {
           document.body.style.overflow = 'auto'
         }}
-        transition={{ delay: 5.5, duration: 1, ease: 'easeInOut' }}
+        transition={{ delay: 3.5, duration: 1, ease: 'easeInOut' }}
         className="mt-14 flex flex-col gap-5"
       >
         <div className="flex w-full items-center justify-start">
