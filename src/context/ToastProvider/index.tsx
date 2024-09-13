@@ -1,11 +1,11 @@
-'use client'
+"use client";
 
-import 'react-toastify/dist/ReactToastify.css'
-import '../../app/globals.css'
-import { ToastContainer } from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css";
+import "../../app/globals.css";
+import { ToastContainer } from "react-toastify";
 
 interface ToastProviderProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export default function ToastProvider({ children }: ToastProviderProps) {
@@ -19,5 +19,5 @@ export default function ToastProvider({ children }: ToastProviderProps) {
         hideProgressBar={true}
       />
     </>
-  )
+  );
 }

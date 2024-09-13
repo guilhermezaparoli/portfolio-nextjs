@@ -1,9 +1,9 @@
-'use client'
-import { Variants, motion } from 'framer-motion'
-import { useTranslations } from "next-intl"
-import Image, { StaticImageData } from 'next/image'
-import Link from 'next/link'
-import { FaGithub, FaLink } from 'react-icons/fa'
+"use client";
+import { Variants, motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
+import { FaGithub, FaLink } from "react-icons/fa";
 const cardVariants: Variants = {
   offscreen: {
     y: 150,
@@ -13,19 +13,19 @@ const cardVariants: Variants = {
     y: 50,
     opacity: 1,
     transition: {
-      type: 'spring',
+      type: "spring",
       bounce: 0.4,
       duration: 0.8,
     },
   },
-}
+};
 interface ProjectCardProps {
-  title: string
-  description: string
-  technologies: string
-  image: StaticImageData
-  deploy: string
-  repo: string
+  title: string;
+  description: string;
+  technologies: string;
+  image: StaticImageData;
+  deploy: string;
+  repo: string;
 }
 export function ProjectCard({
   image,
@@ -35,7 +35,7 @@ export function ProjectCard({
   deploy,
   repo,
 }: ProjectCardProps) {
-  const t = useTranslations("Projects")
+  const t = useTranslations("Projects");
   return (
     <motion.div
       variants={cardVariants}
@@ -54,7 +54,9 @@ export function ProjectCard({
           {description}
         </p>
         <p className="mt-3 font-poppins text-xs font-light">
-          <span className="font-poppins text-sm font-normal">{t("cardInfo.technologies")}:</span>{' '}
+          <span className="font-poppins text-sm font-normal">
+            {t("cardInfo.technologies")}:
+          </span>{" "}
           {technologies}
         </p>
 
@@ -80,5 +82,5 @@ export function ProjectCard({
         </div>
       </div>
     </motion.div>
-  )
+  );
 }

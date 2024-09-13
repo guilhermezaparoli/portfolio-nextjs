@@ -1,4 +1,4 @@
-import './styles.css'
+import "./styles.css";
 export function Birds() {
   return (
     <div className="hidden lg:block">
@@ -20,5 +20,5 @@ export function Birds() {
       </div> */}
       </div>
     </div>
-  )
+  );
 }

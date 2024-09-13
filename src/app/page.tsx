@@ -1,5 +1,3 @@
-import { redirect } from 'next/dist/server/api-utils'
+import { redirect } from "next/dist/server/api-utils";
 
-export default function RootPage() {
-    
-}
+export default function RootPage() {}

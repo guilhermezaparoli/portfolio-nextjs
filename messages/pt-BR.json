@@ -1,83 +1,77 @@
 {
-    "Index": {
-        "title": "Olá mundo!"
-    },
+  "Index": {
+    "title": "Olá mundo!"
+  },
 
-    "Header": {
-        "Menu": {
-            "home": "Início",
-            "about": "Sobre",
-            "skills": "Habilidades",
-            "projects": "Projetos",
-            "contact": "Contato"
-        }
-
-   
+  "Header": {
+    "Menu": {
+      "home": "Início",
+      "about": "Sobre",
+      "skills": "Habilidades",
+      "projects": "Projetos",
+      "contact": "Contato"
+    }
+  },
+  "Hero": {
+    "nameMessage": "Olá, meu nome é",
+    "dynamicMessages": {
+      "1": "Sou um desenvolvedor front-end",
+      "2": "Crio interfaces intuitivas e funcionais",
+      "3": "Sou apaixonado por desenvolver experiências digitais",
+      "4": "Transformo ideias em aplicações modernas"
     },
-    "Hero": {
-        "nameMessage": "Olá, meu nome é",
-       "dynamicMessages": {
-            "1": "Sou um desenvolvedor front-end",
-            "2": "Crio interfaces intuitivas e funcionais",
-            "3": "Sou apaixonado por desenvolver experiências digitais",
-            "4": "Transformo ideias em aplicações modernas"
-        },
-        "letsTalk": "Vamos conversar"
+    "letsTalk": "Vamos conversar"
+  },
+  "Skills": {
+    "tag": "Habilidades",
+    "title": "Minhas Habilidades",
+    "subtitle": "Tecnologias que estive trabalhando recentemente:",
+    "groups": {
+      "1": "Linguagens e Ferramentas",
+      "2": "Bibliotecas e Frameworks",
+      "3": "Banco de dados",
+      "4": "Outras"
+    }
+  },
 
-    },
-    "Skills": {
-        "tag": "Habilidades",
-        "title": "Minhas Habilidades",
-        "subtitle": "Tecnologias que estive trabalhando recentemente:",
-        "groups": {
-            "1": "Linguagens e Ferramentas",
-            "2": "Bibliotecas e Frameworks",
-            "3": "Banco de dados",
-            "4": "Outras"
-        }
-    },
-
-    "Projects": {
+  "Projects": {
     "tag": "Projetos",
     "title": "Meus Projetos",
     "subtitle": "Algumas coisas que construí:",
     "projects": {
-        "propertyPulse": {
-            "title": "Alugue um Imóvel",
-            "description": "Um site para locação de imóveis com as seguintes funcionalidades: cadastro via Google Account, envio de mensagens diretamente ao proprietário do imóvel, favoritar imóveis preferidos, visualizar a geolocalização do imóvel, entre outros."
-        },
-        "pokedex": {
-            "title": "Pokédex",
-            "description": "Um aplicativo que permite aos usuários pesquisar e explorar Pokémon, exibindo detalhes como estatísticas. Oferece uma experiência interativa e atualizações em tempo real."
-        },
-        "coffeeDelivery": {
-            "title": "Delivery de Café",
-            "description": "Um aplicativo de delivery de café criado durante o curso Ignite da Rocketseat. Permite aos usuários adicionar cafés ao carrinho e concluir uma compra fictícia usando Stripe (apenas para testes)."
-        }
+      "propertyPulse": {
+        "title": "Alugue um Imóvel",
+        "description": "Um site para locação de imóveis com as seguintes funcionalidades: cadastro via Google Account, envio de mensagens diretamente ao proprietário do imóvel, favoritar imóveis preferidos, visualizar a geolocalização do imóvel, entre outros."
+      },
+      "pokedex": {
+        "title": "Pokédex",
+        "description": "Um aplicativo que permite aos usuários pesquisar e explorar Pokémon, exibindo detalhes como estatísticas. Oferece uma experiência interativa e atualizações em tempo real."
+      },
+      "coffeeDelivery": {
+        "title": "Delivery de Café",
+        "description": "Um aplicativo de delivery de café criado durante o curso Ignite da Rocketseat. Permite aos usuários adicionar cafés ao carrinho e concluir uma compra fictícia usando Stripe (apenas para testes)."
+      }
     },
     "cardInfo": {
-        "technologies": "Tecnologias",
-        "visit": "Visitar site",
-        "repo": "Repositório"
+      "technologies": "Tecnologias",
+      "visit": "Visitar site",
+      "repo": "Repositório"
     }
-
-   
-},
-"Contact": {
+  },
+  "Contact": {
     "tag": "Contato",
     "title": "Contato",
     "subtitle": "Entre em contato:",
     "Form": {
-        "name": "Nome",
-        "email": "E-mail",
-        "message": "Mensagem",
-        "send": "Enviar"
+      "name": "Nome",
+      "email": "E-mail",
+      "message": "Mensagem",
+      "send": "Enviar"
     }
-},
-"Footer": {
+  },
+  "Footer": {
     "connect": "Sinta-se à vontade para se conectar nas redes sociais",
     "description": "Desenvolvido e construído por Guilherme Zaparoli Gomes",
     "letsTalk": "Vamos conversar"
-}
-
+  }
 }

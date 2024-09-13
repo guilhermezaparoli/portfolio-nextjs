@@ -31,11 +31,9 @@
   position: relative;
 }
 
-
-
 .cloud::after,
 .cloud::before {
-  content: '';
+  content: "";
   position: absolute;
   background: #fff;
 }
@@ -65,11 +63,9 @@
   position: relative;
 }
 
-
-
 .cloud-dark::after,
 .cloud-dark::before {
-  content: '';
+  content: "";
   position: absolute;
   background: #000;
 }
