@@ -322,7 +322,9 @@ const RainCanvas = () => {
 
     return () => {
       cancelAnimationFrame(animationFrameId)
-      document.body.removeChild(div)
+      if (document.body.contains(div)) {
+        document.body.removeChild(div)
+      }
     }
   }, [isLightTheme, transitionProgress])
 
