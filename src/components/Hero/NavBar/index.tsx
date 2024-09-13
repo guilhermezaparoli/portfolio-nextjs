@@ -53,8 +53,7 @@ const NavBar = () => {
         <div className="md:hidden">
           <Link href="#inicio">
             <div className="flex">
-              <h1 className="-translate-y-1 font-poppins
-               text-2xl text-title dark:text-simpleDark">
+              <h1 className="-translate-y-1 font-poppins text-2xl text-title dark:text-simpleDark">
                 G
               </h1>
               <h1 className="translate-y-1 font-poppins text-2xl text-title dark:text-simpleDark">
