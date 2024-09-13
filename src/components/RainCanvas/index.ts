@@ -186,6 +186,10 @@ const RainCanvas = () => {
         ctx.fillStyle = `rgba(250, 250, 245, ${lightningAlpha})`
         ctx.fillRect(0, 0, w, h)
       }
+      if (navigator.vibrate) {
+        // Faz o dispositivo vibrar por 200ms
+        navigator.vibrate(500)
+      }
     }
 
     const drawSunAndMoon = (progress: number) => {

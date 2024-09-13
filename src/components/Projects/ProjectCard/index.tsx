@@ -5,11 +5,12 @@ import Link from 'next/link'
 import { FaGithub, FaLink } from 'react-icons/fa'
 const cardVariants: Variants = {
   offscreen: {
-    y: 200,
+    y: 150,
+    opacity: 0,
   },
   onscreen: {
-    y: 100,
-
+    y: 50,
+    opacity: 1,
     transition: {
       type: 'spring',
       bounce: 0.4,
@@ -38,14 +39,14 @@ export function ProjectCard({
       variants={cardVariants}
       initial="offscreen"
       whileInView="onscreen"
-      className="max-w-80 rounded-2xl bg-white shadow-2xl md:h-[530px] md:max-w-[475px]"
+      className="h-full max-w-80 rounded-2xl bg-white shadow-2xl md:h-[530px] md:max-w-[475px]"
       viewport={{ once: true, amount: 0.8 }}
     >
       <div className="max-h-64 overflow-hidden rounded-t-2xl">
         <Image src={image} alt="teste" />
       </div>
 
-      <div className="p-7 text-center font-medium text-black">
+      <div className="h-full min-h-72 p-7 text-center font-medium text-black">
         <h1 className="font-poppins text-xl">{title}</h1>
         <p className="mt-4 text-start font-poppins text-sm font-light text-descriptionProject">
           {description}

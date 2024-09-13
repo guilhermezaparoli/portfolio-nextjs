@@ -41,7 +41,7 @@ export default function TextAnimed({ delay }: IAnimTextProps) {
       },
     })
     window.scrollTo(0, 0)
-    document.body.style.overflow = 'hidden'
+    // document.body.style.overflow = 'hidden'
     return controlsFirst.stop
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])

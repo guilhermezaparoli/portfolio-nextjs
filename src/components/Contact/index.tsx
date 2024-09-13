@@ -1,6 +1,22 @@
+'use client'
+
+import { FormEvent } from 'react'
+import { mailer } from './mailer'
+
 export function Contact() {
+  function sendDataMail(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    const target = e.target as HTMLFormElement
+    const { name, email, message } = {
+      name: (target[0] as HTMLInputElement).value,
+      email: (target[1] as HTMLInputElement).value,
+      message: (target[2] as HTMLTextAreaElement).value,
+    }
+
+    mailer({ name, email, message })
+  }
   return (
-    <div id="contato" className="flex flex-col justify-center pt-20">
+    <div id="contato" className="flex flex-col justify-center pt-24">
       <p className="text-start font-mono text-simple dark:text-simpleDark">
         Contato
       </p>
@@ -10,31 +26,31 @@ export function Contact() {
       <p className="whitespace-nowrap font-poppins text-sm text-simple dark:text-simpleDark md:text-lg">
         Entre em contato:
       </p>
-      <div className="mb-60 mt-8 flex flex-col items-center">
-        <form className="flex w-full flex-col gap-4">
-          <label className="flex flex-col text-title">
+      <div className="mb-60 mt-14 flex flex-col items-center place-self-center">
+        <form className="flex w-full flex-col gap-4" onSubmit={sendDataMail}>
+          <label className="flex flex-col text-title dark:text-simpleDark">
             Nome
             <input
               title="Nome"
               type="text"
-              className="h-12 rounded-md border border-title bg-transparent px-3 font-poppins text-lg outline-none focus:border-2 focus:border-simple"
+              className="h-16 rounded-md border border-title bg-transparent px-3 font-poppins text-lg outline-none focus:border-2 focus:border-simple dark:border-simpleDark md:w-[700px]"
               required
             />
           </label>
-          <label className="flex flex-col text-title">
+          <label className="flex flex-col text-title dark:text-simpleDark">
             Email
             <input
               title="Nome"
-              type="mail"
-              className="h-12 rounded-md border border-title bg-transparent px-3 font-poppins text-lg outline-none focus:border-2 focus:border-simple"
+              type="email"
+              className="h-16 rounded-md border border-title bg-transparent px-3 font-poppins text-lg outline-none focus:border-2 focus:border-simple dark:border-simpleDark md:w-[700px]"
               required
             />
           </label>
-          <label className="flex flex-col text-title">
+          <label className="flex flex-col text-title dark:text-simpleDark">
             Mensagem
             <textarea
               title="Nome"
-              className="h-48 rounded-md border border-title bg-transparent p-3 font-poppins text-lg outline-none focus:border-2 focus:border-simple"
+              className="h-48 rounded-md border border-title bg-transparent p-3 font-poppins text-lg outline-none focus:border-2 focus:border-simple dark:border-simpleDark md:w-[700px]"
               required
             />
           </label>

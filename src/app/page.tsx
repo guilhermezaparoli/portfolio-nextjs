@@ -1,7 +1,7 @@
 // import Clouds from "@/components/Clouds"
 import { Birds } from '@/components/Birds'
 import Clouds from '@/components/Clouds'
-import { Contact } from "@/components/Contact"
+import { Contact } from '@/components/Contact'
 import { Footer } from '@/components/Footer'
 import { Hero } from '@/components/Hero'
 import { Projects } from '@/components/Projects'
@@ -17,7 +17,7 @@ const Page = () => {
       <Hero />
       <Skills />
       <Projects />
-      <Contact/>
+      <Contact />
       <Footer />
     </>
   )
