@@ -83,8 +83,10 @@ export function Footer() {
         </button>
       </Link>
 
-      <div className="font-poppins text-[10px] text-simple dark:text-simpleDark">
-        <p>{t('description')}</p>
+      <div className="font-poppins text-simple dark:text-simpleDark">
+        <p className="whitespace-nowrap text-[10px] md:text-lg">
+          {t('description')}
+        </p>
       </div>
     </motion.div>
   )

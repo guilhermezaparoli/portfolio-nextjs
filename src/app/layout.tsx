@@ -8,15 +8,8 @@ export const metadata: Metadata = {
 
 interface RootLayoutProps {
   children: React.ReactNode
-  params: {
-    locale: string
-  }
 }
-export default function RootLayout({
-  children,
-  params: { locale },
-}: Readonly<RootLayoutProps>) {
-  console.log(locale)
+export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
     <html>
       <body>{children}</body>

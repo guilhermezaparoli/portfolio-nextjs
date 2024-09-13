@@ -7,11 +7,8 @@ import { Hero } from '@/components/Hero'
 import { Projects } from '@/components/Projects'
 import RainCanvas from '@/components/RainCanvas'
 import Skills from '@/components/Skills'
-import { useTranslations } from 'next-intl'
 
 const Page = () => {
-  const t = useTranslations('Index')
-  console.log(t('title'))
   return (
     <>
       <Clouds />

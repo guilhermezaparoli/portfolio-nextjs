@@ -7,7 +7,6 @@ import Link from 'next/link'
 
 const NavBar = () => {
   const t = useTranslations('Header')
-  console.log(t('Menu.home'))
   const links = [
     {
       url: '#inicio',

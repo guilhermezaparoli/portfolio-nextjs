@@ -14,7 +14,6 @@ export function LocalSwitcher() {
   const localActiove = useLocale()
   const [selected, setSelected] = useState(localActiove)
 
-  console.log(router, 'aaa')
   function onSelectChange(value: string) {
     setSelected(value)
     startTransition(() => {
