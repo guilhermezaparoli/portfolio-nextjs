@@ -2,8 +2,9 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useState } from 'react'
-import SwitchTheme from '../SwitchTheme'
+import SwitchTheme from '../../../SwitchTheme'
 import { useTranslations } from "next-intl"
+import { LocalSwitcher } from "../LocalSwitcher"
 
 export function HamburgerMenu() {
   const t = useTranslations("Header")
@@ -85,6 +86,10 @@ export function HamburgerMenu() {
   return (
     <div className="flex gap-5">
       <SwitchTheme />
+      <div  className=" items-center hidden md:flex md:visible">
+
+      <LocalSwitcher/>
+      </div>
       <button
         onClick={() => setOpen(!open)}
         className="relative z-50 flex h-8 w-10 flex-col justify-between md:hidden"
@@ -113,8 +118,13 @@ export function HamburgerMenu() {
           animate="opened"
           className="absolute left-0 top-0 flex h-screen w-screen flex-col items-center justify-center gap-8 bg-overlay font-poppins text-5xl font-bold text-white hover:no-underline"
         >
+          <motion.div initial={{y: -100, opacity: 0}} animate={{y: 0, opacity: 1}} transition={{duration: 0.3}} className="absolute top-0 left-0 p-2">
+
+          <LocalSwitcher/>
+          </motion.div>
           {links.map((link) => (
             <motion.div key={link.url} variants={listItemVarients}>
+
               <Link onClick={() => setOpen(!open)} href={link.url}>
                 {link.title}
               </Link>

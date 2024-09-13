@@ -1,79 +1,79 @@
 {
-    "Index": {
-        "title": "Hello world!"
-    },
+  "Index": {
+    "title": "Hello world!"
+  },
 
-    "Header": {
-        "Menu": {
-            "home": "Home",
-            "about": "About",
-            "skills": "Skills",
-            "projects": "Projects",
-                 "contact": "Contact"
-        }
-    },
-    "Hero": {
-        "nameMessage": "Hello, my name is",
-        "dynamicMessages": {
-            "1": "I am a front-end developer",
-            "2": "I create intuitive and functional interfaces",
-            "3": "I am passionate about developing digital experiences",
-            "4": "I turn ideas into modern applications"
-        },
-        "letsTalk": "Let's talk"
-    },
-
-    "Skills": {
-        "tag": "Skills",
-        "title": "My Skills",
-        "subtitle": "Technologies I've been working with recently:",
-        "groups": {
-            "1": "Languages and Tools",
-            "2": "Libraries and Frameworks",
-            "3": "Database",
-            "4": "Others"
-        }
-    },
-
-    "Projects": {
-        "tag": "Projects",
-        "title": "My Projects",
-        "subtitle": "Some things I've built:",
-        "projects": {
-            "propertyPulse": {
-                "title": "Rent a Property",
-                "description": "A website for renting properties with the following features: sign up via Google account, send messages directly to the property owner, favorite preferred properties, view the property's geolocation, among others."
-            },
-            "pokedex": {
-                "title": "Pokedex",
-                "description": "An app that allows users to search and explore Pokémon, displaying details such as stats. It offers an interactive experience and real-time updates."
-            },
-            "coffeeDelivery": {
-                "title": "Coffee Delivery",
-                "description": "A coffee delivery app created during Rocketseat's Ignite course. It allows users to add coffee to the cart and complete a mock purchase using Stripe (for testing purposes only)."
-            }
-        },
-        "cardInfo": {
-            "technologies": "Technologies",
-            "visit": "Visit website",
-            "repo": "Repository"
-        }
-    },
-    "Contact": {
-        "tag": "Contact",
-        "title": "Contact",
-        "subtitle": "Get in Touch:",
-        "Form": {
-            "name": "Name",
-            "email": "Email",
-            "message": "Message",
-            "send": "Send"
-        }
-    },
-
-    "Footer": {
-        "connect": "Feel free to connect on social media.",
-        "description": "Developed and built by Guilherme Zaparoli Gomes",
-        "letsTalk": "Let's talk"
+  "Header": {
+    "Menu": {
+      "home": "Home",
+      "about": "About",
+      "skills": "Skills",
+      "projects": "Projects",
+      "contact": "Contact"
     }
+  },
+  "Hero": {
+    "nameMessage": "Hello, my name is",
+    "dynamicMessages": {
+      "1": "I am a front-end developer",
+      "2": "I create intuitive and functional interfaces",
+      "3": "I am passionate about developing digital experiences",
+      "4": "I turn ideas into modern applications"
+    },
+    "letsTalk": "Let's talk"
+  },
+
+  "Skills": {
+    "tag": "Skills",
+    "title": "My Skills",
+    "subtitle": "Technologies I've been working with recently:",
+    "groups": {
+      "1": "Languages and Tools",
+      "2": "Libraries and Frameworks",
+      "3": "Database",
+      "4": "Others"
+    }
+  },
+
+  "Projects": {
+    "tag": "Projects",
+    "title": "My Projects",
+    "subtitle": "Some things I've built:",
+    "projects": {
+      "propertyPulse": {
+        "title": "Rent a Property",
+        "description": "A website for renting properties with the following features: sign up via Google account, send messages directly to the property owner, favorite preferred properties, view the property's geolocation, among others."
+      },
+      "pokedex": {
+        "title": "Pokedex",
+        "description": "An app that allows users to search and explore Pokémon, displaying details such as stats. It offers an interactive experience and real-time updates."
+      },
+      "coffeeDelivery": {
+        "title": "Coffee Delivery",
+        "description": "A coffee delivery app created during Rocketseat's Ignite course. It allows users to add coffee to the cart and complete a mock purchase using Stripe (for testing purposes only)."
+      }
+    },
+    "cardInfo": {
+      "technologies": "Technologies",
+      "visit": "Visit website",
+      "repo": "Repository"
+    }
+  },
+  "Contact": {
+    "tag": "Contact",
+    "title": "Contact",
+    "subtitle": "Get in Touch:",
+    "Form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send"
+    }
+  },
+
+  "Footer": {
+    "connect": "Feel free to connect on social media",
+    "description": "Developed and built by Guilherme Zaparoli Gomes",
+    "letsTalk": "Let's talk"
+  }
 }

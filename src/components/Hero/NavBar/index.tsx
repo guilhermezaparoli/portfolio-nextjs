@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl"
-import { HamburgerMenu } from '../../HamburgerMenu'
+import { HamburgerMenu } from './HamburgerMenu'
 import { ScrollProgressBar } from './ScrollProgressBar'
 import { motion } from 'framer-motion'
 
@@ -54,10 +54,10 @@ const NavBar = () => {
         <div className="md:hidden">
           <Link href="#inicio">
             <div className="flex">
-              <h1 className="-translate-y-1 font-poppins text-2xl text-title dark:text-simpleDark">
+              <h1 className="-translate-y-1 font-poppins text-2xl text-title dark:text-simpleDark font-semibold">
                 G
               </h1>
-              <h1 className="translate-y-1 font-poppins text-2xl text-title dark:text-simpleDark">
+              <h1 className="translate-y-1 font-poppins text-2xl text-title dark:text-simpleDark font-semibold">
                 Z
               </h1>
             </div>

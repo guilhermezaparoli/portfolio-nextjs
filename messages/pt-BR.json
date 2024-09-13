@@ -10,21 +10,21 @@
             "skills": "Habilidades",
             "projects": "Projetos",
             "contact": "Contato"
-        },
+        }
 
-        "Hero": {
+   
+    },
+    "Hero": {
         "nameMessage": "Olá, meu nome é",
-        "dynamicMessages": {
-            "1": "I am a front-end developer",
-            "2": "I create intuitive and functional interfaces",
-            "3": "I am passionate about developing digital experiences",
-            "4": "I turn ideas into modern applications"
+       "dynamicMessages": {
+            "1": "Sou um desenvolvedor front-end",
+            "2": "Crio interfaces intuitivas e funcionais",
+            "3": "Sou apaixonado por desenvolver experiências digitais",
+            "4": "Transformo ideias em aplicações modernas"
         },
         "letsTalk": "Vamos conversar"
 
-    }
     },
-
     "Skills": {
         "tag": "Habilidades",
         "title": "Minhas Habilidades",
@@ -59,24 +59,25 @@
         "technologies": "Tecnologias",
         "visit": "Visitar site",
         "repo": "Repositório"
-    },
-
-    "Contact": {
-        "tag": "Contato",
-        "title": "Contato",
-        "subtitle": "Entre em contato:",
-        "Form": {
-            "name": "Nome",
-            "email": "E-mail",
-            "message": "Mensagem",
-            "send": "Enviar"
-        }
-    },
-    "Footer": {
-        "connect": "Sinta-se à vontade para se conectar nas redes sociais.",
-        "description": "Desenvolvido e construído por Guilherme Zaparoli Gomes",
-        "letsTalk": "Vamos conversar"
     }
+
+   
+},
+"Contact": {
+    "tag": "Contato",
+    "title": "Contato",
+    "subtitle": "Entre em contato:",
+    "Form": {
+        "name": "Nome",
+        "email": "E-mail",
+        "message": "Mensagem",
+        "send": "Enviar"
+    }
+},
+"Footer": {
+    "connect": "Sinta-se à vontade para se conectar nas redes sociais",
+    "description": "Desenvolvido e construído por Guilherme Zaparoli Gomes",
+    "letsTalk": "Vamos conversar"
 }
 
 }

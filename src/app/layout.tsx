@@ -17,5 +17,7 @@ export default function RootLayout({
   params: { locale },
 }: Readonly<RootLayoutProps>) {
   console.log(locale)
-  return children
+  return <html>
+    <body>{children}</body>
+  </html>
 }
