@@ -16,9 +16,8 @@ const Page = () => {
     <>
       <Clouds />
       <Birds />
-      <RainCanvas />
+      {/* <RainCanvas /> */}
       <Hero />
-    <h1>{t("title")}</h1>
       <Skills />
       <Projects />
       <Contact />

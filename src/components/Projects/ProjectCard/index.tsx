@@ -1,5 +1,6 @@
 'use client'
 import { Variants, motion } from 'framer-motion'
+import { useTranslations } from "next-intl"
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import { FaGithub, FaLink } from 'react-icons/fa'
@@ -34,6 +35,7 @@ export function ProjectCard({
   deploy,
   repo,
 }: ProjectCardProps) {
+  const t = useTranslations("Projects")
   return (
     <motion.div
       variants={cardVariants}
@@ -52,7 +54,7 @@ export function ProjectCard({
           {description}
         </p>
         <p className="mt-3 font-poppins text-xs font-light">
-          <span className="font-poppins text-sm font-normal">Tecnologias:</span>{' '}
+          <span className="font-poppins text-sm font-normal">{t("cardInfo.technologies")}:</span>{' '}
           {technologies}
         </p>
 
@@ -63,7 +65,7 @@ export function ProjectCard({
               className="font-poppins text-sm text-black underline"
               href={deploy}
             >
-              Visitar site
+              {t("cardInfo.visit")}
             </Link>
           </div>
           <div className="flex items-center gap-2">
@@ -72,7 +74,7 @@ export function ProjectCard({
               className="font-poppins text-sm text-black underline"
               href={repo}
             >
-              Repositório
+              {t("cardInfo.repo")}
             </Link>
           </div>
         </div>

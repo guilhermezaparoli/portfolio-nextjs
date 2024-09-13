@@ -5,10 +5,11 @@ import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import TextAnimed from './TextAnimed'
 import { motion } from 'framer-motion'
+import { useTranslations } from "next-intl"
 
 const NavBarDynamic = dynamic(() => import('./NavBar'))
-
 export function Hero() {
+  const t = useTranslations("Hero")
   return (
     <div id="inicio" className="min-h-screen">
       <div className="flex items-center gap-3">
@@ -84,7 +85,7 @@ export function Hero() {
         </div>
         <Link href="#contato">
           <button className="w-36 rounded-lg border-2 border-simple p-3 text-center font-itensMenu text-xs font-bold text-simple transition-colors delay-0 hover:bg-simple hover:text-sunnyDay dark:border-white dark:text-simpleDark dark:hover:bg-white dark:hover:text-black">
-            Vamos conversar
+           {t("letsTalk")}
           </button>
         </Link>
       </motion.div>

@@ -3,6 +3,10 @@ import { Inter } from 'next/font/google'
 
 import { GlobalProvider } from '@/context/GlobalContext'
 import ToastProvider from '@/context/ToastProvider'
+import { NextIntlClientProvider } from "next-intl"
+import en from "../../../messages/en.json"
+import pt from "../../../messages/pt-BR.json"
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,8 +23,11 @@ interface RootLayoutProps {
 }
 
 export default function LayoutLocale({children, params: {locale}}: Readonly<RootLayoutProps>){
+ const messages = locale === "en" ? en : pt
     return (  <html lang={locale} className="scroll-smooth antialiased">
         <GlobalProvider>
+            <NextIntlClientProvider locale={locale} messages={messages}>
+
           <body className={`${inter.className} bg-sunnyDay dark:bg-nightDay`}>
             <div className="min-h-screen px-4 py-5 md:px-36 md:py-8">
               <ToastProvider>
@@ -28,6 +35,8 @@ export default function LayoutLocale({children, params: {locale}}: Readonly<Root
               </ToastProvider>
             </div>
           </body>
+          </NextIntlClientProvider>
+
         </GlobalProvider>
       </html>)
 }

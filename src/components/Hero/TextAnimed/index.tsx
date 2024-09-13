@@ -4,15 +4,17 @@ import { useEffect, useState } from 'react'
 
 import CursorBlinker from './CursorBlinker'
 import AnimText from './AnimText.tsx'
+import { useTranslations } from "next-intl"
 
 export interface IAnimTextProps {
   delay: number
 }
 
 export default function TextAnimed({ delay }: IAnimTextProps) {
+  const t = useTranslations("Hero")
   const [doneFirstPart, setDoneFirstPart] = useState(false)
   const [doneSecondPart, setDoneSecondPart] = useState(false)
-  const firstPart = 'Olá, meu nome é'
+  const firstPart = t("nameMessage")
   const secondPart = 'Guilherme Zaparoli'
 
   const countFirst = useMotionValue(0)

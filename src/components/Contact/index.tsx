@@ -4,8 +4,10 @@ import { FormEvent, useRef } from 'react'
 import { mailer } from './mailer'
 import { motion, useInView } from 'framer-motion'
 import { toast } from 'react-toastify'
+import { useTranslations } from "next-intl"
 
 export function Contact() {
+  const t = useTranslations("Contact")
   const contactRef = useRef<HTMLDivElement>(null)
   const formRef = useRef<HTMLDivElement>(null)
 
@@ -35,7 +37,7 @@ export function Contact() {
           transition={{ duration: 0.5 }}
           className="text-start font-mono text-simple dark:text-simpleDark"
         >
-          Contato
+          {t("tag")}
         </motion.p>
         <motion.h1
           initial={{ x: '-1000px' }}
@@ -43,7 +45,7 @@ export function Contact() {
           transition={{ delay: 0.5, duration: 0.6 }}
           className="font-poppins text-3xl font-bold text-simple dark:text-simpleDark md:text-4xl"
         >
-          Contato
+           {t("title")}
         </motion.h1>
         <motion.p
           initial={{ x: '-1000px' }}
@@ -51,7 +53,7 @@ export function Contact() {
           transition={{ delay: 1, duration: 0.6 }}
           className="whitespace-nowrap font-poppins text-sm text-simple dark:text-simpleDark md:text-lg"
         >
-          Entre em contato:
+           {t("subtitle")}
         </motion.p>
 
         <motion.div
@@ -63,7 +65,7 @@ export function Contact() {
         >
           <form className="flex w-full flex-col gap-4" onSubmit={sendDataMail}>
             <label className="flex flex-col text-title dark:text-simpleDark">
-              Nome
+            {t("Form.name")}
               <input
                 title="Nome"
                 type="text"
@@ -72,7 +74,7 @@ export function Contact() {
               />
             </label>
             <label className="flex flex-col text-title dark:text-simpleDark">
-              Email
+            {t("Form.email")}
               <input
                 title="Nome"
                 type="email"
@@ -81,7 +83,7 @@ export function Contact() {
               />
             </label>
             <label className="flex flex-col text-title dark:text-simpleDark">
-              Mensagem
+            {t("Form.message")}
               <textarea
                 title="Nome"
                 className="h-48 rounded-md border border-title bg-transparent p-3 font-poppins text-lg outline-none focus:border-2 focus:border-simple dark:border-simpleDark"
@@ -103,7 +105,7 @@ export function Contact() {
               }
               className="mt-5 w-36 place-self-center rounded-lg border-2 border-simple p-3 text-center font-itensMenu text-xs font-bold text-simple transition-colors delay-0 hover:bg-simple hover:text-sunnyDay dark:border-white dark:text-simpleDark dark:hover:bg-white dark:hover:text-black"
             >
-              Enviar
+                {t("Form.send")}
             </button>
           </form>
         </motion.div>

@@ -1,5 +1,4 @@
-'use client'
-
+import { useTranslations } from "next-intl"
 import { HamburgerMenu } from '../../HamburgerMenu'
 import { ScrollProgressBar } from './ScrollProgressBar'
 import { motion } from 'framer-motion'
@@ -7,26 +6,28 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 
 const NavBar = () => {
+  const t = useTranslations("Header")
+  console.log(t("Menu.home"))
   const links = [
     {
       url: '#inicio',
-      title: 'Início',
+      title: t("Menu.home"),
     },
     {
       url: '#sobre',
-      title: 'Sobre',
+      title: t("Menu.about"),
     },
     {
       url: '#habilidades',
-      title: 'Habilidades',
+      title: t("Menu.skills"),
     },
     {
       url: '#projetos',
-      title: 'Projetos',
+      title: t("Menu.projects"),
     },
     {
       url: '#contato',
-      title: 'Contato',
+      title: t("Menu.contact"),
     },
   ]
 

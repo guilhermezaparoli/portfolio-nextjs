@@ -3,29 +3,32 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useState } from 'react'
 import SwitchTheme from '../SwitchTheme'
+import { useTranslations } from "next-intl"
 
 export function HamburgerMenu() {
+  const t = useTranslations("Header")
+
   const [open, setOpen] = useState(false)
   const links = [
     {
       url: '#inicio',
-      title: 'Início',
+      title: t("Menu.home"),
     },
     {
       url: '#sobre',
-      title: 'Sobre',
+      title: t("Menu.about"),
     },
     {
       url: '#habilidades',
-      title: 'Habilidades',
+      title: t("Menu.skills"),
     },
     {
       url: '#projetos',
-      title: 'Projetos',
+      title: t("Menu.projects"),
     },
     {
       url: '#contato',
-      title: 'Contato',
+      title: t("Menu.contact"),
     },
   ]
   const topVariants = {

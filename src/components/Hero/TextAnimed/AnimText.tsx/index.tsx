@@ -1,5 +1,6 @@
 'use client'
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion'
+import { useTranslations } from "next-intl"
 import { useEffect } from 'react'
 
 export interface IRedoAnimTextProps {
@@ -7,12 +8,13 @@ export interface IRedoAnimTextProps {
 }
 
 export default function AnimText({ delay }: IRedoAnimTextProps) {
+  const t = useTranslations("Hero")
   const textIndex = useMotionValue(0)
   const texts = [
-    'Sou desenvolvedor front-end',
-    'Crio interfaces intuitivas e funcionais',
-    'Sou apaixonado por desenvolver experiências digitais',
-    'Transformo ideias em aplicações modernas',
+    t("dynamicMessages.1"),
+    t("dynamicMessages.2"),
+    t("dynamicMessages.3"),
+    t("dynamicMessages.4")
   ]
 
   const baseText = useTransform(textIndex, (latest) => texts[latest] || '')

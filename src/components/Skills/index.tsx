@@ -23,8 +23,10 @@ import jira from '../../../public/assets/svg/jira.svg'
 import Image from 'next/image'
 import { useInView, motion } from 'framer-motion'
 import { useGlobalContext } from '@/context/GlobalContext'
+import { useTranslations } from "next-intl"
 
 const Skills = () => {
+  const t = useTranslations("Skills")
   const skillRref = useRef<HTMLDivElement>(null)
   const IconsRef = useRef<HTMLDivElement>(null)
   const [firstAnimationFinished, setFirstAnimationFinished] = useState(false)
@@ -40,7 +42,7 @@ const Skills = () => {
           transition={{ duration: 0.5 }}
           className="text-start font-mono text-simple dark:text-simpleDark"
         >
-          Habilidades
+          {t("tag")}
         </motion.p>
         <motion.h1
           initial={{ x: '-1000px' }}
@@ -48,7 +50,7 @@ const Skills = () => {
           transition={{ delay: 0.5, duration: 0.5 }}
           className="font-poppins text-3xl font-bold text-simple dark:text-simpleDark md:text-4xl"
         >
-          Minhas habilidades
+         {t("title")}
         </motion.h1>
         <motion.p
           initial={{ x: '-1000px' }}
@@ -57,7 +59,7 @@ const Skills = () => {
           onAnimationComplete={() => setFirstAnimationFinished(true)}
           className="whitespace-nowrap font-poppins text-sm text-simple dark:text-simpleDark md:text-lg"
         >
-          Tecnologias que estive trabalhando recentemente:
+          {t("subtitle")}
         </motion.p>
 
         <motion.div
@@ -69,7 +71,7 @@ const Skills = () => {
         >
           <div className="mt-10">
             <p className="text-simple dark:text-simpleDark md:text-lg">
-              Linguagens e Ferramentas
+            {t("groups.1")}
             </p>
             <div className="mt-4 grid w-full grid-cols-icons justify-center gap-8 md:justify-start">
               <Image title="HTML5" src={html5} alt="HTML5" />
@@ -88,7 +90,7 @@ const Skills = () => {
           </div>
           <div className="mt-10">
             <p className="text-simple dark:text-simpleDark md:text-lg">
-              Bibliotecas e Frameworks
+            {t("groups.2")}
             </p>
             <div className="mt-4 grid w-full grid-cols-icons justify-center gap-8 md:justify-start">
               <Image title="React.js" src={react} alt="React.js" />
@@ -109,7 +111,7 @@ const Skills = () => {
 
           <div className="mt-10">
             <p className="text-simple dark:text-simpleDark md:text-lg">
-              Banco de dados
+            {t("groups.3")}
             </p>
             <div className="mt-4 grid w-full grid-cols-icons justify-center gap-8 md:justify-start">
               <Image title="PostgreSQL" src={postgreSQL} alt="PostgreSQL" />
@@ -121,7 +123,7 @@ const Skills = () => {
 
           <div className="mt-10 flex-1">
             <p className="text-simple dark:text-simpleDark md:text-lg">
-              Outros
+            {t("groups.4")}
             </p>
             <div className="mt-4 grid w-full grid-cols-icons justify-center gap-6 md:justify-start">
               <Image title="Git" src={git} alt="Git" />
