@@ -22,14 +22,14 @@ export default function TextAnimed({ delay }: IAnimTextProps) {
 
   const roundedFirst = useTransform(countFirst, (latest) => Math.round(latest))
   const roundedSecond = useTransform(countSecond, (latest) =>
-    Math.round(latest)
+    Math.round(latest),
   )
 
   const displayFirstPart = useTransform(roundedFirst, (latest) =>
-    firstPart.slice(0, latest)
+    firstPart.slice(0, latest),
   )
   const displaySecondPart = useTransform(roundedSecond, (latest) =>
-    secondPart.slice(0, latest)
+    secondPart.slice(0, latest),
   )
 
   useEffect(() => {
@@ -61,7 +61,7 @@ export default function TextAnimed({ delay }: IAnimTextProps) {
       })
       return controlsSecond.stop
     }
-  }, [doneFirstPart])
+  }, [doneFirstPart, countSecond])
 
   return (
     <div>

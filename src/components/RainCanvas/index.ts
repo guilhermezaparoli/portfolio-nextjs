@@ -79,7 +79,7 @@ const RainCanvas = () => {
       const currentBackgroundColor = blendColors(
         nightColor,
         dayColor,
-        transitionProgress
+        transitionProgress,
       )
 
       ctx.fillStyle = currentBackgroundColor
@@ -115,7 +115,7 @@ const RainCanvas = () => {
         lampX,
         lampY,
         lampX,
-        lampY + 290
+        lampY + 290,
       )
       grdOuterHigh.addColorStop(0.0, 'rgba(65, 65, 65, 1.0)')
       grdOuterHigh.addColorStop(0.2, 'rgba(95, 95, 95, 1.0)')
@@ -127,7 +127,7 @@ const RainCanvas = () => {
         lampX,
         lampY,
         lampX,
-        lampY + 290
+        lampY + 290,
       )
       grdOuterLow.addColorStop(0.0, 'rgba(45, 45, 45, 1.0)')
       grdOuterLow.addColorStop(0.2, 'rgba(60, 60, 60, 1.0)')
@@ -143,7 +143,7 @@ const RainCanvas = () => {
         0,
         lampX + sinGlowMod,
         lampY + 200 + cosGlowMod,
-        250
+        250,
       )
       grdGlow.addColorStop(0.0, 'rgba(220, 240, 160, 1)')
       grdGlow.addColorStop(0.2, 'rgba(180, 240, 160, 0.4)')
@@ -210,7 +210,7 @@ const RainCanvas = () => {
           0,
           moonX,
           moonY,
-          moonRadius + 30
+          moonRadius + 30,
         )
         outerGlow.addColorStop(0, 'rgba(255, 255, 255, 0.6)')
         outerGlow.addColorStop(1, 'rgba(255, 255, 255, 0)')
@@ -227,7 +227,7 @@ const RainCanvas = () => {
           0,
           moonX,
           moonY,
-          moonRadius
+          moonRadius,
         )
         moonGradient.addColorStop(0, 'rgba(255, 255, 255, 1)')
         moonGradient.addColorStop(1, 'rgba(180, 180, 180, 1)')
@@ -247,7 +247,7 @@ const RainCanvas = () => {
           0,
           sunX,
           sunY,
-          sunRadius + 60
+          sunRadius + 60,
         )
         outerGlow.addColorStop(0, 'rgba(255, 255, 0, 0.6)')
         outerGlow.addColorStop(1, 'rgba(255, 255, 0, 0)')
@@ -264,7 +264,7 @@ const RainCanvas = () => {
           0,
           sunX,
           sunY,
-          sunRadius
+          sunRadius,
         )
         sunGradient.addColorStop(0, 'rgba(255, 215, 0, 1)')
         sunGradient.addColorStop(0.5, 'rgba(255, 215, 0, 1)')
@@ -283,7 +283,7 @@ const RainCanvas = () => {
           0,
           sunX,
           sunY,
-          sunRadius * 0.5
+          sunRadius * 0.5,
         )
         innerGlow.addColorStop(0, 'rgba(255, 255, 255, 1)')
         innerGlow.addColorStop(1, 'rgba(255, 255, 0, 0)')
@@ -298,7 +298,7 @@ const RainCanvas = () => {
     const blendColors = (
       color1: string,
       color2: string,
-      percentage: number
+      percentage: number,
     ) => {
       const c1 = parseInt(color1.slice(1), 16)
       const c2 = parseInt(color2.slice(1), 16)

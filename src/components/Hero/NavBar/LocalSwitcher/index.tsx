@@ -7,7 +7,9 @@ import { useRouter } from 'next/navigation'
 import { useLocale } from 'next-intl'
 
 export function LocalSwitcher() {
+  /* eslint-disable */
   const [isPending, startTransition] = useTransition()
+  /* eslint-enable */
   const router = useRouter()
   const localActiove = useLocale()
   const [selected, setSelected] = useState(localActiove)
@@ -24,13 +26,13 @@ export function LocalSwitcher() {
     <>
       <button
         onClick={() => onSelectChange('pt-BR')}
-        className={`flex w-full items-center p-2 ${selected == 'en' && 'brightness-50'}`}
+        className={`flex w-full items-center p-2 ${selected === 'en' && 'brightness-50'}`}
       >
         <Image src={brasil} alt="Portuguese" width={30} height={15} />
       </button>
       <button
         onClick={() => onSelectChange('en')}
-        className={`flex w-full items-center p-2 ${selected == 'pt-BR' && 'brightness-50'}`}
+        className={`flex w-full items-center p-2 ${selected === 'pt-BR' && 'brightness-50'}`}
       >
         <Image src={usa} alt="English" width={30} height={15} />
       </button>

@@ -25,7 +25,7 @@ export async function mailer({ name, email, message }: mailerProps) {
       limitRate: {
         throttle: 10000,
       },
-    }
+    },
   )
 
   if (status === 200) {

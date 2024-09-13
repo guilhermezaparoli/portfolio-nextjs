@@ -15,7 +15,7 @@ interface GlobalContextType {
 }
 
 export const GlobalContext = createContext<GlobalContextType | undefined>(
-  undefined
+  undefined,
 )
 
 export function GlobalProvider({ children }: { children: ReactNode }) {
