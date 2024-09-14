@@ -25,7 +25,7 @@ export function Contact() {
   }
 
   return (
-    <div id="contato">
+    <div id="contato" className="pt-20">
       <div className="mb-48 flex flex-col justify-center" ref={contactRef}>
         <motion.div
           initial={{ x: '-1000px' }}

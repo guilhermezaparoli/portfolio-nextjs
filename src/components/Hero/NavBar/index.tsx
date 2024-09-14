@@ -12,10 +12,10 @@ const NavBar = () => {
       url: '#inicio',
       title: t('Menu.home'),
     },
-    {
-      url: '#sobre',
-      title: t('Menu.about'),
-    },
+    // {
+    //   url: '#sobre',
+    //   title: t('Menu.about'),
+    // },
     {
       url: '#habilidades',
       title: t('Menu.skills'),
