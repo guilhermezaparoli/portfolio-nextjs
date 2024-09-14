@@ -1,6 +1,6 @@
 'use client'
 
-import { FormEvent, useRef } from 'react'
+import { FormEvent, useRef, useState } from 'react'
 import { mailer } from './mailer'
 import { motion, useInView } from 'framer-motion'
 import { toast } from 'react-toastify'
@@ -10,9 +10,8 @@ export function Contact() {
   const t = useTranslations('Contact')
   const contactRef = useRef<HTMLDivElement>(null)
   const formRef = useRef<HTMLDivElement>(null)
-
   const isContactRefInView = useInView(contactRef, { once: true })
-  const isFormRefInView = useInView(formRef, { once: true })
+  const [finishedFirstAnimation, setFinhisedFirstAnimation] = useState(false)
   function sendDataMail(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     const target = e.target as HTMLFormElement
@@ -26,42 +25,32 @@ export function Contact() {
   }
 
   return (
-    <div id="contato" className="">
-      <div
-        className="mb-48 flex flex-col justify-center pt-24"
-        ref={contactRef}
-      >
-        <motion.p
+    <div id="contato">
+      <div className="mb-48 flex flex-col justify-center" ref={contactRef}>
+        <motion.div
           initial={{ x: '-1000px' }}
           animate={isContactRefInView ? { x: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="text-start font-mono text-simple dark:text-simpleDark"
+          transition={{ duration: 0.8 }}
+          className="mb-10"
+          onAnimationComplete={() => setFinhisedFirstAnimation(true)}
         >
-          {t('tag')}
-        </motion.p>
-        <motion.h1
-          initial={{ x: '-1000px' }}
-          animate={isContactRefInView ? { x: 0 } : {}}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="font-poppins text-3xl font-bold text-simple dark:text-simpleDark md:text-4xl"
-        >
-          {t('title')}
-        </motion.h1>
-        <motion.p
-          initial={{ x: '-1000px' }}
-          animate={isContactRefInView ? { x: 0 } : {}}
-          transition={{ delay: 1, duration: 0.6 }}
-          className="whitespace-nowrap font-poppins text-sm text-simple dark:text-simpleDark md:text-lg"
-        >
-          {t('subtitle')}
-        </motion.p>
+          <p className="text-start font-mono text-simple dark:text-simpleDark">
+            {t('tag')}
+          </p>
+          <h1 className="font-poppins text-3xl font-bold text-simple dark:text-simpleDark md:text-4xl">
+            {t('title')}
+          </h1>
+          <p className="whitespace-nowrap font-poppins text-sm text-simple dark:text-simpleDark md:text-lg">
+            {t('subtitle')}
+          </p>
+        </motion.div>
 
         <motion.div
           ref={formRef}
-          initial={{ y: '500px', opacity: 0 }}
-          animate={isFormRefInView ? { y: 0, opacity: 1 } : {}}
+          initial={{ y: '400px', opacity: 0 }}
+          animate={finishedFirstAnimation ? { y: 0, opacity: 1 } : {}}
           transition={{ duration: 0.8 }}
-          className="mb-60 mt-14 flex w-full flex-col items-center place-self-center md:w-[700px]"
+          className="mb-60 flex w-full flex-col items-center place-self-center md:w-[700px]"
         >
           <form className="flex w-full flex-col gap-4" onSubmit={sendDataMail}>
             <label className="flex flex-col text-title dark:text-simpleDark">
@@ -97,7 +86,7 @@ export function Contact() {
                 toast.error('Houve um erro ao enviar o e-mail', {
                   className: 'font-poppins',
                   position: 'top-center',
-                  autoClose: 2000, // Ensure progress bar is visible
+                  autoClose: 2000,
                   closeOnClick: true,
                   pauseOnHover: true,
                   draggable: true,

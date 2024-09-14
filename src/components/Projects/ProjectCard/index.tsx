@@ -27,6 +27,7 @@ interface ProjectCardProps {
   deploy: string
   repo: string
 }
+
 export function ProjectCard({
   image,
   title,
@@ -42,7 +43,7 @@ export function ProjectCard({
       initial="offscreen"
       whileInView="onscreen"
       className="h-full max-w-80 rounded-2xl bg-white shadow-2xl md:h-[530px] md:max-w-[475px]"
-      viewport={{ once: true, amount: 0.8 }}
+      viewport={{ once: true, amount: 0.3 }}
     >
       <div className="max-h-64 overflow-hidden rounded-t-2xl">
         <Image src={image} alt="teste" />

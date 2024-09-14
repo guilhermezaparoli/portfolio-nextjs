@@ -9,15 +9,15 @@ import { useTranslations } from 'next-intl'
 export function Footer() {
   const t = useTranslations('Footer')
   const refFooter = useRef<HTMLDivElement>(null)
-  const isFooterInView = useInView(refFooter, { once: true })
+  const isFooterInView = useInView(refFooter, { once: false })
   return (
     <motion.div
       ref={refFooter}
-      initial={{ opacity: 0 }}
-      animate={isFooterInView ? { opacity: 1 } : {}}
-      transition={{ duration: 1.3 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={isFooterInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 1.5 }}
       id="contato"
-      className="relative flex flex-col items-center justify-center gap-8 font-poppins text-sm"
+      className="flex flex-col items-center justify-center gap-8 font-poppins text-sm"
     >
       <h1 className="text-center text-3xl font-bold text-simple dark:text-simpleDark md:text-4xl">
         {t('connect')}
