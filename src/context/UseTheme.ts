@@ -2,20 +2,15 @@
 import { useEffect, useState } from 'react'
 
 export function UseTheme() {
-  const [isLightTheme, setIsLightTheme] = useState<boolean | undefined>(true)
+  // Initialize state based on localStorage value
+  const getInitialTheme = () => {
+    const themeLocalStorage = localStorage.getItem('theme') || 'light'
+    return themeLocalStorage === 'light'
+  }
 
-  // () => {
-  //   if(typeof localStorage !== "undefined"){
-  //       const storedTheme = localStorage
-  //       ? localStorage.getItem('theme')
-  //       : null
-  //     if (storedTheme) {
-  //       return storedTheme === 'light'
-  //     }
-  //     return !window.matchMedia('(prefers-color-scheme: light)').matches
-  //   }
-  // return
-  // }
+  const [isLightTheme, setIsLightTheme] = useState<boolean | undefined>(
+    getInitialTheme,
+  )
 
   useEffect(() => {
     if (isLightTheme) {
@@ -23,9 +18,8 @@ export function UseTheme() {
     } else {
       document.documentElement.classList.add('dark')
     }
-  }, [isLightTheme])
+  }, [isLightTheme]) // Add isLightTheme as a dependency to update the class when it changes
 
-  // Update localStorage when the theme changes
   useEffect(() => {
     localStorage.setItem('theme', isLightTheme ? 'light' : 'dark')
   }, [isLightTheme])

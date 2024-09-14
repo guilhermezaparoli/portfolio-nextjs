@@ -30,7 +30,7 @@ const Skills = () => {
   const skillRref = useRef<HTMLDivElement>(null)
   const { isLightTheme } = useGlobalContext()
   const [finishedFirstAnimation, setFinishedFirstAnimation] = useState(false)
-  const isSkillRefInView = useInView(skillRref, { once: false })
+  const isSkillRefInView = useInView(skillRref, { once: true })
 
   const iconVariants = {
     hidden: { opacity: 0, scale: 0.8 },
@@ -113,7 +113,7 @@ const Skills = () => {
             >
               {t('groups.1')}
             </motion.p>
-            <div className="mt-4 grid w-full grid-cols-icons justify-center gap-8 md:justify-start">
+            <div className="mt-4 grid w-full grid-cols-icons gap-8 px-2 md:justify-start">
               {skillsGroup1.map((icon, i) => (
                 <motion.div
                   key={i}
@@ -143,7 +143,7 @@ const Skills = () => {
             >
               {t('groups.2')}
             </motion.p>
-            <div className="mt-4 grid w-full grid-cols-icons justify-center gap-8 md:justify-start">
+            <div className="mt-4 grid w-full grid-cols-icons gap-8 px-2 md:justify-start">
               {skillsGroup2.map((icon, i) => (
                 <motion.div
                   key={i}
@@ -173,7 +173,7 @@ const Skills = () => {
             >
               {t('groups.3')}
             </motion.p>
-            <div className="mt-4 grid w-full grid-cols-icons justify-center gap-8 md:justify-start">
+            <div className="mt-4 grid w-full grid-cols-icons gap-8 px-2 md:justify-start">
               {skillsGroup3.map((icon, i) => (
                 <motion.div
                   key={i}
@@ -203,7 +203,7 @@ const Skills = () => {
             >
               {t('groups.4')}
             </motion.p>
-            <div className="mt-4 grid w-full grid-cols-icons justify-center gap-6 md:justify-start">
+            <div className="mt-4 grid w-full grid-cols-icons gap-6 px-2 md:justify-start">
               {skillsGroup4.map((icon, i) => (
                 <motion.div
                   key={i}

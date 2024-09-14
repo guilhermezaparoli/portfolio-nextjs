@@ -10,7 +10,7 @@ import { useTranslations } from 'next-intl'
 export function Projects() {
   const t = useTranslations('Projects')
   const skillRref = useRef<HTMLDivElement>(null)
-  const isProjectContainerInView = useInView(skillRref, { once: false })
+  const isProjectContainerInView = useInView(skillRref, { once: true })
   const projects = [
     {
       description: t('projects.propertyPulse.description'),

@@ -9,7 +9,7 @@ import { useTranslations } from 'next-intl'
 export function Footer() {
   const t = useTranslations('Footer')
   const refFooter = useRef<HTMLDivElement>(null)
-  const isFooterInView = useInView(refFooter, { once: false })
+  const isFooterInView = useInView(refFooter, { once: true })
   return (
     <motion.div
       ref={refFooter}
