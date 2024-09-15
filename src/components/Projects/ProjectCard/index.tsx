@@ -65,6 +65,7 @@ export function ProjectCard({
           <div className="flex items-center gap-2">
             <FaLink />
             <Link
+              target="_blank"
               className="font-poppins text-sm text-black underline"
               href={deploy}
             >
@@ -74,6 +75,7 @@ export function ProjectCard({
           <div className="flex items-center gap-2">
             <FaGithub />
             <Link
+              target="_blank"
               className="font-poppins text-sm text-black underline"
               href={repo}
             >

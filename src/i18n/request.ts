@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import { getRequestConfig } from 'next-intl/server'
 import { routing } from './routing'
 
-type Locale = 'en' | 'pt-BR'
+type Locale = 'pt-BR' | 'en'
 
 export default getRequestConfig(async (params: { locale: string }) => {
   const locale = params.locale as Locale

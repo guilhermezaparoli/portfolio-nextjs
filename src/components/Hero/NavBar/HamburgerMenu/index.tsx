@@ -83,6 +83,7 @@ export function HamburgerMenu() {
       opacity: 1,
     },
   }
+
   return (
     <div className="flex gap-5">
       <SwitchTheme />
