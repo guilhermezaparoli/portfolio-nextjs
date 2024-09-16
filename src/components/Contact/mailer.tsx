@@ -27,7 +27,7 @@ export async function mailer({ name, email, message }: mailerProps) {
       },
     },
   )
-
+  console.log(status)
   if (status === 200) {
     toast.success('E-mail enviado com sucesso!', {
       className: 'font-poppins',

@@ -3,7 +3,6 @@
 import { FormEvent, useRef, useState } from 'react'
 import { mailer } from './mailer'
 import { motion, useInView } from 'framer-motion'
-import { toast } from 'react-toastify'
 import { useTranslations } from 'next-intl'
 
 export function Contact() {
@@ -82,16 +81,6 @@ export function Contact() {
 
             <button
               type="submit"
-              onClick={() =>
-                toast.error('Houve um erro ao enviar o e-mail', {
-                  className: 'font-poppins',
-                  position: 'top-center',
-                  autoClose: 2000,
-                  closeOnClick: true,
-                  pauseOnHover: true,
-                  draggable: true,
-                })
-              }
               className="mt-5 w-36 place-self-center rounded-lg border-2 border-simple p-3 text-center font-itensMenu text-xs font-bold text-simple transition-colors delay-0 hover:bg-simple hover:text-sunnyDay dark:border-white dark:text-simpleDark dark:hover:bg-white dark:hover:text-black"
             >
               {t('Form.send')}
