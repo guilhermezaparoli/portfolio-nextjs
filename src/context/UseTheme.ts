@@ -7,12 +7,12 @@ export function UseTheme() {
   )
 
   useEffect(() => {
-    const themeLocalStorage = localStorage.getItem('theme') || 'light'
+    const themeLocalStorage = localStorage.getItem('theme') || 'dark'
     setIsLightTheme(themeLocalStorage === 'light')
-  }, []) // Run only on the client side, on the first render
+  }, [])
 
   useEffect(() => {
-    if (isLightTheme === undefined) return // Prevent updating before the theme is set
+    if (isLightTheme === undefined) return
 
     if (isLightTheme) {
       document.documentElement.classList.remove('dark')
