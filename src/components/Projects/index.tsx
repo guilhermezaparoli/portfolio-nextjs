@@ -2,6 +2,7 @@
 import { ProjectCard } from './ProjectCard'
 import pokedex from '../../../public/assets/images/project-pokedex.png'
 import propertyPulse from '../../../public/assets/images/propertyPulse.png'
+import beerCalculator from '../../../public/assets/images/beer-calculator.png'
 import cooffeeDelivery from '../../../public/assets/images/coffee-delivery.png'
 import { useRef } from 'react'
 import { useInView, motion } from 'framer-motion'
@@ -12,6 +13,15 @@ export function Projects() {
   const skillRref = useRef<HTMLDivElement>(null)
   const isProjectContainerInView = useInView(skillRref, { once: true })
   const projects = [
+    {
+      description: t('projects.beerCalculator.description'),
+      title: t('projects.beerCalculator.title'),
+      technologies:
+        'Next.js 15, Tailwind, openai, react-toastfy, lucide-react, brower-image-compression',
+      image: beerCalculator,
+      deploy: 'https://www.calculadoradecerveja.com.br/',
+      repo: 'https://github.com/guilhermezaparoli/beer-calculator',
+    },
     {
       description: t('projects.propertyPulse.description'),
       title: t('projects.propertyPulse.title'),

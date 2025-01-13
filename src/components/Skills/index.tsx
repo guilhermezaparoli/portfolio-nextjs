@@ -19,7 +19,9 @@ import styledComponents from '../../../public/assets/svg/styled-components.svg'
 import typescript from '../../../public/assets/svg/typescript.svg'
 import materialUI from '../../../public/assets/svg/material-ui.svg'
 import postgreSQL from '../../../public/assets/svg/postgresql.svg'
+import mySQL from '../../../public/assets/svg/my-sql.svg'
 import jira from '../../../public/assets/svg/jira.svg'
+import awsCloudPractitioner from '../../../public/assets/images/AWS-Certified-Cloud-Practitioner_badger.png'
 import Image from 'next/image'
 import { useInView, motion } from 'framer-motion'
 import { useGlobalContext } from '@/context/GlobalContext'
@@ -73,12 +75,20 @@ const Skills = () => {
   ]
 
   const skillsGroup3 = [
+    { light: mySQL, dark: mySQL, title: 'MySQL' },
     { light: postgreSQL, dark: postgreSQL, title: 'PostgreSQL' },
     { light: mongoDB, dark: mongoDB, title: 'MongoDB' },
   ]
 
   const skillsGroup4 = [
-    { light: git, dark: git, title: 'Git' },
+    {
+      light: awsCloudPractitioner,
+      dark: awsCloudPractitioner,
+      title: 'AWS Certified Cloud Practitioner (CLF-C02)',
+    },
+  ]
+  const skillsGroup5 = [
+    { light: git, dark: git, title: 'GitHub' },
     { light: gitHub, dark: gitHubDark, title: 'GitHub' },
   ]
 
@@ -103,7 +113,6 @@ const Skills = () => {
         </motion.div>
 
         <div className="md:grid md:grid-cols-skills md:gap-36">
-          {/* Group 1 */}
           <div className="mt-10">
             <motion.p
               initial={{ x: '-1000px' }}
@@ -133,7 +142,6 @@ const Skills = () => {
             </div>
           </div>
 
-          {/* Group 2 */}
           <div className="mt-10">
             <motion.p
               initial={{ x: '-1000px' }}
@@ -163,7 +171,6 @@ const Skills = () => {
             </div>
           </div>
 
-          {/* Group 3 */}
           <div className="mt-10">
             <motion.p
               initial={{ x: '-1000px' }}
@@ -193,7 +200,6 @@ const Skills = () => {
             </div>
           </div>
 
-          {/* Group 4 */}
           <div className="mt-10 flex-1">
             <motion.p
               initial={{ x: '-1000px' }}
@@ -205,6 +211,34 @@ const Skills = () => {
             </motion.p>
             <div className="mt-4 grid w-full grid-cols-icons gap-6 px-2 md:justify-start">
               {skillsGroup4.map((icon, i) => (
+                <motion.div
+                  key={i}
+                  variants={iconVariants}
+                  initial="hidden"
+                  animate={finishedFirstAnimation ? 'visible' : {}}
+                  custom={i}
+                  whileHover="hover"
+                >
+                  <Image
+                    title={icon.title}
+                    src={isLightTheme ? icon.light : icon.dark}
+                    alt={icon.title}
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+          <div className="mt-10 flex-1">
+            <motion.p
+              initial={{ x: '-1000px' }}
+              animate={isSkillRefInView ? { x: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="text-simple dark:text-simpleDark md:text-lg"
+            >
+              {t('groups.5')}
+            </motion.p>
+            <div className="mt-4 grid w-full grid-cols-icons gap-6 px-2 md:justify-start">
+              {skillsGroup5.map((icon, i) => (
                 <motion.div
                   key={i}
                   variants={iconVariants}

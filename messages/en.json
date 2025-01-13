@@ -31,7 +31,8 @@
       "1": "Languages and Tools",
       "2": "Libraries and Frameworks",
       "3": "Database",
-      "4": "Others"
+      "4": "Certifications",
+      "5": "Others"
     }
   },
 
@@ -43,6 +44,10 @@
       "propertyPulse": {
         "title": "Rent a Property",
         "description": "A website for renting properties with the following features: sign up via Google account, send messages directly to the property owner, favorite preferred properties, view the property's geolocation, among others."
+      },
+      "beerCalculator": {
+        "title": "Beer calculator",
+        "description": "A Beer Calculator that uses artificial intelligence to help users make smart choices. The tool allows users to discover the best beer size worth purchasing based on its price and volume."
       },
       "pokedex": {
         "title": "Pokedex",
