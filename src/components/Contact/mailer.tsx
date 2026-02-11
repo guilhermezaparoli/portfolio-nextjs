@@ -32,17 +32,17 @@ export async function mailer({ name, email, message }: mailerProps) {
     toast.success('E-mail enviado com sucesso!', {
       className: 'font-poppins',
       position: 'top-center',
-      autoClose: 2000, // Ensure progress bar is visible
+      autoClose: 2000,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
-      icon: <FaCheckCircle className="text-xl text-dark" />,
+      icon: <FaCheckCircle className="text-dark text-xl" />,
     })
   } else {
     toast.error('Houve um erro ao enviar o e-mail', {
       className: 'font-poppins',
       position: 'top-center',
-      autoClose: 2000, // Ensure progress bar is visible
+      autoClose: 2000,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
