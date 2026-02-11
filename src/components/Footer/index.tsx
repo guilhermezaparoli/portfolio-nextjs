@@ -1,93 +1,61 @@
 'use client'
-import Link from 'next/link'
+
+import { useTranslations } from 'next-intl'
 import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
 import { HiOutlineMail } from 'react-icons/hi'
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
-import { useTranslations } from 'next-intl'
+
+const socials = [
+  {
+    icon: FaGithub,
+    href: 'https://github.com/guilhermezaparoli',
+    label: 'GitHub',
+  },
+  {
+    icon: FaLinkedin,
+    href: 'https://www.linkedin.com/in/guilherme-zaparoli-gomes-b979b5179/',
+    label: 'LinkedIn',
+  },
+  {
+    icon: FaInstagram,
+    href: 'https://www.instagram.com/guilherme.zaparoli/',
+    label: 'Instagram',
+  },
+  {
+    icon: FaWhatsapp,
+    href: 'https://api.whatsapp.com/send?phone=5517996299200',
+    label: 'WhatsApp',
+  },
+  {
+    icon: HiOutlineMail,
+    href: 'mailto:guilhermezapas@gmail.com',
+    label: 'Email',
+  },
+]
 
 export function Footer() {
   const t = useTranslations('Footer')
-  const refFooter = useRef<HTMLDivElement>(null)
-  const isFooterInView = useInView(refFooter, { once: true })
-  return (
-    <motion.div
-      ref={refFooter}
-      initial={{ opacity: 0, y: 20 }}
-      animate={isFooterInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 1.5 }}
-      id="contato"
-      className="flex flex-col items-center justify-center gap-8 font-poppins text-sm"
-    >
-      <h1 className="text-center text-3xl font-bold text-simple dark:text-simpleDark md:text-4xl">
-        {t('connect')}
-      </h1>
-      <div className="flex w-full items-center justify-center">
-        <div className="flex items-center gap-5">
-          <Link
-            target="_blank"
-            type="email"
-            href={'mailto:guilhermezapas@gmail.com'}
-            title="E-mail"
-          >
-            <HiOutlineMail
-              className="cursor-pointer text-simple transition-transform duration-[300] hover:scale-110 hover:brightness-50 dark:text-simpleDark dark:hover:brightness-[0.85]"
-              fontSize={25}
-            />
-          </Link>
-          <Link
-            target="_blank"
-            href="https://api.whatsapp.com/send?phone=5517996299200"
-            title="Whatsapp"
-          >
-            <FaWhatsapp
-              className="cursor-pointer text-simple transition-transform duration-[300] hover:scale-110 hover:brightness-50 dark:text-simpleDark dark:hover:brightness-[0.85]"
-              fontSize={25}
-            />
-          </Link>
-          <Link
-            target="_blank"
-            href="https://www.instagram.com/guilherme.zaparoli/"
-            title="Instagram"
-          >
-            <FaInstagram
-              className="cursor-pointer text-simple transition-transform duration-[300] hover:scale-110 hover:brightness-50 dark:text-simpleDark dark:hover:brightness-[0.85]"
-              fontSize={25}
-            />
-          </Link>
-          <Link
-            target="_blank"
-            href="https://www.linkedin.com/in/guilherme-zaparoli-gomes-b979b5179/"
-            title="Linkedin"
-          >
-            <FaLinkedin
-              className="cursor-pointer text-simple transition-transform duration-[300] hover:scale-110 hover:brightness-50 dark:text-simpleDark dark:hover:brightness-[0.85]"
-              fontSize={25}
-            />
-          </Link>
-          <Link
-            target="_blank"
-            href="https://github.com/guilhermezaparoli"
-            title="Github"
-          >
-            <FaGithub
-              className="cursor-pointer text-simple transition-transform duration-[300] hover:scale-110 hover:brightness-50 dark:text-simpleDark dark:hover:brightness-[0.85]"
-              fontSize={25}
-            />
-          </Link>
-        </div>
-      </div>
-      <Link href="#contato">
-        <button className="px- w-36 rounded-lg border-2 border-simple p-3 text-center font-itensMenu text-xs font-bold text-simple transition-colors delay-0 hover:bg-simple hover:text-sunnyDay dark:border-white dark:text-simpleDark dark:hover:bg-white dark:hover:text-black">
-          {t('letsTalk')}
-        </button>
-      </Link>
 
-      <div className="font-poppins text-simple dark:text-simpleDark">
-        <p className="whitespace-nowrap text-[10px] md:text-lg">
+  return (
+    <footer className="border-t border-border">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 py-12">
+        <div className="flex gap-5">
+          {socials.map((social) => (
+            <a
+              key={social.label}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={social.label}
+              className="text-muted transition-colors hover:text-foreground"
+            >
+              <social.icon size={18} />
+            </a>
+          ))}
+        </div>
+        <p className="text-center font-mono text-xs text-muted">
           {t('description')}
         </p>
       </div>
-    </motion.div>
+    </footer>
   )
 }
