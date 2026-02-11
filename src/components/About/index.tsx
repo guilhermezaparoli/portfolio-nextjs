@@ -15,7 +15,12 @@ export function About() {
   ]
 
   return (
-    <section id="about" className="mx-auto max-w-6xl px-6 py-24">
+    <section
+      id="about"
+      className="relative mx-auto max-w-6xl overflow-hidden px-6 py-24"
+    >
+  
+
       <SectionHeader
         tag={t('tag')}
         title={t('title')}
