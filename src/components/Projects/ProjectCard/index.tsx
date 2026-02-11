@@ -1,89 +1,76 @@
 'use client'
-import { Variants, motion } from 'framer-motion'
+
 import { useTranslations } from 'next-intl'
 import Image, { StaticImageData } from 'next/image'
-import Link from 'next/link'
-import { FaGithub, FaLink } from 'react-icons/fa'
-const cardVariants: Variants = {
-  offscreen: {
-    y: 150,
-    opacity: 0,
-  },
-  onscreen: {
-    y: 50,
-    opacity: 1,
-    transition: {
-      type: 'spring',
-      bounce: 0.4,
-      duration: 0.8,
-    },
-  },
-}
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
+
 interface ProjectCardProps {
   title: string
   description: string
-  technologies: string
+  technologies: string[]
   image: StaticImageData
   deploy: string
   repo: string
 }
 
 export function ProjectCard({
-  image,
   title,
   description,
   technologies,
+  image,
   deploy,
   repo,
 }: ProjectCardProps) {
   const t = useTranslations('Projects')
+
   return (
-    <motion.div
-      variants={cardVariants}
-      initial="offscreen"
-      whileInView="onscreen"
-      className="h-full max-w-80 rounded-2xl bg-white shadow-2xl md:h-[530px] md:max-w-[475px]"
-      viewport={{ once: true, amount: 0.3 }}
-    >
-      <div className="max-h-64 overflow-hidden rounded-t-2xl">
-        <Image src={image} alt="teste" />
+    <div className="group overflow-hidden rounded-xl border border-border bg-surface transition-colors hover:border-muted">
+      <div className="overflow-hidden">
+        <Image
+          src={image}
+          alt={title}
+          className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
       </div>
 
-      <div className="h-full min-h-72 p-7 text-center font-medium text-black">
-        <h1 className="font-poppins text-xl">{title}</h1>
-        <p className="mt-4 text-start font-poppins text-sm font-light text-descriptionProject">
+      <div className="p-6">
+        <h3 className="mb-2 text-lg font-semibold text-foreground">{title}</h3>
+        <p className="mb-4 text-sm leading-relaxed text-muted-fg">
           {description}
         </p>
-        <p className="mt-3 font-poppins text-xs font-light">
-          <span className="font-poppins text-sm font-normal">
-            {t('cardInfo.technologies')}:
-          </span>{' '}
-          {technologies}
-        </p>
 
-        <div className="mt-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <FaLink />
-            <Link
-              target="_blank"
-              className="font-poppins text-sm text-black underline"
-              href={deploy}
+        <div className="mb-4 flex flex-wrap gap-2">
+          {technologies.map((tech) => (
+            <span
+              key={tech}
+              className="rounded-full border border-border px-2 py-0.5 font-mono text-xs text-muted-fg"
             >
-              {t('cardInfo.visit')}
-            </Link>
-          </div>
-          <div className="flex items-center gap-2">
-            <FaGithub />
-            <Link
-              target="_blank"
-              className="font-poppins text-sm text-black underline"
-              href={repo}
-            >
-              {t('cardInfo.repo')}
-            </Link>
-          </div>
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        <div className="flex gap-4">
+          <a
+            href={deploy}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 font-mono text-sm text-muted-fg transition-colors hover:text-foreground"
+          >
+            <FaExternalLinkAlt size={12} />
+            {t('cardInfo.visit')}
+          </a>
+          <a
+            href={repo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 font-mono text-sm text-muted-fg transition-colors hover:text-foreground"
+          >
+            <FaGithub size={14} />
+            {t('cardInfo.repo')}
+          </a>
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }
