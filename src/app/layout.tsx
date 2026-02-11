@@ -13,9 +13,9 @@ const jetbrains = JetBrainsMono({
 })
 
 export const metadata: Metadata = {
-  title: 'Guilherme Zaparoli Gomes | Front-End Developer',
+  title: 'Guilherme Zaparoli Gomes | Full Stack Developer',
   description:
-    'Portfolio of Guilherme Zaparoli Gomes, a front-end developer specializing in React.js and Next.js.',
+    'Portfolio of Guilherme Zaparoli Gomes, a full stack developer specializing in React.js, Next.js, Node.js and TypeScript.',
   icons: {
     icon: '/favicon.ico',
   },
