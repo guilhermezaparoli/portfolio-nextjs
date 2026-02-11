@@ -1,22 +1,34 @@
 import type { Metadata } from 'next'
+import { Inter, JetBrains_Mono as JetBrainsMono } from 'next/font/google'
 import './globals.css'
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+})
+
+const jetbrains = JetBrainsMono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains',
+})
 
 export const metadata: Metadata = {
   title: 'Guilherme Zaparoli Gomes | Front-End Developer',
   description:
-    'Welcome to the portfolio of Guilherme Zaparoli Gomes, a skilled front-end developer specializing in React.js and Next.js. Explore my projects and get in touch!',
+    'Portfolio of Guilherme Zaparoli Gomes, a front-end developer specializing in React.js and Next.js.',
   icons: {
     icon: '/favicon.ico',
   },
 }
 
-interface RootLayoutProps {
+export default function RootLayout({
+  children,
+}: {
   children: React.ReactNode
-}
-export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
+}) {
   return (
-    <html>
-      <body>{children}</body>
+    <html className={`${inter.variable} ${jetbrains.variable}`}>
+      <body className="font-sans">{children}</body>
     </html>
   )
 }
