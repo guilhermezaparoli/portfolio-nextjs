@@ -4,6 +4,8 @@ import { useTranslations } from 'next-intl'
 import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
 import { HiOutlineMail } from 'react-icons/hi'
 import { AnimateOnScroll } from '@/components/AnimateOnScroll'
+import { SceneContainer } from '@/components/three/SceneContainer'
+import { HeroScene } from '@/components/three/HeroScene'
 
 const socials = [
   {
@@ -41,6 +43,10 @@ export function Hero() {
       id="home"
       className="relative flex min-h-screen items-center justify-center overflow-hidden px-6"
     >
+      <SceneContainer>
+        <HeroScene />
+      </SceneContainer>
+
       <div className="pointer-events-none absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-muted/5 blur-3xl" />
       <div className="pointer-events-none absolute bottom-1/4 right-1/4 h-72 w-72 rounded-full bg-muted/5 blur-3xl" />
 
