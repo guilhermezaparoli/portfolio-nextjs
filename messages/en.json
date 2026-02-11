@@ -2,7 +2,6 @@
   "Index": {
     "title": "Hello world!"
   },
-
   "Header": {
     "Menu": {
       "home": "Home",
@@ -13,72 +12,87 @@
     }
   },
   "Hero": {
-    "nameMessage": "Hello, my name is",
-    "dynamicMessages": {
-      "1": "I am a front-end developer",
-      "2": "I create intuitive and functional interfaces",
-      "3": "I am passionate about developing digital experiences",
-      "4": "I turn ideas into modern applications"
-    },
-    "letsTalk": "Let's talk"
+    "greeting": "Hi, my name is",
+    "description": "Front-end developer specializing in React.js and Next.js. I build modern, performant web experiences with clean code and attention to detail.",
+    "cta": "Get in touch",
+    "projects": "View projects"
   },
-
+  "About": {
+    "tag": "// about",
+    "title": "About Me",
+    "subtitle": "A bit about who I am and how I work.",
+    "bio": "I'm a front-end developer passionate about building digital experiences that are both functional and visually appealing. With experience in React.js and Next.js, I focus on writing clean, maintainable code and delivering interfaces that users love to interact with.",
+    "values": {
+      "1": {
+        "title": "Clean Code",
+        "description": "Writing readable, maintainable code that follows best practices and design patterns."
+      },
+      "2": {
+        "title": "Performance",
+        "description": "Optimizing for fast load times and smooth interactions across all devices."
+      },
+      "3": {
+        "title": "User Experience",
+        "description": "Building intuitive interfaces that prioritize usability and accessibility."
+      },
+      "4": {
+        "title": "Continuous Learning",
+        "description": "Always exploring new technologies and improving my skills to deliver better solutions."
+      }
+    }
+  },
   "Skills": {
-    "tag": "Skills",
+    "tag": "// skills",
     "title": "My Skills",
-    "subtitle": "Technologies I've been working with recently:",
+    "subtitle": "Technologies I've been working with recently.",
     "groups": {
-      "1": "Languages and Tools",
-      "2": "Libraries and Frameworks",
+      "1": "Languages & Tools",
+      "2": "Libraries & Frameworks",
       "3": "Database",
       "4": "Certifications",
       "5": "Others"
     }
   },
-
   "Projects": {
-    "tag": "Projects",
+    "tag": "// projects",
     "title": "My Projects",
-    "subtitle": "Some things I've built:",
+    "subtitle": "Some things I've built.",
     "projects": {
       "propertyPulse": {
         "title": "Rent a Property",
-        "description": "A website for renting properties with the following features: sign up via Google account, send messages directly to the property owner, favorite preferred properties, view the property's geolocation, among others."
+        "description": "Full-featured property rental platform with listings, search, bookmarks, messaging, and authentication via NextAuth.js."
       },
       "beerCalculator": {
-        "title": "Beer calculator",
-        "description": "A Beer Calculator that uses artificial intelligence to help users make smart choices. The tool allows users to discover the best beer size worth purchasing based on its price and volume."
+        "title": "Beer Calculator",
+        "description": "Smart calculator for home brewing that uses OpenAI to suggest recipes and calculate ingredient quantities."
       },
       "pokedex": {
         "title": "Pokedex",
-        "description": "An app that allows users to search and explore Pokémon, displaying details such as stats. It offers an interactive experience and real-time updates."
+        "description": "Interactive Pokedex built with React and TypeScript, consuming the PokeAPI with search, filtering and detailed views."
       },
       "coffeeDelivery": {
         "title": "Coffee Delivery",
-        "description": "A coffee delivery app created during Rocketseat's Ignite course. It allows users to add coffee to the cart and complete a mock purchase using Stripe (for testing purposes only)."
+        "description": "E-commerce for coffee delivery with shopping cart, address form with validation using zod, and order management."
       }
     },
     "cardInfo": {
       "technologies": "Technologies",
-      "visit": "Visit website",
-      "repo": "Repository"
+      "visit": "Live demo",
+      "repo": "Source code"
     }
   },
   "Contact": {
-    "tag": "Contact",
+    "tag": "// contact",
     "title": "Contact",
-    "subtitle": "Get in Touch:",
+    "subtitle": "Let's work together.",
     "Form": {
       "name": "Name",
       "email": "Email",
       "message": "Message",
-      "send": "Send"
+      "send": "Send message"
     }
   },
-
   "Footer": {
-    "connect": "Feel free to connect on social media",
-    "description": "Developed and built by Guilherme Zaparoli Gomes",
-    "letsTalk": "Let's talk"
+    "description": "Built by Guilherme Zaparoli Gomes"
   }
 }

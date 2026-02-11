@@ -1,20 +1,17 @@
-// import Clouds from "@/components/Clouds"
-import { Birds } from '@/components/Birds'
-import Clouds from '@/components/Clouds'
+import { Header } from '@/components/Header'
+import { Hero } from '@/components/Hero'
+import { About } from '@/components/About'
+import Skills from '@/components/Skills'
+import { Projects } from '@/components/Projects'
 import { Contact } from '@/components/Contact'
 import { Footer } from '@/components/Footer'
-import { Hero } from '@/components/Hero'
-import { Projects } from '@/components/Projects'
-import RainCanvas from '@/components/RainCanvas'
-import Skills from '@/components/Skills'
 
-const Page = () => {
+export default function Page() {
   return (
     <>
-      <Clouds />
-      <Birds />
-      <RainCanvas />
+      <Header />
       <Hero />
+      <About />
       <Skills />
       <Projects />
       <Contact />
@@ -22,5 +19,3 @@ const Page = () => {
     </>
   )
 }
-
-export default Page
