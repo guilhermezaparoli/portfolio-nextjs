@@ -7,6 +7,8 @@ import { AnimateOnScroll } from '@/components/AnimateOnScroll'
 import { HiOutlineMail } from 'react-icons/hi'
 import { FaLinkedin, FaWhatsapp } from 'react-icons/fa'
 import { mailer } from './mailer'
+import { SceneContainer } from '@/components/three/SceneContainer'
+import { ConstellationNetwork } from '@/components/three/ConstellationNetwork'
 
 const contactInfo = [
   {
@@ -35,11 +37,18 @@ export function Contact() {
     const name = (target[0] as HTMLInputElement).value
     const email = (target[1] as HTMLInputElement).value
     const message = (target[2] as HTMLTextAreaElement).value
-    mailer({ name, email, message })
+    mailer({ name, email, message, onSuccess: () => target.reset() })
   }
 
   return (
-    <section id="contact" className="mx-auto max-w-6xl px-6 py-24">
+    <section
+      id="contact"
+      className="relative mx-auto max-w-6xl overflow-hidden px-6 py-24"
+    >
+      <SceneContainer>
+        <ConstellationNetwork />
+      </SceneContainer>
+
       <SectionHeader
         tag={t('tag')}
         title={t('title')}
