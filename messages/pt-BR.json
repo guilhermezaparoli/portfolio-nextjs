@@ -13,7 +13,7 @@
   },
   "Hero": {
     "greeting": "Olá, meu nome é",
-    "description": "Desenvolvedor front-end especializado em React.js e Next.js. Construo experiências web modernas e performáticas com código limpo e atenção aos detalhes.",
+    "description": "Desenvolvedor full stack especializado em React.js, Next.js, Node.js e TypeScript. Construo experiências web modernas e performáticas com código limpo e atenção aos detalhes.",
     "cta": "Entrar em contato",
     "projects": "Ver projetos"
   },
@@ -21,7 +21,7 @@
     "tag": "// sobre",
     "title": "Sobre Mim",
     "subtitle": "Um pouco sobre quem eu sou e como trabalho.",
-    "bio": "Sou um desenvolvedor front-end apaixonado por construir experiências digitais que são funcionais e visualmente atraentes. Com experiência em React.js e Next.js, foco em escrever código limpo e de fácil manutenção, entregando interfaces que os usuários adoram usar.",
+    "bio": "Sou um desenvolvedor full stack apaixonado por construir experiências digitais que são funcionais e visualmente atraentes. Com experiência em React.js, Next.js, Node.js e TypeScript, foco em escrever código limpo e de fácil manutenção, entregando interfaces que os usuários adoram usar.",
     "values": {
       "1": {
         "title": "Código Limpo",
@@ -64,7 +64,7 @@
       },
       "beerCalculator": {
         "title": "Calculadora de Cerveja",
-        "description": "Calculadora inteligente para cerveja artesanal que usa OpenAI para sugerir receitas e calcular quantidades de ingredientes."
+        "description": "Calculadora inteligente para cerveja artesanal que usa OpenAI para comparar o melhor custo-benefício entre cervejas."
       },
       "pokedex": {
         "title": "Pokédex",
@@ -73,6 +73,10 @@
       "coffeeDelivery": {
         "title": "Delivery de Café",
         "description": "E-commerce de delivery de café com carrinho de compras, formulário de endereço com validação usando zod e gerenciamento de pedidos."
+      },
+      "aiDex": {
+        "title": "AI-Dex",
+        "description": "Pokédex alimentada por IA onde usuários criam monstros personalizados com descrições e designs únicos gerados por inteligência artificial."
       }
     },
     "cardInfo": {
