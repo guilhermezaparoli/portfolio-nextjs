@@ -37,11 +37,11 @@ const skillGroups = [
   },
   {
     key: '4',
-    skills: ['AWS Cloud Practitioner (CLF-C02)'],
+    skills: ['AWS Cloud Practitioner (CLF-C02)', 'Graph Developer - Associate', 'The Official React Query Course'],
   },
   {
     key: '5',
-    skills: ['Git', 'GitHub', 'GitLab', 'Scrum', 'Jira'],
+    skills: ['Artificial Intelligence', 'Git', 'GitHub', 'GitLab', 'Scrum', 'Jira'],
   },
 ]
 
