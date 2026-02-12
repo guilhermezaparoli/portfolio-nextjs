@@ -4,21 +4,33 @@ import { useTranslations } from 'next-intl'
 import { SectionHeader } from '@/components/SectionHeader'
 import { AnimateOnScroll } from '@/components/AnimateOnScroll'
 import { ProjectCard } from './ProjectCard'
+import { SceneContainer } from '@/components/three/SceneContainer'
+import { GlowingOrbs } from '@/components/three/GlowingOrbs'
 import pokedex from '../../../public/assets/images/project-pokedex.png'
 import propertyPulse from '../../../public/assets/images/propertyPulse.png'
 import beerCalculator from '../../../public/assets/images/beer-calculator.png'
 import coffeeDelivery from '../../../public/assets/images/coffee-delivery.png'
+import iadex from '../../../public/assets/images/iadex.png'
 
 export function Projects() {
   const t = useTranslations('Projects')
 
   const projects = [
+
+    {
+      title: t('projects.aiDex.title'),
+      description: t('projects.aiDex.description'),
+      technologies: ['Fastify', 'TypeScript', 'Clean Architecture', 'Prisma', 'PostgreSQL', 'JWT', 'OpenAI API', 'React.js'],
+      image: iadex,
+      deploy: 'https://iadex.guilhermezaparoli.dev',
+      repo:'https://github.com/guilhermezaparoli/vite-IA-dex-'
+    },
     {
       title: t('projects.beerCalculator.title'),
       description: t('projects.beerCalculator.description'),
       technologies: ['Next.js 15', 'Tailwind', 'OpenAI', 'lucide-react'],
       image: beerCalculator,
-      deploy: 'https://www.calculadoradecerveja.com.br/',
+      deploy: 'https://beer-calculator-git-main-guilhermezaparolis-projects.vercel.app',
       repo: 'https://github.com/guilhermezaparoli/beer-calculator',
     },
     {
@@ -54,7 +66,14 @@ export function Projects() {
   ]
 
   return (
-    <section id="projects" className="mx-auto max-w-6xl px-6 py-24">
+    <section
+      id="projects"
+      className="relative mx-auto max-w-6xl overflow-hidden px-6 py-24"
+    >
+      <SceneContainer>
+        <GlowingOrbs />
+      </SceneContainer>
+
       <SectionHeader
         tag={t('tag')}
         title={t('title')}
