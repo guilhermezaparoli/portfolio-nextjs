@@ -5,8 +5,9 @@ interface mailerProps {
   name: string
   email: string
   message: string
+  onSuccess: () => void
 }
-export async function mailer({ name, email, message }: mailerProps) {
+export async function mailer({ name, email, message, onSuccess }: mailerProps) {
   const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID || ''
   const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID || ''
   const publicKey = process.env.NEXT_PUBLIC_KEY || ''
@@ -38,6 +39,7 @@ export async function mailer({ name, email, message }: mailerProps) {
       draggable: true,
       icon: <FaCheckCircle className="text-dark text-xl" />,
     })
+    onSuccess()
   } else {
     toast.error('Houve um erro ao enviar o e-mail', {
       className: 'font-poppins',
