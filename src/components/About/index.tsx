@@ -36,7 +36,7 @@ export function About() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {values.map((value, i) => (
           <AnimateOnScroll key={value.key} delay={150 + i * 100}>
-            <div className="group rounded-xl border border-border bg-surface p-6 transition-colors hover:border-muted">
+            <div className="group min-h-52 rounded-xl border border-border bg-surface p-6 transition-colors hover:border-muted">
               <span className="mb-3 block font-mono text-2xl text-muted-fg transition-colors group-hover:text-foreground">
                 {value.icon}
               </span>
