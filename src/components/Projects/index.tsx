@@ -38,7 +38,8 @@ export function Projects() {
       description: t('projects.beerCalculator.description'),
       technologies: ['Next.js 15', 'Tailwind', 'OpenAI', 'lucide-react'],
       image: beerCalculator,
-      deploy: 'https://beer-calculator-git-main-guilhermezaparolis-projects.vercel.app',
+      deploy:
+        'https://beer-calculator-git-main-guilhermezaparolis-projects.vercel.app',
       repo: 'https://github.com/guilhermezaparoli/beer-calculator',
     },
     {

@@ -9,14 +9,7 @@ import { ParticleField } from '@/components/three/ParticleField'
 const skillGroups = [
   {
     key: '1',
-    skills: [
-      'HTML5',
-      'CSS3',
-      'JavaScript',
-      'TypeScript',
-      'Node.js',
-      'Vite',
-    ],
+    skills: ['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'Node.js', 'Vite'],
   },
   {
     key: '2',
@@ -37,11 +30,22 @@ const skillGroups = [
   },
   {
     key: '4',
-    skills: ['AWS Cloud Practitioner (CLF-C02)', 'Graph Developer - Associate', 'The Official React Query Course'],
+    skills: [
+      'AWS Cloud Practitioner (CLF-C02)',
+      'Graph Developer - Associate',
+      'The Official React Query Course',
+    ],
   },
   {
     key: '5',
-    skills: ['Artificial Intelligence', 'Git', 'GitHub', 'GitLab', 'Scrum', 'Jira'],
+    skills: [
+      'Artificial Intelligence',
+      'Git',
+      'GitHub',
+      'GitLab',
+      'Scrum',
+      'Jira',
+    ],
   },
 ]
 
@@ -66,7 +70,7 @@ export default function Skills() {
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {skillGroups.map((group, groupIndex) => (
           <AnimateOnScroll key={group.key} delay={groupIndex * 100}>
-            <div className=" min-h-48 rounded-xl border border-border bg-surface p-6">
+            <div className="min-h-48 rounded-xl border border-border bg-surface p-6">
               <h3 className="mb-4 font-semibold text-foreground">
                 {t(`groups.${group.key}`)}
               </h3>
