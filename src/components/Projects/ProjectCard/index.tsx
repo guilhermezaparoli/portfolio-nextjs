@@ -24,8 +24,8 @@ export function ProjectCard({
   const t = useTranslations('Projects')
 
   return (
-    <div className="group overflow-hidden rounded-xl border border-border bg-surface transition-colors hover:border-muted h-full">
-      <div className="overflow-hidden ">
+    <div className="group h-full overflow-hidden rounded-xl border border-border bg-surface transition-colors hover:border-muted">
+      <div className="overflow-hidden">
         <Image
           src={image}
           alt={title}

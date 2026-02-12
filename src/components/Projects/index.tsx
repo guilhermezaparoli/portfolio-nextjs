@@ -16,14 +16,22 @@ export function Projects() {
   const t = useTranslations('Projects')
 
   const projects = [
-
     {
       title: t('projects.aiDex.title'),
       description: t('projects.aiDex.description'),
-      technologies: ['Fastify', 'TypeScript', 'Clean Architecture', 'Prisma', 'PostgreSQL', 'JWT', 'OpenAI API', 'React.js'],
+      technologies: [
+        'Fastify',
+        'TypeScript',
+        'Clean Architecture',
+        'Prisma',
+        'PostgreSQL',
+        'JWT',
+        'OpenAI API',
+        'React.js',
+      ],
       image: iadex,
       deploy: 'https://iadex.guilhermezaparoli.dev',
-      repo:'https://github.com/guilhermezaparoli/vite-IA-dex-'
+      repo: 'https://github.com/guilhermezaparoli/vite-IA-dex-',
     },
     {
       title: t('projects.beerCalculator.title'),
