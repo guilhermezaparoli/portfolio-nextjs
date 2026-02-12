@@ -3,6 +3,8 @@
 import { useTranslations } from 'next-intl'
 import { SectionHeader } from '@/components/SectionHeader'
 import { AnimateOnScroll } from '@/components/AnimateOnScroll'
+import { SceneContainer } from '@/components/three/SceneContainer'
+import { ParticleField } from '@/components/three/ParticleField'
 
 const skillGroups = [
   {
@@ -14,8 +16,6 @@ const skillGroups = [
       'TypeScript',
       'Node.js',
       'Vite',
-      'Figma',
-      'Jira',
     ],
   },
   {
@@ -24,13 +24,16 @@ const skillGroups = [
       'React.js',
       'Next.js',
       'Tailwind CSS',
+      'NestJS',
+      'Express',
+      'GraphQl',
       'Styled Components',
       'Material UI',
     ],
   },
   {
     key: '3',
-    skills: ['MySQL', 'PostgreSQL', 'MongoDB'],
+    skills: ['MySQL', 'PostgreSQL'],
   },
   {
     key: '4',
@@ -38,7 +41,7 @@ const skillGroups = [
   },
   {
     key: '5',
-    skills: ['Git', 'GitHub'],
+    skills: ['Git', 'GitHub', 'GitLab', 'Scrum', 'Jira'],
   },
 ]
 
@@ -46,7 +49,14 @@ export default function Skills() {
   const t = useTranslations('Skills')
 
   return (
-    <section id="skills" className="mx-auto max-w-6xl px-6 py-24">
+    <section
+      id="skills"
+      className="relative mx-auto max-w-6xl overflow-hidden px-6 py-24"
+    >
+      <SceneContainer>
+        <ParticleField />
+      </SceneContainer>
+
       <SectionHeader
         tag={t('tag')}
         title={t('title')}
@@ -56,7 +66,7 @@ export default function Skills() {
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {skillGroups.map((group, groupIndex) => (
           <AnimateOnScroll key={group.key} delay={groupIndex * 100}>
-            <div className="rounded-xl border border-border bg-surface p-6">
+            <div className=" min-h-48 rounded-xl border border-border bg-surface p-6">
               <h3 className="mb-4 font-semibold text-foreground">
                 {t(`groups.${group.key}`)}
               </h3>
