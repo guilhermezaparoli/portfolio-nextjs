@@ -34,6 +34,14 @@ export function Projects() {
       repo: 'https://github.com/guilhermezaparoli/vite-IA-dex-',
     },
     {
+      title: t('projects.propertyPulse.title'),
+      description: t('projects.propertyPulse.description'),
+      technologies: ['Next.js 14', 'Tailwind', 'MongoDB', 'NextAuth.js'],
+      image: propertyPulse,
+      deploy: 'https://property-pulse-ten-gamma.vercel.app/',
+      repo: 'https://github.com/guilhermezaparoli/property-pulse',
+    },
+    {
       title: t('projects.beerCalculator.title'),
       description: t('projects.beerCalculator.description'),
       technologies: ['Next.js 15', 'Tailwind', 'OpenAI', 'lucide-react'],
@@ -41,14 +49,6 @@ export function Projects() {
       deploy:
         'https://beer-calculator-git-main-guilhermezaparolis-projects.vercel.app',
       repo: 'https://github.com/guilhermezaparoli/beer-calculator',
-    },
-    {
-      title: t('projects.propertyPulse.title'),
-      description: t('projects.propertyPulse.description'),
-      technologies: ['Next.js 14', 'Tailwind', 'MongoDB', 'NextAuth.js'],
-      image: propertyPulse,
-      deploy: 'https://property-pulse-ten-gamma.vercel.app/',
-      repo: 'https://github.com/guilhermezaparoli/property-pulse',
     },
     {
       title: t('projects.pokedex.title'),
