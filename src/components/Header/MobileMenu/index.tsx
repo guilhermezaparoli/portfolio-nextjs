@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { LanguageSwitcher } from '../LanguageSwitcher'
 import { ThemeToggle } from '../ThemeToggle'
@@ -8,6 +8,13 @@ import { ThemeToggle } from '../ThemeToggle'
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false)
   const t = useTranslations('Header')
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isOpen])
 
   const links = [
     { url: '#home', title: t('Menu.home') },
