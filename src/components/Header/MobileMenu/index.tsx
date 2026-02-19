@@ -1,18 +1,32 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { useTranslations } from 'next-intl'
 import { LanguageSwitcher } from '../LanguageSwitcher'
-import { ThemeToggle } from '../ThemeToggle'
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const t = useTranslations('Header')
 
   useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : ''
+    setMounted(true)
+  }, [])
+
+  useLayoutEffect(() => {
+    if (!isOpen) return
+
+    const scrollY = window.scrollY
+    document.body.style.position = 'fixed'
+    document.body.style.top = `-${scrollY}px`
+    document.body.style.width = '100%'
+
     return () => {
-      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.width = ''
+      window.scrollTo(0, scrollY)
     }
   }, [isOpen])
 
@@ -48,23 +62,30 @@ export function MobileMenu() {
         />
       </button>
 
-      {isOpen && (
-        <div className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 bg-background/95 backdrop-blur-md">
-          {links.map((link) => (
-            <a
-              key={link.url}
-              href={link.url}
-              onClick={() => setIsOpen(false)}
-              className="text-2xl font-light text-foreground transition-colors hover:text-muted-fg"
-            >
-              {link.title}
-            </a>
-          ))}
-          <div className="flex items-center gap-4 pt-4">
-            <LanguageSwitcher />
-          </div>
-        </div>
-      )}
+      {mounted &&
+        createPortal(
+          <div
+            aria-hidden={!isOpen}
+            className={`fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 bg-background/95 backdrop-blur-md transition-opacity duration-200 ${
+              isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+            }`}
+          >
+            {links.map((link) => (
+              <a
+                key={link.url}
+                href={link.url}
+                onClick={() => setIsOpen(false)}
+                className="text-2xl font-light text-foreground transition-colors hover:text-muted-fg"
+              >
+                {link.title}
+              </a>
+            ))}
+            <div className="flex items-center gap-4 pt-4">
+              <LanguageSwitcher />
+            </div>
+          </div>,
+          document.body,
+        )}
     </div>
   )
 }
