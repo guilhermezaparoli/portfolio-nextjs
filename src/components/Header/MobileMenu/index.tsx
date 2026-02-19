@@ -67,7 +67,9 @@ export function MobileMenu() {
           <div
             aria-hidden={!isOpen}
             className={`fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 bg-background/95 backdrop-blur-md transition-opacity duration-200 ${
-              isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+              isOpen
+                ? 'pointer-events-auto opacity-100'
+                : 'pointer-events-none opacity-0'
             }`}
           >
             {links.map((link) => (
