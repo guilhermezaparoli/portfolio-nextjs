@@ -1,39 +1,36 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
+import { motion } from 'framer-motion'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { MobileMenu } from './MobileMenu'
 
+const EASE = [0.16, 1, 0.3, 1] as const
+
 export function Header() {
-  const [scrolled, setScrolled] = useState(false)
   const t = useTranslations('Header')
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
   const links = [
-    { url: '#home', title: t('Menu.home') },
-    { url: '#about', title: t('Menu.about') },
-    { url: '#skills', title: t('Menu.skills') },
-    { url: '#projects', title: t('Menu.projects') },
-    { url: '#contact', title: t('Menu.contact') },
+    { url: '#about', index: '01', title: t('Menu.about') },
+    { url: '#skills', index: '02', title: t('Menu.skills') },
+    { url: '#projects', index: '03', title: t('Menu.projects') },
+    { url: '#contact', index: '04', title: t('Menu.contact') },
   ]
 
   return (
-    <header
-      className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? 'border-b border-border/50 bg-background/80 backdrop-blur-md'
-          : 'bg-transparent'
-      }`}
+    <motion.header
+      className="fixed left-0 top-0 z-50 w-full mix-blend-difference"
+      initial={{ y: '-100%' }}
+      animate={{ y: '0%' }}
+      transition={{ duration: 1, delay: 2.2, ease: EASE }}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#home" className="font-mono text-lg font-bold text-foreground">
-          GZ
+      <nav className="flex items-center justify-between px-6 py-6 md:px-12">
+        <a
+          href="#home"
+          className="font-display text-xl italic text-bone"
+          aria-label="Back to top"
+        >
+          GZ<span className="not-italic text-accent">.</span>
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
@@ -41,19 +38,20 @@ export function Header() {
             <a
               key={link.url}
               href={link.url}
-              className="font-mono text-sm text-muted-fg transition-colors hover:text-foreground"
+              className="text-bone/70 group font-mono text-xs uppercase tracking-widest transition-colors hover:text-bone"
             >
-              {link.title}
+              <sup className="mr-1 text-accent">{link.index}</sup>
+              <span className="link-sweep">{link.title}</span>
             </a>
           ))}
         </div>
 
-        <div className="hidden items-center gap-2 md:flex">
+        <div className="hidden md:block">
           <LanguageSwitcher />
         </div>
 
         <MobileMenu />
       </nav>
-    </header>
+    </motion.header>
   )
 }

@@ -1,10 +1,8 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { SectionHeader } from '@/components/SectionHeader'
-import { AnimateOnScroll } from '@/components/AnimateOnScroll'
-import { SceneContainer } from '@/components/three/SceneContainer'
-import { ParticleField } from '@/components/three/ParticleField'
+import { SectionTitle } from '@/components/SectionTitle'
+import { Reveal } from '@/components/motion/Reveal'
 
 const skillGroups = [
   {
@@ -19,7 +17,7 @@ const skillGroups = [
       'Tailwind CSS',
       'NestJS',
       'Express',
-      'GraphQl',
+      'GraphQL',
       'Styled Components',
       'Material UI',
     ],
@@ -32,7 +30,7 @@ const skillGroups = [
     key: '4',
     skills: [
       'AWS Cloud Practitioner (CLF-C02)',
-      'Graph Developer - Associate',
+      'Graph Developer — Associate',
       'The Official React Query Course',
     ],
   },
@@ -53,39 +51,30 @@ export default function Skills() {
   const t = useTranslations('Skills')
 
   return (
-    <section
-      id="skills"
-      className="relative mx-auto max-w-6xl overflow-hidden px-6 py-24"
-    >
-      <SceneContainer>
-        <ParticleField />
-      </SceneContainer>
+    <section id="skills" className="px-6 py-24 md:px-12 md:py-36">
+      <SectionTitle index="02" title={t('title')} meta={t('meta')} />
 
-      <SectionHeader
-        tag={t('tag')}
-        title={t('title')}
-        subtitle={t('subtitle')}
-      />
-
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {skillGroups.map((group, groupIndex) => (
-          <AnimateOnScroll key={group.key} delay={groupIndex * 100}>
-            <div className="min-h-48 rounded-xl border border-border bg-surface p-6">
-              <h3 className="mb-4 font-semibold text-foreground">
+      <div>
+        {skillGroups.map((group, i) => (
+          <Reveal key={group.key} delay={i * 0.05} y={24}>
+            <div className="group grid gap-3 border-b border-line-soft py-8 transition-colors first:border-t hover:border-line md:grid-cols-12 md:items-baseline">
+              <span className="font-mono text-xs uppercase tracking-widest text-faint transition-colors group-hover:text-accent md:col-span-3">
                 {t(`groups.${group.key}`)}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {group.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-full border border-border px-3 py-1 font-mono text-xs text-muted-fg transition-colors hover:border-muted-fg hover:text-foreground"
-                  >
-                    {skill}
+              </span>
+              <p className="flex flex-wrap items-baseline gap-x-3 gap-y-1 font-display text-xl font-light leading-relaxed text-bone md:col-span-9 md:text-3xl">
+                {group.skills.map((skill, j) => (
+                  <span key={skill} className="flex items-baseline gap-x-3">
+                    <span className="cursor-default transition-colors duration-300 hover:italic hover:text-accent">
+                      {skill}
+                    </span>
+                    {j < group.skills.length - 1 && (
+                      <span className="text-faint">·</span>
+                    )}
                   </span>
                 ))}
-              </div>
+              </p>
             </div>
-          </AnimateOnScroll>
+          </Reveal>
         ))}
       </div>
     </section>

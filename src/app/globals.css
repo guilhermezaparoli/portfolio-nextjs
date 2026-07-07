@@ -2,17 +2,135 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --ink: #0e0d0b;
+  --panel: #16140f;
+  --line: rgba(232, 226, 213, 0.14);
+  --line-soft: rgba(232, 226, 213, 0.07);
+  --bone: #e8e2d5;
+  --dim: #96907f;
+  --faint: #635e51;
+  --accent: #ff4b1f;
+}
+
 @layer base {
+  html,
   body {
-    @apply bg-background text-foreground;
+    /* clip (not hidden) keeps the window as the scroll container for Lenis */
+    overflow-x: clip;
+  }
+
+  body {
+    @apply bg-ink text-bone;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--ink);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--ink);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--faint);
+    border: 3px solid var(--ink);
+    border-radius: 8px;
   }
 }
 
 @layer utilities {
+  /* Editorial display type */
+  .font-display {
+    font-family: var(--font-fraunces), serif;
+    font-variation-settings: 'opsz' 144;
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 1px var(--faint);
+    color: transparent;
+  }
+
+  /* Film grain overlay */
+  .grain::after {
+    content: '';
+    position: fixed;
+    inset: -50%;
+    z-index: 90;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.05;
+    animation: grain-shift 0.9s steps(4) infinite;
+  }
+
+  @keyframes grain-shift {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(-2%, 3%);
+    }
+    50% {
+      transform: translate(3%, -2%);
+    }
+    75% {
+      transform: translate(-3%, -3%);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  /* Marquee */
+  .animate-marquee {
+    animation: marquee 28s linear infinite;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Underline sweep for inline links */
+  .link-sweep {
+    position: relative;
+  }
+  .link-sweep::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 1px;
+    width: 100%;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .link-sweep:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
   .Toastify__toast {
-    @apply bg-surface text-foreground p-4 shadow-lg ring-1 ring-border;
+    @apply rounded-none border border-line bg-panel p-4 font-mono text-sm text-bone shadow-none;
   }
   .Toastify__progress-bar--success {
-    @apply bg-foreground;
+    background: var(--accent);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .grain::after,
+    .animate-marquee {
+      animation: none;
+    }
   }
 }

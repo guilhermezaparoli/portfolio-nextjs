@@ -2,27 +2,20 @@
 
 import { FormEvent } from 'react'
 import { useTranslations } from 'next-intl'
-import { SectionHeader } from '@/components/SectionHeader'
-import { AnimateOnScroll } from '@/components/AnimateOnScroll'
-import { HiOutlineMail } from 'react-icons/hi'
-import { FaLinkedin, FaWhatsapp } from 'react-icons/fa'
+import { SectionTitle } from '@/components/SectionTitle'
+import { LineReveal, Reveal } from '@/components/motion/Reveal'
 import { mailer } from './mailer'
-import { SceneContainer } from '@/components/three/SceneContainer'
-import { ConstellationNetwork } from '@/components/three/ConstellationNetwork'
 
-const contactInfo = [
+const channels = [
   {
-    icon: HiOutlineMail,
     label: 'guilhermezapas@gmail.com',
     href: 'mailto:guilhermezapas@gmail.com',
   },
   {
-    icon: FaLinkedin,
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/guilherme-zaparoli-gomes-b979b5179/',
   },
   {
-    icon: FaWhatsapp,
     label: 'WhatsApp',
     href: 'https://api.whatsapp.com/send?phone=5517996299200',
   },
@@ -41,74 +34,80 @@ export function Contact() {
   }
 
   return (
-    <section
-      id="contact"
-      className="relative mx-auto max-w-6xl overflow-hidden px-6 py-24"
-    >
-      <SceneContainer>
-        <ConstellationNetwork />
-      </SceneContainer>
+    <section id="contact" className="px-6 py-24 md:px-12 md:py-36">
+      <SectionTitle index="04" title={t('title')} meta={t('meta')} />
 
-      <SectionHeader
-        tag={t('tag')}
-        title={t('title')}
-        subtitle={t('subtitle')}
-      />
+      <div className="grid gap-16 md:grid-cols-12">
+        <div className="md:col-span-6">
+          <h3 className="font-display text-4xl font-light leading-[1.05] text-bone md:text-6xl">
+            <LineReveal>{t('headline.1')}</LineReveal>
+            <LineReveal delay={0.12}>
+              <em className="text-accent">{t('headline.2')}</em>
+            </LineReveal>
+          </h3>
 
-      <div className="grid gap-12 lg:grid-cols-2">
-        <AnimateOnScroll delay={100}>
-          <div className="flex flex-col gap-6">
-            {contactInfo.map((info) => (
-              <a
-                key={info.label}
-                href={info.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-4 text-muted-fg transition-colors hover:text-foreground"
-              >
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-border bg-surface transition-colors group-hover:border-muted">
-                  <info.icon size={20} />
-                </div>
-                <span className="font-mono text-sm">{info.label}</span>
-              </a>
-            ))}
-          </div>
-        </AnimateOnScroll>
+          <Reveal delay={0.3} className="mt-12 flex flex-col gap-4">
+            <>
+              {channels.map((channel) => (
+                <a
+                  key={channel.label}
+                  href={channel.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-baseline gap-3 font-mono text-sm text-dim transition-colors hover:text-bone"
+                >
+                  <span className="text-accent transition-transform duration-500 ease-out-expo group-hover:-translate-y-0.5 group-hover:translate-x-1">
+                    ↗
+                  </span>
+                  <span className="link-sweep">{channel.label}</span>
+                </a>
+              ))}
+            </>
+          </Reveal>
+        </div>
 
-        <AnimateOnScroll delay={200}>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <label className="flex flex-col gap-1 text-sm text-muted-fg">
-              {t('Form.name')}
+        <Reveal delay={0.2} className="md:col-span-5 md:col-start-8">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-10">
+            <label className="group flex flex-col gap-2">
+              <span className="font-mono text-xs uppercase tracking-widest text-faint transition-colors group-focus-within:text-accent">
+                {t('Form.name')}
+              </span>
               <input
                 type="text"
                 required
-                className="rounded-lg border border-border bg-surface px-4 py-3 text-foreground outline-none transition-colors focus:border-muted-fg"
+                className="border-b border-line bg-transparent pb-3 text-lg text-bone outline-none transition-colors focus:border-accent"
               />
             </label>
-            <label className="flex flex-col gap-1 text-sm text-muted-fg">
-              {t('Form.email')}
+            <label className="group flex flex-col gap-2">
+              <span className="font-mono text-xs uppercase tracking-widest text-faint transition-colors group-focus-within:text-accent">
+                {t('Form.email')}
+              </span>
               <input
                 type="email"
                 required
-                className="rounded-lg border border-border bg-surface px-4 py-3 text-foreground outline-none transition-colors focus:border-muted-fg"
+                className="border-b border-line bg-transparent pb-3 text-lg text-bone outline-none transition-colors focus:border-accent"
               />
             </label>
-            <label className="flex flex-col gap-1 text-sm text-muted-fg">
-              {t('Form.message')}
+            <label className="group flex flex-col gap-2">
+              <span className="font-mono text-xs uppercase tracking-widest text-faint transition-colors group-focus-within:text-accent">
+                {t('Form.message')}
+              </span>
               <textarea
                 required
-                rows={5}
-                className="resize-none rounded-lg border border-border bg-surface px-4 py-3 text-foreground outline-none transition-colors focus:border-muted-fg"
+                rows={4}
+                className="resize-none border-b border-line bg-transparent pb-3 text-lg text-bone outline-none transition-colors focus:border-accent"
               />
             </label>
+
             <button
               type="submit"
-              className="mt-2 rounded-lg border border-foreground bg-foreground px-6 py-3 font-mono text-sm text-background transition-all hover:bg-transparent hover:text-foreground"
+              className="group relative mt-2 self-start overflow-hidden border border-bone px-10 py-4 font-mono text-xs uppercase tracking-widest text-bone transition-colors duration-500 hover:border-accent hover:text-ink"
             >
-              {t('Form.send')}
+              <span className="absolute inset-0 -z-0 translate-y-full bg-accent transition-transform duration-500 ease-out-expo group-hover:translate-y-0" />
+              <span className="relative z-10">{t('Form.send')} →</span>
             </button>
           </form>
-        </AnimateOnScroll>
+        </Reveal>
       </div>
     </section>
   )

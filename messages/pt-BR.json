@@ -6,58 +6,73 @@
     "Menu": {
       "home": "Início",
       "about": "Sobre",
-      "skills": "Habilidades",
+      "skills": "Stack",
       "projects": "Projetos",
       "contact": "Contato"
     }
   },
   "Hero": {
-    "greeting": "Olá, meu nome é",
+    "role": "Desenvolvedor Full-Stack",
+    "status": "Aberto a novos projetos",
+    "iBuild": "Eu construo",
+    "words": {
+      "1": "interfaces",
+      "2": "APIs",
+      "3": "produtos",
+      "4": "experiências"
+    },
     "description": "Desenvolvedor full stack especializado em React.js, Next.js, Node.js e TypeScript. Construo experiências web modernas e performáticas com código limpo e atenção aos detalhes.",
-    "cta": "Entrar em contato",
-    "projects": "Ver projetos"
+    "scroll": "Role"
+  },
+  "Marquee": {
+    "role": "Desenvolvedor Full-Stack"
   },
   "About": {
-    "tag": "// sobre",
-    "title": "Sobre Mim",
-    "subtitle": "Um pouco sobre quem eu sou e como trabalho.",
+    "title": "Sobre mim",
+    "meta": "Quem eu sou",
+    "lede": {
+      "1": "Código é a matéria-prima.",
+      "2": "O capricho é o ponto."
+    },
     "bio": "Sou um desenvolvedor full stack apaixonado por construir experiências digitais que são funcionais e visualmente atraentes. Com experiência em React.js, Next.js, Node.js e TypeScript, foco em escrever código limpo e de fácil manutenção, entregando interfaces que os usuários adoram usar.",
     "values": {
       "1": {
         "title": "Código Limpo",
-        "description": "Escrevendo código legível e de fácil manutenção que segue boas práticas e padrões de design."
+        "description": "Código legível e de fácil manutenção, seguindo boas práticas e padrões de design."
       },
       "2": {
         "title": "Performance",
-        "description": "Otimizando para tempos de carregamento rápidos e interações suaves em todos os dispositivos."
+        "description": "Carregamento rápido e interações suaves em todos os dispositivos."
       },
       "3": {
         "title": "Experiência do Usuário",
-        "description": "Construindo interfaces intuitivas que priorizam usabilidade e acessibilidade."
+        "description": "Interfaces intuitivas que priorizam usabilidade e acessibilidade."
       },
       "4": {
         "title": "Aprendizado Contínuo",
-        "description": "Sempre explorando novas tecnologias e aprimorando minhas habilidades para entregar melhores soluções."
+        "description": "Sempre explorando novas tecnologias para entregar melhores soluções."
       }
     }
   },
   "Skills": {
-    "tag": "// habilidades",
-    "title": "Minhas Habilidades",
-    "subtitle": "Tecnologias com as quais tenho trabalhado recentemente.",
+    "title": "Stack",
+    "meta": "Ferramentas do ofício",
     "groups": {
       "1": "Linguagens e Ferramentas",
       "2": "Bibliotecas e Frameworks",
-      "3": "Banco de Dados",
+      "3": "Bancos de Dados",
       "4": "Certificações",
       "5": "Outros"
     }
   },
   "Projects": {
-    "tag": "// projetos",
-    "title": "Meus Projetos",
-    "subtitle": "Algumas coisas que construí.",
+    "title": "Projetos selecionados",
+    "meta": "2022 — 2026",
     "projects": {
+      "acheiPromocoes": {
+        "title": "Achei Promoções",
+        "description": "Plataforma de promoções que captura ofertas 24h por dia com robôs e as seleciona com IA. Inclui alertas de preço em tempo real via bot no Telegram, cupons, busca e lista de desejos."
+      },
       "propertyPulse": {
         "title": "Alugue um Imóvel",
         "description": "Plataforma completa de aluguel de imóveis com listagens, busca, favoritos, mensagens e autenticação via NextAuth.js."
@@ -66,14 +81,6 @@
         "title": "Calculadora de Cerveja",
         "description": "Calculadora inteligente para cerveja artesanal que usa OpenAI para comparar o melhor custo-benefício entre cervejas."
       },
-      "pokedex": {
-        "title": "Pokédex",
-        "description": "Pokédex interativa construída com React e TypeScript, consumindo a PokeAPI com busca, filtragem e visualizações detalhadas."
-      },
-      "coffeeDelivery": {
-        "title": "Delivery de Café",
-        "description": "E-commerce de delivery de café com carrinho de compras, formulário de endereço com validação usando zod e gerenciamento de pedidos."
-      },
       "aiDex": {
         "title": "AI-Dex",
         "description": "Pokédex alimentada por IA onde usuários criam monstros personalizados com descrições e designs únicos gerados por inteligência artificial."
@@ -81,14 +88,17 @@
     },
     "cardInfo": {
       "technologies": "Tecnologias",
-      "visit": "Demo ao vivo",
-      "repo": "Código fonte"
+      "visit": "Ver",
+      "repo": "Código"
     }
   },
   "Contact": {
-    "tag": "// contato",
     "title": "Contato",
-    "subtitle": "Vamos trabalhar juntos.",
+    "meta": "Vamos trabalhar juntos",
+    "headline": {
+      "1": "Tem uma ideia?",
+      "2": "Vamos construir."
+    },
     "Form": {
       "name": "Nome",
       "email": "Email",
@@ -97,6 +107,8 @@
     }
   },
   "Footer": {
-    "description": "Desenvolvido por Guilherme Zaparoli Gomes"
+    "rights": "Guilherme Zaparoli Gomes",
+    "localTime": "Hora local",
+    "backToTop": "Voltar ao topo"
   }
 }

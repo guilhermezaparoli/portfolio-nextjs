@@ -5,12 +5,16 @@ import Skills from '@/components/Skills'
 import { Projects } from '@/components/Projects'
 import { Contact } from '@/components/Contact'
 import { Footer } from '@/components/Footer'
+import { Marquee } from '@/components/Marquee'
+import { Preloader } from '@/components/motion/Preloader'
 
 export default function Page() {
   return (
     <>
+      <Preloader />
       <Header />
       <Hero />
+      <Marquee />
       <About />
       <Skills />
       <Projects />

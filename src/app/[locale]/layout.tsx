@@ -3,6 +3,8 @@
 import { GlobalProvider } from '@/context/GlobalContext'
 import ToastProvider from '@/context/ToastProvider'
 import { NextIntlClientProvider } from 'next-intl'
+import { SmoothScroll } from '@/components/motion/SmoothScroll'
+import { Cursor } from '@/components/motion/Cursor'
 import en from '../../../messages/en.json'
 import pt from '../../../messages/pt-BR.json'
 
@@ -22,7 +24,10 @@ export default function LayoutLocale({
     <GlobalProvider>
       <NextIntlClientProvider locale={locale} messages={messages}>
         <ToastProvider>
-          <main className="min-h-screen">{children}</main>
+          <SmoothScroll>
+            <Cursor />
+            <main className="min-h-screen">{children}</main>
+          </SmoothScroll>
         </ToastProvider>
       </NextIntlClientProvider>
     </GlobalProvider>

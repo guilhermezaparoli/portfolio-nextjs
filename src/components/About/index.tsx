@@ -1,52 +1,52 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { SectionHeader } from '@/components/SectionHeader'
-import { AnimateOnScroll } from '@/components/AnimateOnScroll'
+import { SectionTitle } from '@/components/SectionTitle'
+import { LineReveal, Reveal } from '@/components/motion/Reveal'
 
 export function About() {
   const t = useTranslations('About')
 
-  const values = [
-    { key: '1', icon: '{}' },
-    { key: '2', icon: '~>' },
-    { key: '3', icon: '<>' },
-    { key: '4', icon: '//' },
-  ]
+  const values = ['1', '2', '3', '4']
 
   return (
-    <section
-      id="about"
-      className="relative mx-auto max-w-6xl overflow-hidden px-6 py-24"
-    >
-      <SectionHeader
-        tag={t('tag')}
-        title={t('title')}
-        subtitle={t('subtitle')}
-      />
+    <section id="about" className="px-6 py-24 md:px-12 md:py-36">
+      <SectionTitle index="01" title={t('title')} meta={t('meta')} />
 
-      <AnimateOnScroll delay={100}>
-        <p className="mb-12 max-w-2xl leading-relaxed text-muted-fg">
-          {t('bio')}
-        </p>
-      </AnimateOnScroll>
+      <div className="grid gap-12 md:grid-cols-12">
+        <div className="md:col-span-7">
+          <h3 className="font-display text-2xl font-light leading-snug text-bone md:text-4xl">
+            <LineReveal>{t('lede.1')}</LineReveal>
+            <LineReveal delay={0.1}>
+              <em className="text-accent">{t('lede.2')}</em>
+            </LineReveal>
+          </h3>
+          <Reveal delay={0.25} className="mt-8 max-w-xl">
+            <p className="leading-relaxed text-dim">{t('bio')}</p>
+          </Reveal>
+        </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {values.map((value, i) => (
-          <AnimateOnScroll key={value.key} delay={150 + i * 100}>
-            <div className="group min-h-52 rounded-xl border border-border bg-surface p-6 transition-colors hover:border-muted">
-              <span className="mb-3 block font-mono text-2xl text-muted-fg transition-colors group-hover:text-foreground">
-                {value.icon}
-              </span>
-              <h3 className="mb-1 font-semibold text-foreground">
-                {t(`values.${value.key}.title`)}
-              </h3>
-              <p className="text-sm text-muted-fg">
-                {t(`values.${value.key}.description`)}
-              </p>
-            </div>
-          </AnimateOnScroll>
-        ))}
+        <div className="md:col-span-4 md:col-start-9">
+          {values.map((key, i) => (
+            <Reveal key={key} delay={0.1 + i * 0.08} y={20}>
+              <div className="group border-b border-line-soft py-5 transition-colors first:border-t hover:border-line">
+                <div className="flex items-baseline gap-4">
+                  <span className="font-mono text-xs text-accent">
+                    0{i + 1}
+                  </span>
+                  <div>
+                    <h4 className="font-display text-lg text-bone transition-transform duration-500 ease-out-expo group-hover:translate-x-2 group-hover:italic">
+                      {t(`values.${key}.title`)}
+                    </h4>
+                    <p className="mt-1 text-sm leading-relaxed text-dim">
+                      {t(`values.${key}.description`)}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   )

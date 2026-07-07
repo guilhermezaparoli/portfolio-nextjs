@@ -1,24 +1,41 @@
-import type { Metadata } from 'next'
-import { Inter, JetBrains_Mono as JetBrainsMono } from 'next/font/google'
+import type { Metadata, Viewport } from 'next'
+import {
+  Fraunces,
+  Instrument_Sans as InstrumentSans,
+  Fragment_Mono as FragmentMono,
+} from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({
+const fraunces = Fraunces({
   subsets: ['latin'],
-  variable: '--font-inter',
+  style: ['normal', 'italic'],
+  axes: ['opsz', 'SOFT', 'WONK'],
+  variable: '--font-fraunces',
 })
 
-const jetbrains = JetBrainsMono({
+const instrument = InstrumentSans({
   subsets: ['latin'],
-  variable: '--font-jetbrains',
+  variable: '--font-instrument',
+})
+
+const fragment = FragmentMono({
+  subsets: ['latin'],
+  weight: '400',
+  style: ['normal', 'italic'],
+  variable: '--font-fragment',
 })
 
 export const metadata: Metadata = {
-  title: 'Guilherme Zaparoli Gomes | Full Stack Developer',
+  title: 'Guilherme Zaparoli — Full-Stack Developer',
   description:
     'Portfolio of Guilherme Zaparoli Gomes, a full stack developer specializing in React.js, Next.js, Node.js and TypeScript.',
   icons: {
     icon: '/favicon.ico',
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#0e0d0b',
 }
 
 export default function RootLayout({
@@ -27,8 +44,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html className={`${inter.variable} ${jetbrains.variable}`}>
-      <body className="font-sans">{children}</body>
+    <html
+      className={`${fraunces.variable} ${instrument.variable} ${fragment.variable}`}
+    >
+      <body className="grain font-sans">{children}</body>
     </html>
   )
 }
